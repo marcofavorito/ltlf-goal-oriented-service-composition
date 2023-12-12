@@ -42,7 +42,7 @@ def services_to_pddl(services: Sequence[Service], formula_pddl: str) -> Tuple[st
                 action_str += f"    :effect (and\n"
                 next_states = sorted(service.transition_function.get(state, {}).get(action, set()))
                 if len(next_states) == 0:
-                    next_states = {_SINK}
+                    continue
                 more_than_one_successor = len(next_states) > 1
                 if more_than_one_successor:
                     action_str += f"        (oneof\n"
@@ -74,10 +74,15 @@ def services_to_pddl(services: Sequence[Service], formula_pddl: str) -> Tuple[st
     problem += "    (:goal (and\n"
     problem += f"            {formula_pddl}\n"
     for idx, service in enumerate(services):
-        disjunction = "       (or\n"
+        more_than_one_final_state = len(service.final_states) > 1
+        disjunction = "    (eventually (and\n"
+        if more_than_one_final_state:
+            disjunction += "        (or\n"
         for final_state in sorted(service.final_states):
             disjunction += f"           (current_state_{idx} s{idx}_{final_state})\n"
-        disjunction += "       )\n"
+        if more_than_one_final_state:
+            disjunction += "       )\n"
+        disjunction += "        (not (next (true) ))))\n"
         problem += disjunction
     problem += ")))"
     return pddl, problem

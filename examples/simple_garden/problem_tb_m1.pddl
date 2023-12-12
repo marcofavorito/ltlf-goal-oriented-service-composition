@@ -5,7 +5,7 @@
   (:init 
     (current_state_0 s0_x0)
     (startsymb)
-    (q_10)
+    (q_11)
     (f_copy)
     (f_ok)
   )

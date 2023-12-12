@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from pylogics.parsers import parse_ltl
-from pylogics.utils.to_string import to_string
 
 from ltlf_goal_oriented_service_composition.declare_utils import build_declare_assumption
 from ltlf_goal_oriented_service_composition.rewrite_formula import rewrite
@@ -12,14 +11,14 @@ if __name__ == "__main__":
     actions = {"clean", "water"}
     declare_ass = build_declare_assumption(actions)
     # formula_str = "clean & X[!](water)" + " & " + declare_ass
-    formula_str = f"{_START_SYMB} & X[!](clean & X[!](water))"
+    formula_str = f"{_START_SYMB} & X[!](clean)"
     formula = parse_ltl(formula_str)
     formula_pddl = rewrite(formula)
 
     bot_0 = Service(
         {"x0", "x1"},
         {"clean", "water"},
-        {"x0", "x1"},
+        {"x0"},
         "x0",
         {
             "x0": {

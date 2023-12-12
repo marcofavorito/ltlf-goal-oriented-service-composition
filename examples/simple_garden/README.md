@@ -15,5 +15,7 @@ python3 scripts/fix_tb_oneof.py --domain-file examples/simple_garden/domain_tb_m
 cd ./planners/mynd
 ./mynd.sh -exportDot ../../policy.dot -dumpPlan -search aostar ../../output.sas
 cd ../../
+
+python scripts/simplify-policy.py --dot-file policy.dot
 dot -Tsvg policy.dot -o policy.svg
 ```

@@ -19,22 +19,6 @@
         (not (water))
     )
 )
-(:action clean_0_x1
-    :precondition (current_state_0 s0_x1)
-    :effect (and
-            (and (not (current_state_0 s0_x1)) (current_state_0 s0_sink))
-        (clean)
-        (not (water))
-    )
-)
-(:action water_0_x0
-    :precondition (current_state_0 s0_x0)
-    :effect (and
-            (and (not (current_state_0 s0_x0)) (current_state_0 s0_sink))
-        (water)
-        (not (clean))
-    )
-)
 (:action water_0_x1
     :precondition (current_state_0 s0_x1)
     :effect (and

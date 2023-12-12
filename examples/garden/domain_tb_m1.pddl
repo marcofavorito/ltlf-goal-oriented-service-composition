@@ -8,7 +8,11 @@
     (current_state_0 ?x0 - state)
     (current_state_1 ?x0 - state)
     (current_state_2 ?x0 - state)
-    (last_action ?x0 - action)
+    (clean)
+    (empty)
+    (pluck)
+    (water)
+    (startsymb)
     (f_copy)
     (f_sync)
     (f_world)
@@ -82,34 +86,6 @@
     (q_33s)
     (q_34)
     (q_34s)
-    (q_35)
-    (q_35s)
-    (q_36)
-    (q_36s)
-    (q_37)
-    (q_37s)
-    (q_38)
-    (q_38s)
-    (q_39)
-    (q_39s)
-    (q_40)
-    (q_40s)
-    (q_41)
-    (q_41s)
-    (q_42)
-    (q_42s)
-    (q_43)
-    (q_43s)
-    (q_44)
-    (q_44s)
-    (q_45)
-    (q_45s)
-    (q_46)
-    (q_46s)
-    (q_47)
-    (q_47s)
-    (q_48)
-    (q_48s)
   )
   (:action clean_0_a0
     :parameters ()
@@ -121,168 +97,14 @@
     :effect
       (and
         (oneof (current_state_0 s0_a0) (and (not (current_state_0 s0_a0)) (current_state_0 s0_a1)))
-        (last_action clean)
+        (clean)
         (f_copy)
         (not 
-          (last_action empty))
+          (empty))
         (not 
-          (last_action pluck))
+          (pluck))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_0_a1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a1)) (current_state_0 s0_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_1_b0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b0)) (current_state_1 s1_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_1_b1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b1)) (current_state_1 s1_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_1_b2
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b2)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b2)) (current_state_1 s1_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_2_c0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c0)) (current_state_2 s2_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action clean_2_c1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c1)) (current_state_2 s2_sink)))
-        (last_action clean)
-        (f_copy)
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action empty_0_a0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a0)) (current_state_0 s0_sink)))
-        (last_action empty)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
+          (water))
         (not 
           (f_world))
       )
@@ -296,37 +118,18 @@
         (f_world))
     :effect
       (and
-        (oneof (and (not (current_state_0 s0_a1)) (current_state_0 s0_a0)))
-        (last_action empty)
+        (and
+          (not 
+            (current_state_0 s0_a1))
+          (current_state_0 s0_a0))
+        (empty)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action pluck))
+          (pluck))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action empty_1_b0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b0)) (current_state_1 s1_sink)))
-        (last_action empty)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
+          (water))
         (not 
           (f_world))
       )
@@ -340,59 +143,18 @@
         (f_world))
     :effect
       (and
-        (oneof (and (not (current_state_1 s1_b1)) (current_state_1 s1_b0)))
-        (last_action empty)
+        (and
+          (not 
+            (current_state_1 s1_b1))
+          (current_state_1 s1_b0))
+        (empty)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action pluck))
+          (pluck))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action empty_1_b2
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b2)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b2)) (current_state_1 s1_sink)))
-        (last_action empty)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action empty_2_c0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c0)) (current_state_2 s2_sink)))
-        (last_action empty)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action pluck))
-        (not 
-          (last_action water))
+          (water))
         (not 
           (f_world))
       )
@@ -406,59 +168,18 @@
         (f_world))
     :effect
       (and
-        (oneof (and (not (current_state_2 s2_c1)) (current_state_2 s2_c0)))
-        (last_action empty)
+        (and
+          (not 
+            (current_state_2 s2_c1))
+          (current_state_2 s2_c0))
+        (empty)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action pluck))
+          (pluck))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action pluck_0_a0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a0)) (current_state_0 s0_sink)))
-        (last_action pluck)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action pluck_0_a1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a1)) (current_state_0 s0_sink)))
-        (last_action pluck)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action water))
+          (water))
         (not 
           (f_world))
       )
@@ -473,58 +194,14 @@
     :effect
       (and
         (oneof (and (not (current_state_1 s1_b0)) (current_state_1 s1_b1)) (and (not (current_state_1 s1_b0)) (current_state_1 s1_b2)))
-        (last_action pluck)
+        (pluck)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action empty))
+          (empty))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action pluck_1_b1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b1)) (current_state_1 s1_sink)))
-        (last_action pluck)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action pluck_1_b2
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b2)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b2)) (current_state_1 s1_sink)))
-        (last_action pluck)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action water))
+          (water))
         (not 
           (f_world))
       )
@@ -538,81 +215,18 @@
         (f_world))
     :effect
       (and
-        (oneof (and (not (current_state_2 s2_c0)) (current_state_2 s2_c1)))
-        (last_action pluck)
+        (and
+          (not 
+            (current_state_2 s2_c0))
+          (current_state_2 s2_c1))
+        (pluck)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action empty))
+          (empty))
         (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action pluck_2_c1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c1)) (current_state_2 s2_sink)))
-        (last_action pluck)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action water))
-        (not 
-          (f_world))
-      )
-    )
-  (:action water_0_a0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a0)) (current_state_0 s0_sink)))
-        (last_action water)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (f_world))
-      )
-    )
-  (:action water_0_a1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_a1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_0 s0_a1)) (current_state_0 s0_sink)))
-        (last_action water)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
+          (water))
         (not 
           (f_world))
       )
@@ -626,15 +240,15 @@
         (f_world))
     :effect
       (and
-        (oneof (current_state_1 s1_b0))
-        (last_action water)
+        (current_state_1 s1_b0)
+        (water)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action empty))
+          (empty))
         (not 
-          (last_action pluck))
+          (pluck))
         (not 
           (f_world))
       )
@@ -648,81 +262,15 @@
         (f_world))
     :effect
       (and
-        (oneof (current_state_1 s1_b1))
-        (last_action water)
+        (current_state_1 s1_b1)
+        (water)
         (f_copy)
         (not 
-          (last_action clean))
+          (clean))
         (not 
-          (last_action empty))
+          (empty))
         (not 
-          (last_action pluck))
-        (not 
-          (f_world))
-      )
-    )
-  (:action water_1_b2
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_b2)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_1 s1_b2)) (current_state_1 s1_sink)))
-        (last_action water)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (f_world))
-      )
-    )
-  (:action water_2_c0
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c0)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c0)) (current_state_2 s2_sink)))
-        (last_action water)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
-        (not 
-          (f_world))
-      )
-    )
-  (:action water_2_c1
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_c1)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (oneof (and (not (current_state_2 s2_c1)) (current_state_2 s2_sink)))
-        (last_action water)
-        (f_copy)
-        (not 
-          (last_action clean))
-        (not 
-          (last_action empty))
-        (not 
-          (last_action pluck))
+          (pluck))
         (not 
           (f_world))
       )
@@ -838,48 +386,6 @@
         (when
           (q_34)
           (q_34s))
-        (when
-          (q_35)
-          (q_35s))
-        (when
-          (q_36)
-          (q_36s))
-        (when
-          (q_37)
-          (q_37s))
-        (when
-          (q_38)
-          (q_38s))
-        (when
-          (q_39)
-          (q_39s))
-        (when
-          (q_40)
-          (q_40s))
-        (when
-          (q_41)
-          (q_41s))
-        (when
-          (q_42)
-          (q_42s))
-        (when
-          (q_43)
-          (q_43s))
-        (when
-          (q_44)
-          (q_44s))
-        (when
-          (q_45)
-          (q_45s))
-        (when
-          (q_46)
-          (q_46s))
-        (when
-          (q_47)
-          (q_47s))
-        (when
-          (q_48)
-          (q_48s))
         (not 
           (f_copy))
         (not 
@@ -950,34 +456,6 @@
           (q_33))
         (not 
           (q_34))
-        (not 
-          (q_35))
-        (not 
-          (q_36))
-        (not 
-          (q_37))
-        (not 
-          (q_38))
-        (not 
-          (q_39))
-        (not 
-          (q_40))
-        (not 
-          (q_41))
-        (not 
-          (q_42))
-        (not 
-          (q_43))
-        (not 
-          (q_44))
-        (not 
-          (q_45))
-        (not 
-          (q_46))
-        (not 
-          (q_47))
-        (not 
-          (q_48))
       )
     )
   (:action o_goal
@@ -1051,35 +529,7 @@
         (not 
           (q_32))
         (not 
-          (q_33))
-        (not 
-          (q_34))
-        (not 
-          (q_35))
-        (not 
-          (q_36))
-        (not 
-          (q_37))
-        (not 
-          (q_38))
-        (not 
-          (q_39))
-        (not 
-          (q_40))
-        (not 
-          (q_41))
-        (not 
-          (q_42))
-        (not 
-          (q_43))
-        (not 
-          (q_44))
-        (not 
-          (q_45))
-        (not 
-          (q_46))
-        (not 
-          (q_47)))
+          (q_33)))
     :effect
 (f_goal)    )
   (:action o_world
@@ -1155,35 +605,7 @@
         (not 
           (q_33s))
         (not 
-          (q_34s))
-        (not 
-          (q_35s))
-        (not 
-          (q_36s))
-        (not 
-          (q_37s))
-        (not 
-          (q_38s))
-        (not 
-          (q_39s))
-        (not 
-          (q_40s))
-        (not 
-          (q_41s))
-        (not 
-          (q_42s))
-        (not 
-          (q_43s))
-        (not 
-          (q_44s))
-        (not 
-          (q_45s))
-        (not 
-          (q_46s))
-        (not 
-          (q_47s))
-        (not 
-          (q_48s)))
+          (q_34s)))
     :effect
       (and
         (f_world)
@@ -1206,224 +628,167 @@
     :parameters ()
     :precondition 
       (and
-        (empty)
         (f_sync)
         (f_ok)
         (q_2s))
     :effect
-(not 
-        (q_2s))    )
+      (and
+        (not 
+          (q_2s))
+        (not 
+          (f_ok))
+      )
+    )
   (:action o_sync_q_3s
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_3s))
+    :effect
+      (and
+        (q_34)
+        (not 
+          (q_3s))
+      )
+    )
+  (:action o_sync_q_4s
     :parameters ()
     :precondition 
       (and
         (pluck)
         (f_sync)
         (f_ok)
-        (q_3s))
+        (q_4s))
     :effect
 (not 
-        (q_3s))    )
-  (:action o_sync_q_4s
+        (q_4s))    )
+  (:action o_sync_q_5s
+    :parameters ()
+    :precondition 
+      (and
+        (startsymb)
+        (f_sync)
+        (f_ok)
+        (q_5s))
+    :effect
+(not 
+        (q_5s))    )
+  (:action o_sync_q_6s
     :parameters ()
     :precondition 
       (and
         (water)
         (f_sync)
         (f_ok)
-        (q_4s))
+        (q_6s))
     :effect
 (not 
-        (q_4s))    )
-  (:action o_sync_q_5s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_5s))
-    :effect
-      (and
-        (q_40s)
-        (q_48)
-        (not 
-          (q_5s))
-      )
-    )
-  (:action o_sync_q_5s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_5s))
-    :effect
-      (and
-        (q_40s)
-        (q_5)
-        (q_47)
-        (not 
-          (q_5s))
-      )
-    )
-  (:action o_sync_q_6s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_6s))
-    :effect
-      (and
-        (q_41s)
-        (q_48)
-        (not 
-          (q_6s))
-      )
-    )
-  (:action o_sync_q_6s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_6s))
-    :effect
-      (and
-        (q_41s)
-        (q_6)
-        (q_47)
-        (not 
-          (q_6s))
-      )
-    )
-  (:action o_sync_q_7s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_7s))
-    :effect
-      (and
-        (q_42s)
-        (q_48)
-        (not 
-          (q_7s))
-      )
-    )
-  (:action o_sync_q_7s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_7s))
-    :effect
-      (and
-        (q_42s)
-        (q_7)
-        (q_47)
-        (not 
-          (q_7s))
-      )
-    )
-  (:action o_sync_q_8s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_8s))
-    :effect
-      (and
-        (q_43s)
-        (q_48)
-        (not 
-          (q_8s))
-      )
-    )
-  (:action o_sync_q_8s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_8s))
-    :effect
-      (and
-        (q_43s)
-        (q_8)
-        (q_47)
-        (not 
-          (q_8s))
-      )
-    )
-  (:action o_sync_q_9s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_9s))
-    :effect
-      (and
-        (q_44s)
-        (q_48)
-        (not 
-          (q_9s))
-      )
-    )
-  (:action o_sync_q_9s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_9s))
-    :effect
-      (and
-        (q_44s)
-        (q_9)
-        (q_47)
-        (not 
-          (q_9s))
-      )
-    )
-  (:action o_sync_q_10s
+        (q_6s))    )
+  (:action o_sync_q_7s
     :parameters ()
     :precondition 
       (and
         (current_state_0 s0_a0)
         (f_sync)
         (f_ok)
-        (q_10s))
+        (q_7s))
     :effect
 (not 
-        (q_10s))    )
-  (:action o_sync_q_11s
+        (q_7s))    )
+  (:action o_sync_q_8s
+    :parameters ()
+    :precondition 
+      (and
+        (current_state_0 s0_a1)
+        (f_sync)
+        (f_ok)
+        (q_8s))
+    :effect
+(not 
+        (q_8s))    )
+  (:action o_sync_q_9s
     :parameters ()
     :precondition 
       (and
         (current_state_1 s1_b0)
         (f_sync)
         (f_ok)
-        (q_11s))
+        (q_9s))
     :effect
 (not 
-        (q_11s))    )
-  (:action o_sync_q_12s
+        (q_9s))    )
+  (:action o_sync_q_10s
     :parameters ()
     :precondition 
       (and
         (current_state_2 s2_c0)
         (f_sync)
         (f_ok)
-        (q_12s))
+        (q_10s))
     :effect
 (not 
-        (q_12s))    )
-  (:action o_sync_q_13s
+        (q_10s))    )
+  (:action o_sync_q_11s_1
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_11s))
+    :effect
+      (and
+        (q_23s)
+        (not 
+          (q_11s))
+      )
+    )
+  (:action o_sync_q_11s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_11s))
+    :effect
+      (and
+        (q_33)
+        (q_11)
+        (not 
+          (q_11s))
+      )
+    )
+  (:action o_sync_q_12s_1
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_12s))
+    :effect
+      (and
+        (q_24s)
+        (not 
+          (q_12s))
+      )
+    )
+  (:action o_sync_q_12s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_12s))
+    :effect
+      (and
+        (q_33)
+        (q_12)
+        (not 
+          (q_12s))
+      )
+    )
+  (:action o_sync_q_13s_1
     :parameters ()
     :precondition 
       (and
@@ -1432,8 +797,22 @@
         (q_13s))
     :effect
       (and
-        (q_47)
-        (q_3)
+        (q_28s)
+        (not 
+          (q_13s))
+      )
+    )
+  (:action o_sync_q_13s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_13s))
+    :effect
+      (and
+        (q_33)
+        (q_13)
         (not 
           (q_13s))
       )
@@ -1447,8 +826,8 @@
         (q_14s))
     :effect
       (and
-        (q_47)
-        (q_4)
+        (q_33)
+        (q_2)
         (not 
           (q_14s))
       )
@@ -1462,8 +841,8 @@
         (q_15s))
     :effect
       (and
-        (q_47)
-        (q_46)
+        (q_33)
+        (q_4)
         (not 
           (q_15s))
       )
@@ -1472,50 +851,62 @@
     :parameters ()
     :precondition 
       (and
-        (not 
-          (clean))
         (f_sync)
         (f_ok)
         (q_16s))
     :effect
-(not 
-        (q_16s))    )
+      (and
+        (q_33)
+        (q_6)
+        (not 
+          (q_16s))
+      )
+    )
   (:action o_sync_q_17s
     :parameters ()
     :precondition 
       (and
-        (not 
-          (empty))
         (f_sync)
         (f_ok)
         (q_17s))
     :effect
-(not 
-        (q_17s))    )
+      (and
+        (q_33)
+        (q_19)
+        (not 
+          (q_17s))
+      )
+    )
   (:action o_sync_q_18s
     :parameters ()
     :precondition 
       (and
-        (not 
-          (pluck))
         (f_sync)
         (f_ok)
         (q_18s))
     :effect
-(not 
-        (q_18s))    )
+      (and
+        (q_33)
+        (q_32)
+        (not 
+          (q_18s))
+      )
+    )
   (:action o_sync_q_19s
     :parameters ()
     :precondition 
       (and
-        (not 
-          (water))
         (f_sync)
         (f_ok)
         (q_19s))
     :effect
-(not 
-        (q_19s))    )
+      (and
+        (q_1s)
+        (q_18s)
+        (not 
+          (q_19s))
+      )
+    )
   (:action o_sync_q_20s
     :parameters ()
     :precondition 
@@ -1525,8 +916,8 @@
         (q_20s))
     :effect
       (and
-        (q_1s)
-        (q_29s)
+        (q_4s)
+        (q_16s)
         (not 
           (q_20s))
       )
@@ -1540,8 +931,8 @@
         (q_21s))
     :effect
       (and
-        (q_3s)
-        (q_14s)
+        (q_5s)
+        (q_17s)
         (not 
           (q_21s))
       )
@@ -1555,8 +946,8 @@
         (q_22s))
     :effect
       (and
-        (q_4s)
-        (q_13s)
+        (q_6s)
+        (q_15s)
         (not 
           (q_22s))
       )
@@ -1570,8 +961,8 @@
         (q_23s))
     :effect
       (and
-        (q_5s)
-        (q_26s)
+        (q_9s)
+        (q_29s)
         (not 
           (q_23s))
       )
@@ -1585,8 +976,8 @@
         (q_24s))
     :effect
       (and
-        (q_6s)
-        (q_7s)
+        (q_10s)
+        (q_29s)
         (not 
           (q_24s))
       )
@@ -1600,8 +991,8 @@
         (q_25s))
     :effect
       (and
-        (q_8s)
-        (q_24s)
+        (q_11s)
+        (q_12s)
         (not 
           (q_25s))
       )
@@ -1615,7 +1006,7 @@
         (q_26s))
     :effect
       (and
-        (q_9s)
+        (q_13s)
         (q_25s)
         (not 
           (q_26s))
@@ -1630,8 +1021,8 @@
         (q_27s))
     :effect
       (and
-        (q_10s)
-        (q_28s)
+        (q_21s)
+        (q_26s)
         (not 
           (q_27s))
       )
@@ -1645,13 +1036,13 @@
         (q_28s))
     :effect
       (and
-        (q_11s)
-        (q_12s)
+        (q_29s)
+        (q_30s)
         (not 
           (q_28s))
       )
     )
-  (:action o_sync_q_29s
+  (:action o_sync_q_29s_1
     :parameters ()
     :precondition 
       (and
@@ -1660,13 +1051,26 @@
         (q_29s))
     :effect
       (and
-        (q_15s)
-        (q_23s)
+        (q_3s)
         (not 
           (q_29s))
       )
     )
-  (:action o_sync_q_30s
+  (:action o_sync_q_29s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_29s))
+    :effect
+      (and
+        (q_14s)
+        (not 
+          (q_29s))
+      )
+    )
+  (:action o_sync_q_30s_1
     :parameters ()
     :precondition 
       (and
@@ -1675,13 +1079,26 @@
         (q_30s))
     :effect
       (and
-        (q_16s)
-        (q_17s)
+        (q_7s)
         (not 
           (q_30s))
       )
     )
-  (:action o_sync_q_31s
+  (:action o_sync_q_30s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_30s))
+    :effect
+      (and
+        (q_8s)
+        (not 
+          (q_30s))
+      )
+    )
+  (:action o_sync_q_31s_1
     :parameters ()
     :precondition 
       (and
@@ -1690,13 +1107,26 @@
         (q_31s))
     :effect
       (and
-        (q_16s)
-        (q_18s)
+        (q_20s)
         (not 
           (q_31s))
       )
     )
-  (:action o_sync_q_32s
+  (:action o_sync_q_31s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_31s))
+    :effect
+      (and
+        (q_22s)
+        (not 
+          (q_31s))
+      )
+    )
+  (:action o_sync_q_32s_1
     :parameters ()
     :precondition 
       (and
@@ -1705,8 +1135,23 @@
         (q_32s))
     :effect
       (and
-        (q_17s)
-        (q_18s)
+        (q_31s)
+        (not 
+          (q_32s))
+      )
+    )
+  (:action o_sync_q_32s_2
+    :parameters ()
+    :precondition 
+      (and
+        (f_sync)
+        (f_ok)
+        (q_32s))
+    :effect
+      (and
+        (q_1s)
+        (q_32)
+        (q_33)
         (not 
           (q_32s))
       )
@@ -1719,13 +1164,8 @@
         (f_ok)
         (q_33s))
     :effect
-      (and
-        (q_18s)
-        (q_30s)
-        (not 
-          (q_33s))
-      )
-    )
+(not 
+        (q_33s))    )
   (:action o_sync_q_34s
     :parameters ()
     :precondition 
@@ -1735,332 +1175,8 @@
         (q_34s))
     :effect
       (and
-        (q_19s)
-        (q_30s)
         (not 
           (q_34s))
-      )
-    )
-  (:action o_sync_q_35s
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_35s))
-    :effect
-      (and
-        (q_19s)
-        (q_31s)
-        (not 
-          (q_35s))
-      )
-    )
-  (:action o_sync_q_36s
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_36s))
-    :effect
-      (and
-        (q_19s)
-        (q_32s)
-        (not 
-          (q_36s))
-      )
-    )
-  (:action o_sync_q_37s
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_37s))
-    :effect
-      (and
-        (q_20s)
-        (q_27s)
-        (not 
-          (q_37s))
-      )
-    )
-  (:action o_sync_q_38s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_38s))
-    :effect
-      (and
-        (q_1s)
-        (not 
-          (q_38s))
-      )
-    )
-  (:action o_sync_q_38s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_38s))
-    :effect
-      (and
-        (q_2s)
-        (not 
-          (q_38s))
-      )
-    )
-  (:action o_sync_q_39s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_39s))
-    :effect
-      (and
-        (q_3s)
-        (not 
-          (q_39s))
-      )
-    )
-  (:action o_sync_q_39s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_39s))
-    :effect
-      (and
-        (q_38s)
-        (not 
-          (q_39s))
-      )
-    )
-  (:action o_sync_q_40s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_40s))
-    :effect
-      (and
-        (q_4s)
-        (not 
-          (q_40s))
-      )
-    )
-  (:action o_sync_q_40s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_40s))
-    :effect
-      (and
-        (q_39s)
-        (not 
-          (q_40s))
-      )
-    )
-  (:action o_sync_q_41s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_41s))
-    :effect
-      (and
-        (q_16s)
-        (not 
-          (q_41s))
-      )
-    )
-  (:action o_sync_q_41s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_41s))
-    :effect
-      (and
-        (q_36s)
-        (not 
-          (q_41s))
-      )
-    )
-  (:action o_sync_q_42s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_42s))
-    :effect
-      (and
-        (q_17s)
-        (not 
-          (q_42s))
-      )
-    )
-  (:action o_sync_q_42s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_42s))
-    :effect
-      (and
-        (q_35s)
-        (not 
-          (q_42s))
-      )
-    )
-  (:action o_sync_q_43s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_43s))
-    :effect
-      (and
-        (q_18s)
-        (not 
-          (q_43s))
-      )
-    )
-  (:action o_sync_q_43s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_43s))
-    :effect
-      (and
-        (q_34s)
-        (not 
-          (q_43s))
-      )
-    )
-  (:action o_sync_q_44s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_44s))
-    :effect
-      (and
-        (q_19s)
-        (not 
-          (q_44s))
-      )
-    )
-  (:action o_sync_q_44s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_44s))
-    :effect
-      (and
-        (q_33s)
-        (not 
-          (q_44s))
-      )
-    )
-  (:action o_sync_q_45s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_45s))
-    :effect
-      (and
-        (q_21s)
-        (not 
-          (q_45s))
-      )
-    )
-  (:action o_sync_q_45s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_45s))
-    :effect
-      (and
-        (q_22s)
-        (not 
-          (q_45s))
-      )
-    )
-  (:action o_sync_q_46s_1
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_46s))
-    :effect
-      (and
-        (q_45s)
-        (not 
-          (q_46s))
-      )
-    )
-  (:action o_sync_q_46s_2
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_46s))
-    :effect
-      (and
-        (q_1s)
-        (q_46)
-        (q_47)
-        (not 
-          (q_46s))
-      )
-    )
-  (:action o_sync_q_47s
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_47s))
-    :effect
-(not 
-        (q_47s))    )
-  (:action o_sync_q_48s
-    :parameters ()
-    :precondition 
-      (and
-        (f_sync)
-        (f_ok)
-        (q_48s))
-    :effect
-      (and
-        (not 
-          (q_48s))
         (not 
           (f_ok))
       )
