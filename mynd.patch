@@ -1,3 +1,14 @@
+diff --git a/mynd.sh b/mynd.sh
+index c245dd3..2bd3b01 100755
+--- a/mynd.sh
++++ b/mynd.sh
+@@ -1,3 +1,3 @@
+ #!/bin/bash
+ 
+-java -Xmx4g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner "$@"
+\ No newline at end of file
++java -Xmx16g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner "$@"
+\ No newline at end of file
 diff --git a/translator-fond/invariant_finder.py b/translator-fond/invariant_finder.py
 index 7ad2f2f..551eff5 100755
 --- a/translator-fond/invariant_finder.py

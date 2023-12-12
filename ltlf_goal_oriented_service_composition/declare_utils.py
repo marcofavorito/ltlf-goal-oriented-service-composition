@@ -3,11 +3,11 @@ def weak_until(a, b):
 
 
 def absence_2(a):
-    return f"G({a} -> XG(!{a}))"
+    return f"G({a} -> X(G(!{a})))"
 
 
 def exactly_once(a):
-    return f"(F({a}) & G({a} -> XG(!{a})))"
+    return f"(F({a}) & G({a} -> X(G(!{a}))))"
 
 
 def alt_response(a, b):
