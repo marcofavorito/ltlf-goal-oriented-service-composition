@@ -23,15 +23,15 @@ def services_to_pddl(services: Sequence[Service], formula_pddl: str) -> Tuple[st
     for idx, service in enumerate(services):
         for state in sorted(service.states):
             pddl += f"    s{idx}_{state} - state\n"
-    for action in actions:
-        pddl += f"    {action} - action\n"
-    pddl += f"  {_START_SYMB} - action\n"
     pddl += "  )\n"
 
     pddl += "  (:predicates\n"
     for idx in range(len(services)):
         pddl += f"    (current_state_{idx} ?s - state)\n"
-    pddl += "    (last_action ?a - action)\n"
+    for action in actions:
+        pddl += f"    ({action})\n"
+    # pddl += "    (?a - action)\n"
+    pddl += f"    ({_START_SYMB})\n"
     pddl += "  )\n"
 
     for action in actions:
@@ -40,21 +40,24 @@ def services_to_pddl(services: Sequence[Service], formula_pddl: str) -> Tuple[st
                 action_str = f"(:action {action}_{idx}_{state}\n"
                 action_str += f"    :precondition (current_state_{idx} s{idx}_{state})\n"
                 action_str += f"    :effect (and\n"
-                action_str += f"        (oneof\n"
                 next_states = sorted(service.transition_function.get(state, {}).get(action, set()))
                 if len(next_states) == 0:
                     next_states = {_SINK}
+                more_than_one_successor = len(next_states) > 1
+                if more_than_one_successor:
+                    action_str += f"        (oneof\n"
                 for next_state in next_states:
                     if next_state == state:
                         action_str += f"            (current_state_{idx} s{idx}_{next_state})\n"
                     else:
                         action_str += f"            (and (not (current_state_{idx} s{idx}_{state})) (current_state_{idx} s{idx}_{next_state}))\n"
-                action_str += "         )\n"
-                action_str += f"        (last_action {action})\n"
+                if more_than_one_successor:
+                    action_str += "         )\n"
+                action_str += f"        ({action})\n"
                 for not_action in actions:
                     if not_action == action:
                         continue
-                    action_str += f"        (not (last_action {not_action}))\n"
+                    action_str += f"        (not ({not_action}))\n"
                 action_str += f"    )\n"
                 action_str += ")\n"
                 pddl += action_str

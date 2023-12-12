@@ -12,8 +12,7 @@ if __name__ == "__main__":
     actions = {"clean", "water"}
     declare_ass = build_declare_assumption(actions)
     # formula_str = "clean & X[!](water)" + " & " + declare_ass
-    formula_str = "clean"
-    formula_str = f"{_START_SYMB}"
+    formula_str = f"{_START_SYMB} & X[!](clean & X[!](water))"
     formula = parse_ltl(formula_str)
     formula_pddl = rewrite(formula)
 

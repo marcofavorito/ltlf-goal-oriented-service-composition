@@ -1,11 +1,11 @@
 (define (problem problem)
 
   (:domain 'domain-problem')
-  (:objects clean - action s0_x0 - state s0_x1 - state startsymb - action water - action)
+  (:objects s0_x0 - state s0_x1 - state)
   (:init 
     (current_state_0 s0_x0)
     (startsymb)
-    (q_4)
+    (q_10)
     (f_copy)
     (f_ok)
   )

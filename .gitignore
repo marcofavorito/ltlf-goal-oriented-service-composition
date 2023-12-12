@@ -383,3 +383,5 @@ sas_plan*
 .planutils
 output.sas
 prologex/tmp
+policy.dot
+policy.svg

@@ -5,7 +5,7 @@
     (startsymb)
     )
     (:goal (and
-            startsymb
+            (and startsymb (next (and clean (next water))))
        (or
            (current_state_0 s0_x0)
            (current_state_0 s0_x1)
