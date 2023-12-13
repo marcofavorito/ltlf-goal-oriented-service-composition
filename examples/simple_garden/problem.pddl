@@ -8,5 +8,5 @@
             (and startsymb (next clean))
     (eventually (and
            (current_state_0 s0_x0)
- (not (next (true) ))))
+        (not (next (true) ))))
 )))

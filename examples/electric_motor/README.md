@@ -1,21 +1,29 @@
+- Generate PDDL files:
 ```
 rm -f output.sas policy.dot policy.svg examples/electric_motor/*.pddl
 cd examples/electric_motor/
 python3 electric_motor_example.py
 cd ../../
+```
 
-cd prologex
-./convert.sh ../examples/electric_motor/domain.pddl ../examples/electric_motor/problem.pddl "dp" 2 && cp ../prologex/tmp/domain-problem_problem_dp.pddl ../examples/electric_motor/domain_tb_m1.pddl && cp ../prologex/tmp/problem_dp.pddl ../examples/electric_motor/problem_tb_m1.pddl
-cd ../
+Then, use `./scripts.run.sh`:
 
-python3 scripts/fix_tb_oneof.py --domain-file examples/electric_motor/domain_tb_m1.pddl
+- TB mode 1, MyND with heuristic HMAX:
+```
+./scripts/run.sh examples/electric_motor/domain.pddl examples/electric_motor/problem.pddl TB 1 mynd "-heuristic hmax -exportDot ../../policy.dot -dumpPlan"
+```
 
-./planners/mynd/translator-fond/translate.py examples/electric_motor/domain_tb_m1.pddl examples/electric_motor/problem_tb_m1.pddl
+- TB mode 2, MyND with heuristic HMAX:
+```
+./scripts/run.sh examples/electric_motor/domain.pddl examples/electric_motor/problem.pddl TB 2 mynd "-heuristic hmax -exportDot ../../policy.dot -dumpPlan"
+```
 
-cd ./planners/mynd
-./mynd.sh -exportDot ../../policy.dot -dumpPlan -search aostar ../../output.sas
-cd ../../
+- TB mode 1, MyND with heuristic FF:
+```
+./scripts/run.sh examples/electric_motor/domain.pddl examples/electric_motor/problem.pddl TB 1 mynd "-heuristic ff -exportDot ../../policy.dot -dumpPlan"
+```
 
-python scripts/simplify-policy.py --dot-file policy.dot
-dot -Tsvg policy.dot -o policy.svg
+- TB mode 2, MyND with heuristic FF:
+```
+./scripts/run.sh examples/electric_motor/domain.pddl examples/electric_motor/problem.pddl TB 2 mynd "-heuristic ff -exportDot ../../policy.dot -dumpPlan"
 ```

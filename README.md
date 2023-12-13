@@ -20,6 +20,11 @@ pipenv shell --python=3.11
 pipenv install --dev
 ```
 
+- In each new terminal, run the following
+```
+export PYTHONPATH=${PYTHONPATH:+$PYTHONPATH:}$(pwd)
+```
+
 ## T&B code dependencies
 
 Torres & Baier's software, stored in `prologex`, has been kindly given by the authors.

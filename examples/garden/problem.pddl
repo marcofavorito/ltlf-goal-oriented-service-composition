@@ -9,10 +9,7 @@
     (:goal (and
             (and startsymb (next (and clean (next (until clean (or (and water (next pluck)) (and pluck (next water))))))))
     (eventually (and
-        (or
            (current_state_0 s0_a0)
-           (current_state_0 s0_a1)
-       )
         (not (next (true) ))))
     (eventually (and
            (current_state_1 s1_b0)

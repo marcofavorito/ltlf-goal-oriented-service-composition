@@ -19,7 +19,7 @@ if __name__ == "__main__":
     bot_0 = Service(
         {"a0", "a1"},
         {"clean", "empty"},
-        {"a0", "a1"},
+        {"a0"},
         "a0",
         {
             "a0": {
