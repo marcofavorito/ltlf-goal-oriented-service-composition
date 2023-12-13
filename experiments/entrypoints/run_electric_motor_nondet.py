@@ -18,9 +18,9 @@ def build_services(n: int) -> Sequence[Service]:
         component = action.split("_")[1]
         service_name = f"{component}_builder"
         if (i+1) <= n:
-            builder_services.append(breakable_state_service(service_name, component))
+            builder_services.append(breakable_state_service(service_name, action))
         else:
-            builder_services.append(one_state_service(service_name, component))
+            builder_services.append(one_state_service(service_name, action))
 
     if n == 4:
         motor_assembler = breakable_state_service("motor_assembler", ASSEMBLE_MOTOR)
