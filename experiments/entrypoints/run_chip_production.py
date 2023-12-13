@@ -4,7 +4,7 @@ from typing import Callable, Sequence
 
 from examples.chip_production.chip_production_example import ALL_SYMBOLS, one_state_service
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args
+from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging
 
 
 def get_service_builder_fn(current_symbols: Sequence[str]) -> Callable:
@@ -35,6 +35,9 @@ def get_goal_fn(current_symbols: Sequence[str]) -> Callable:
 def main():
     arguments = parse_args()
     workdir = Path(arguments.workdir)
+    if not workdir.exists():
+        workdir.mkdir(parents=True)
+    configure_logging(filename=str(workdir / "output.log"))
 
     combination_already_failed: set[tuple[ActionMode, Heuristic]] = set()
     try:

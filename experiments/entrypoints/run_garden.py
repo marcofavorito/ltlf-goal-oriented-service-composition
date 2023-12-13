@@ -4,7 +4,7 @@ from typing import Sequence
 
 from examples.garden.garden_example import bot_1, bot_2, bot_0, get_goal
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args
+from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging
 from ltlf_goal_oriented_service_composition.services import Service
 
 
@@ -15,6 +15,9 @@ def build_services() -> Sequence[Service]:
 def main():
     arguments = parse_args()
     workdir = Path(arguments.workdir)
+    if not workdir.exists():
+        workdir.mkdir(parents=True)
+    configure_logging(filename=str(workdir / "output.log"))
 
     try:
         for action_mode in ActionMode:

@@ -5,7 +5,7 @@ from typing import Sequence
 from examples.electric_motor.electric_motor_example import one_state_service, BUILD_ROTOR, BUILD_STATOR, BUILD_INVERTER, \
     ASSEMBLE_MOTOR, build_goal
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args
+from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging
 from ltlf_goal_oriented_service_composition.services import Service
 
 
@@ -20,6 +20,9 @@ def build_services() -> Sequence[Service]:
 def main():
     arguments = parse_args()
     workdir = Path(arguments.workdir)
+    if not workdir.exists():
+        workdir.mkdir(parents=True)
+    configure_logging(filename=str(workdir / "output.log"))
 
     try:
         for action_mode in ActionMode:

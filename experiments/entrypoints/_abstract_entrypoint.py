@@ -43,16 +43,13 @@ def run_experiment(workdir: Path,
                    goal_builder_fn: Callable,
                    action_mode: ActionMode,
                    heuristic: Heuristic) -> Result:
-    if not workdir.exists():
-        workdir.mkdir(parents=True)
+    assert workdir.exists()
 
     output_dir = workdir / experiment_name
     if output_dir.exists():
         raise ValueError(f"directory {output_dir} already exists")
 
     output_dir.mkdir()
-    reset_logging()
-    configure_logging(filename=str(output_dir / "output.log"))
 
     logging.info(f"Running experiment {experiment_name}, workdir {workdir}, timeout {timeout}")
     with TemporaryDirectory() as tmpfile:

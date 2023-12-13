@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -ex
+set -exuo pipefail
+
 
 ORIGINAL_DOMAIN=$1
 ORIGINAL_PROBLEM=$2
