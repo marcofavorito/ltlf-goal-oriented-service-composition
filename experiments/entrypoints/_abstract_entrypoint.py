@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 from typing import Callable, Optional
 
 from experiments.core import composition_problem_to_pddl, ActionMode, Heuristic, RunArgs, run_script, save_results
+from experiments.utils import Result
 
 
 def configure_logging(filename: Optional[str] = None):
@@ -41,7 +42,7 @@ def run_experiment(workdir: Path,
                    service_builder_fn: Callable,
                    goal_builder_fn: Callable,
                    action_mode: ActionMode,
-                   heuristic: Heuristic) -> None:
+                   heuristic: Heuristic) -> Result:
     if not workdir.exists():
         workdir.mkdir(parents=True)
 
@@ -56,6 +57,11 @@ def run_experiment(workdir: Path,
     logging.info(f"Running experiment {experiment_name}, workdir {workdir}, timeout {timeout}")
     with TemporaryDirectory() as tmpfile:
         tmpdirpath = Path(tmpfile)
+
+        services = service_builder_fn()
+        goal = goal_builder_fn()
+        logging.info(f"Nb Services: {len(services)}")
+        logging.info(f"Goal: {goal}")
         domain_txt, problem_txt = composition_problem_to_pddl(service_builder_fn(), goal_builder_fn())
 
         domain_filepath = (tmpdirpath / "domain.pddl")
@@ -69,4 +75,5 @@ def run_experiment(workdir: Path,
         # save output
         save_results(tmpdirpath, output_dir, run_args, result)
 
-    logging.info("Done!")
+        logging.info("Done!")
+        return result
