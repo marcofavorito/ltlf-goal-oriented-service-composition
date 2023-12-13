@@ -7,28 +7,31 @@ from ltlf_goal_oriented_service_composition.rewrite_formula import rewrite
 from ltlf_goal_oriented_service_composition.services import Service
 from ltlf_goal_oriented_service_composition.to_pddl import services_to_pddl, _START_SYMB
 
-if __name__ == "__main__":
-    actions = {"clean", "water"}
-    declare_ass = build_declare_assumption(actions)
-    # formula_str = "clean & X[!](water)" + " & " + declare_ass
-    formula_str = f"{_START_SYMB} & X[!](clean)"
-    formula = parse_ltl(formula_str)
-    formula_pddl = rewrite(formula)
 
-    bot_0 = Service(
-        {"x0", "x1"},
-        {"clean", "water"},
-        {"x0"},
-        "x0",
+GOAL_FORMULA = f"clean"
+
+
+def bot_0():
+    return Service(
+        {"a0", "a1"},
+        {"clean", "empty"},
+        {"a0"},
+        "a0",
         {
-            "x0": {
-                "clean": {"x1"},
+            "a0": {
+                "clean": {"a0", "a1"},
             },
-            "x1": {"water": {"x0"}},
+            "a1": {"empty": {"a0"}},
         },
     )
 
-    domain, problem = services_to_pddl([bot_0], formula_pddl)
+
+if __name__ == "__main__":
+    formula_str = f"{_START_SYMB} & X[!]({GOAL_FORMULA})"
+    formula = parse_ltl(formula_str)
+    formula_pddl = rewrite(formula)
+
+    domain, problem = services_to_pddl([bot_0()], formula_pddl)
 
     Path("domain.pddl").write_text(domain)
     Path("problem.pddl").write_text(problem)

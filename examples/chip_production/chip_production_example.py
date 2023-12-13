@@ -3,14 +3,10 @@ from pathlib import Path
 from typing import Sequence
 
 from pylogics.parsers import parse_ltl
-from pylogics.utils.to_string import to_string
 
-from ltlf_goal_oriented_service_composition.declare_utils import build_declare_assumption
 from ltlf_goal_oriented_service_composition.rewrite_formula import rewrite
 from ltlf_goal_oriented_service_composition.services import Service
 from ltlf_goal_oriented_service_composition.to_pddl import services_to_pddl, _START_SYMB
-
-from ltlf_goal_oriented_service_composition.declare_utils import exactly_once, absence_2, alt_succession, alt_precedence, build_declare_assumption, not_coexistence
 
 # all the atomic actions for the task
 CLEANING = "cleaning"
@@ -73,15 +69,15 @@ def build_goal(symbols: Sequence[str]):
 
 
 if __name__ == "__main__":
-    symbols = ALL_SYMBOLS[:4]
-    formula_str = build_goal(symbols)
+    cur_symbols = ALL_SYMBOLS[:4]
+    formula_str = build_goal(cur_symbols)
     formula_str = f"{_START_SYMB} & X[!]({formula_str})"
     print(formula_str)
     formula = parse_ltl(formula_str)
     formula_pddl = rewrite(formula)
 
     all_services = [
-        one_state_service(f"handler_{name}", name) for name in symbols
+        one_state_service(f"handler_{name}", name) for name in cur_symbols
     ]
     domain, problem = services_to_pddl(all_services, formula_pddl)
 

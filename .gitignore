@@ -385,3 +385,4 @@ output.sas
 prologex/tmp
 policy.dot
 policy.svg
+examples/**/*.pddl

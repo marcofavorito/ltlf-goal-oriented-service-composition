@@ -2,28 +2,31 @@
   (:requirements :strips :typing :non-deterministic :conditional-effects)
   (:types state action)
   (:constants
-    s0_x0 - state
-    s0_x1 - state
+    s0_a0 - state
+    s0_a1 - state
   )
   (:predicates
     (current_state_0 ?s - state)
     (clean)
-    (water)
+    (empty)
     (startsymb)
   )
-(:action clean_0_x0
-    :precondition (current_state_0 s0_x0)
+(:action clean_0_a0
+    :precondition (current_state_0 s0_a0)
     :effect (and
-            (and (not (current_state_0 s0_x0)) (current_state_0 s0_x1))
+        (oneof
+            (current_state_0 s0_a0)
+            (and (not (current_state_0 s0_a0)) (current_state_0 s0_a1))
+         )
         (clean)
-        (not (water))
+        (not (empty))
     )
 )
-(:action water_0_x1
-    :precondition (current_state_0 s0_x1)
+(:action empty_0_a1
+    :precondition (current_state_0 s0_a1)
     :effect (and
-            (and (not (current_state_0 s0_x1)) (current_state_0 s0_x0))
-        (water)
+            (and (not (current_state_0 s0_a1)) (current_state_0 s0_a0))
+        (empty)
         (not (clean))
     )
 )
