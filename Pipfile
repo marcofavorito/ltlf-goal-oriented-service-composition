@@ -10,6 +10,11 @@ pythomata = "==0.3.2"
 graphviz = "*"
 ipython = "*"
 pydot = "*"
+pylatex = "*"
+matplotlib = "*"
+pandas = "*"
+seaborn = "*"
+numpy = "*"
 
 [dev-packages]
 

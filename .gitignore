@@ -388,3 +388,4 @@ policy.svg
 examples/**/*.pddl
 ./output
 experiment-output
+output-plots
