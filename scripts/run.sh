@@ -41,8 +41,8 @@ fi
 
 TB_encode() {
   # Getting domain and problem files from function arguments
-  local _DOMAIN_FILE=$1
-  local _PROBLEM_FILE=$2
+  local _DOMAIN_FILE="$(realpath $1)"
+  local _PROBLEM_FILE="$(realpath $2)"
   local _ACTION_MODE=$3
 
   # Check action mode
@@ -56,9 +56,9 @@ TB_encode() {
 
   # Run the operations
   cd prologex
-  ./convert.sh "../$_DOMAIN_FILE" "../$_PROBLEM_FILE" "dp" "$_ACTION_MODE" \
-    && cp ../prologex/tmp/domain-problem_problem_dp.pddl "../${_DOMAIN_FILE%.pddl}_compiled.pddl" \
-    && cp ../prologex/tmp/problem_dp.pddl "../${_PROBLEM_FILE%.pddl}_compiled.pddl"
+  ./convert.sh "$_DOMAIN_FILE" "$_PROBLEM_FILE" "dp" "$_ACTION_MODE" \
+    && cp ../prologex/tmp/domain-problem_problem_dp.pddl "${_DOMAIN_FILE%.pddl}_compiled.pddl" \
+    && cp ../prologex/tmp/problem_dp.pddl "${_PROBLEM_FILE%.pddl}_compiled.pddl"
   cd ../
   python3 scripts/fix_tb_oneof.py --domain-file "${_DOMAIN_FILE%.pddl}_compiled.pddl"
 }

@@ -6,8 +6,9 @@ from ltlf_goal_oriented_service_composition.rewrite_formula import rewrite
 from ltlf_goal_oriented_service_composition.services import Service
 from ltlf_goal_oriented_service_composition.to_pddl import services_to_pddl, _START_SYMB
 
-ACTIONS = {"clean", "empty", "water", "pluck"}
-GOAL_FORMULA = "clean & X[!]((clean U ((water & X[!](pluck)) | (pluck & X[!](water)))))"
+
+def get_goal():
+    return "clean & X[!]((clean U ((water & X[!](pluck)) | (pluck & X[!](water)))))"
 
 
 def bot_0():
@@ -62,7 +63,7 @@ def bot_2():
 
 
 if __name__ == "__main__":
-    formula_str = f"{_START_SYMB} & X[!]({GOAL_FORMULA})"
+    formula_str = f"{_START_SYMB} & X[!]({get_goal()})"
     formula = parse_ltl(formula_str)
     formula_pddl = rewrite(formula)
 

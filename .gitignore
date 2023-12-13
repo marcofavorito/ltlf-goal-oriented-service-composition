@@ -381,8 +381,9 @@ sas_plan*
 .bash_history
 .apptainer
 .planutils
-output.sas
+./output.sas
 prologex/tmp
 policy.dot
 policy.svg
 examples/**/*.pddl
+./output
