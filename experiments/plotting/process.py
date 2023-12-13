@@ -1,4 +1,5 @@
 import argparse
+import shutil
 from pathlib import Path
 
 from pylatex import Document, Tabular
@@ -20,7 +21,7 @@ def main():
         raise ValueError("Input directory does not exist")
 
     output_dir: Path = Path(arguments.output_dir)
-    output_dir.unlink(missing_ok=True)
+    shutil.rmtree(output_dir, ignore_errors=True)
     output_dir.mkdir(parents=True, exist_ok=False)
 
     all_results = AllResultDirs(input_dir)

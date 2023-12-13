@@ -77,7 +77,8 @@ class ResultDir:
         self.stats = _parse_stdout(self.stdout)
 
     def _extract_experiment_type(self, dirpath: Path, action_mode: ActionMode, heuristic: Heuristic) -> str:
-        return dirpath.name.replace(action_mode.value, "").replace(heuristic.value, "").replace("__", "")
+        conf_suffix = f"_{action_mode.value}_{heuristic.value}"
+        return dirpath.name.replace(conf_suffix, "")
 
 
 class AllResultDirs:
@@ -122,31 +123,58 @@ def make_small(text: str):
     return make_font_size(text, "small")
 
 
+@dataclasses.dataclass
+class PlanningConfig:
+    action_mode: ActionMode
+    heuristic: Heuristic
+
+    def __str__(self):
+        return f"{self.action_mode.value}_{self.heuristic.value}"
+
+    def action_mode_label(self):
+        if self.action_mode == ActionMode.MODE_1:
+            return "Simple"
+        elif self.action_mode == ActionMode.MODE_2:
+            return "OSA"
+        raise ValueError
+
+    def heuristic_label(self):
+        if self.heuristic == Heuristic.HMAX:
+            return "$h_{\max}$"
+        elif self.heuristic == Heuristic.FF:
+            return "$h_{\\mathsf{ff}}$"
+        raise ValueError
+
+    def to_label(self):
+        am_label = self.action_mode_label()
+        h_label = self.heuristic_label()
+        return f"{am_label}+{h_label}"
+
 
 class TableGenerator:
+
+    metrics_headers = ('TT', 'PT', 'EN', 'PS')
+    non_pg_non_osa_ff = PlanningConfig(ActionMode.MODE_1, Heuristic.FF)
+    non_pg_non_osa_hmax = PlanningConfig(ActionMode.MODE_1, Heuristic.HMAX)
+    non_pg_osa_ff = PlanningConfig(ActionMode.MODE_2, Heuristic.FF)
+    non_pg_osa_hmax = PlanningConfig(ActionMode.MODE_2, Heuristic.HMAX)
+    expcombs = [
+        non_pg_non_osa_ff,
+        non_pg_non_osa_hmax,
+        non_pg_osa_ff,
+        non_pg_osa_hmax,
+    ]
+    nb_metrics = len(metrics_headers)
+    nb_configurations = len(expcombs)
+    nb_columns = nb_metrics * nb_configurations + 1
+
+    # 1 benchmark + 4 metrics times 4 planning configurations
+    # table = Tabular('|c' * nb_metrics * nb_configurations + "|")
+    table_config = '|c' * nb_columns + "|"
 
     def __init__(self, all_results: AllResultDirs):
         self.all_results = all_results
         self.results_by_type = self.all_results.by_experiment_type()
-
-        self.metrics_headers = ('TT', 'PT', 'EN', 'PS')
-        self.non_pg_non_osa_hmax = "1_hmax"
-        self.non_pg_non_osa_ff = "1_hmax"
-        self.non_pg_osa_ff = "2_ff"
-        self.non_pg_osa_hmax = "2_hmax"
-        self.expcombs = [
-            self.non_pg_non_osa_hmax,
-            self.non_pg_non_osa_ff,
-            self.non_pg_osa_ff,
-            self.non_pg_osa_hmax,
-        ]
-        self.nb_metrics = len(self.metrics_headers)
-        self.nb_configurations = len(self.expcombs)
-        self.nb_columns = self.nb_metrics * self.nb_configurations + 1
-
-        # 1 benchmark + 4 metrics times 4 planning configurations
-        # table = Tabular('|c' * nb_metrics * nb_configurations + "|")
-        self.table_config = '|c' * self.nb_columns + "|"
 
     def generate(self) -> Tabular:
         geometry_options = {
@@ -166,7 +194,7 @@ class TableGenerator:
     def _add_subheaders(self, table: Tabular):
         rows = []
         for comb in self.expcombs:
-            row = MultiColumn(self.nb_configurations, align='|c|', data=make_small(f"{comb.replace('_','')}"))
+            row = MultiColumn(self.nb_configurations, align='|c|', data=make_small(comb.to_label()))
             rows.append(row)
         table.add_row(tuple([""] + rows))
         table.add_hline()
