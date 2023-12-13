@@ -19,6 +19,8 @@ class Heuristic(Enum):
 
 
 class ActionMode(Enum):
+    MODE_4 = "4"
+    MODE_3 = "3"
     MODE_2 = "2"
     MODE_1 = "1"
 
