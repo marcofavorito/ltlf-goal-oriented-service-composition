@@ -13,7 +13,6 @@
     (build_retrieve_inverter)
     (build_retrieve_rotor)
     (build_retrieve_stator)
-    (repair)
     (startsymb)
     (f_copy)
     (f_sync)
@@ -151,8 +150,6 @@
         (not 
           (build_retrieve_stator))
         (not 
-          (repair))
-        (not 
           (f_world))
       )
     )
@@ -174,8 +171,6 @@
           (build_retrieve_rotor))
         (not 
           (build_retrieve_stator))
-        (not 
-          (repair))
         (not 
           (f_world))
       )
@@ -199,8 +194,6 @@
         (not 
           (build_retrieve_stator))
         (not 
-          (repair))
-        (not 
           (f_world))
       )
     )
@@ -222,116 +215,6 @@
           (build_retrieve_inverter))
         (not 
           (build_retrieve_rotor))
-        (not 
-          (repair))
-        (not 
-          (f_world))
-      )
-    )
-  (:action repair_0_rotor_builder_broken
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_0 s0_rotor_builder_broken)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (and
-          (not 
-            (current_state_0 s0_rotor_builder_broken))
-          (current_state_0 s0_rotor_builder_0))
-        (repair)
-        (f_copy)
-        (not 
-          (assemble_motor))
-        (not 
-          (build_retrieve_inverter))
-        (not 
-          (build_retrieve_rotor))
-        (not 
-          (build_retrieve_stator))
-        (not 
-          (f_world))
-      )
-    )
-  (:action repair_1_stator_builder_broken
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_1 s1_stator_builder_broken)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (and
-          (not 
-            (current_state_1 s1_stator_builder_broken))
-          (current_state_1 s1_stator_builder_0))
-        (repair)
-        (f_copy)
-        (not 
-          (assemble_motor))
-        (not 
-          (build_retrieve_inverter))
-        (not 
-          (build_retrieve_rotor))
-        (not 
-          (build_retrieve_stator))
-        (not 
-          (f_world))
-      )
-    )
-  (:action repair_2_inverter_builder_broken
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_2 s2_inverter_builder_broken)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (and
-          (not 
-            (current_state_2 s2_inverter_builder_broken))
-          (current_state_2 s2_inverter_builder_0))
-        (repair)
-        (f_copy)
-        (not 
-          (assemble_motor))
-        (not 
-          (build_retrieve_inverter))
-        (not 
-          (build_retrieve_rotor))
-        (not 
-          (build_retrieve_stator))
-        (not 
-          (f_world))
-      )
-    )
-  (:action repair_3_motor_assembler_broken
-    :parameters ()
-    :precondition 
-      (and
-        (current_state_3 s3_motor_assembler_broken)
-        (f_ok)
-        (f_world))
-    :effect
-      (and
-        (and
-          (not 
-            (current_state_3 s3_motor_assembler_broken))
-          (current_state_3 s3_motor_assembler_0))
-        (repair)
-        (f_copy)
-        (not 
-          (assemble_motor))
-        (not 
-          (build_retrieve_inverter))
-        (not 
-          (build_retrieve_rotor))
-        (not 
-          (build_retrieve_stator))
         (not 
           (f_world))
       )
