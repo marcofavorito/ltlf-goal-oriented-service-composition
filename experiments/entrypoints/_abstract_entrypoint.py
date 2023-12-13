@@ -59,7 +59,7 @@ def run_experiment(workdir: Path,
         goal = goal_builder_fn()
         logging.info(f"Nb Services: {len(services)}")
         logging.info(f"Goal: {goal}")
-        domain_txt, problem_txt = composition_problem_to_pddl(service_builder_fn(), goal_builder_fn())
+        domain_txt, problem_txt = composition_problem_to_pddl(services, goal)
 
         domain_filepath = (tmpdirpath / "domain.pddl")
         problem_filepath = (tmpdirpath / "problem.pddl")
