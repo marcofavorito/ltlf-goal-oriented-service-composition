@@ -32,7 +32,7 @@ def reset_logging():
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--workdir", type=str, default="output")
-    parser.add_argument("--timeout", type=float, default=1000.0)
+    parser.add_argument("--timeout", type=float, default=300.0)
     return parser.parse_args()
 
 

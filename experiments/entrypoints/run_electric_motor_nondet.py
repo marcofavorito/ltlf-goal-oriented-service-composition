@@ -12,21 +12,21 @@ from ltlf_goal_oriented_service_composition.services import Service
 
 
 def build_services(n: int) -> Sequence[Service]:
-    assert 1 <= n <= 4
-    builder_services = []
-    for i, action in enumerate([BUILD_ROTOR, BUILD_STATOR, BUILD_INVERTER]):
-        component = action.split("_")[1]
-        service_name = f"{component}_builder"
-        if (i+1) <= n:
-            builder_services.append(breakable_state_service(service_name, action))
+    assert 0 <= n <= 3
+    services = []
+    action_to_name = {
+        BUILD_ROTOR: "rotor_builder",
+        BUILD_STATOR: "stator_builder",
+        BUILD_INVERTER: "inverter_builder",
+    }
+    for i, (action, service_name) in enumerate(action_to_name.items()):
+        service_name = action_to_name[action]
+        if i < n:
+            services.append(breakable_state_service(service_name, action))
         else:
-            builder_services.append(one_state_service(service_name, action))
-
-    if n == 4:
-        motor_assembler = breakable_state_service("motor_assembler", ASSEMBLE_MOTOR)
-    else:
-        motor_assembler = one_state_service("motor_assembler", ASSEMBLE_MOTOR)
-    return builder_services + [motor_assembler]
+            services.append(one_state_service(service_name, action))
+    services.append(one_state_service("motor_assembler", ASSEMBLE_MOTOR))
+    return services
 
 
 def main():
@@ -38,14 +38,14 @@ def main():
 
     combination_already_failed: set[tuple[ActionMode, Heuristic]] = set()
     try:
-        for n in range(1, 4):
+        for n in range(0, 4):
             for action_mode in ActionMode:
                 for heuristic in Heuristic:
                     if (action_mode, heuristic) in combination_already_failed:
                         print(f"Skipping configuration {(action_mode, heuristic)} for {n=}")
                         logging.info(f"Skipping configuration {(action_mode, heuristic)} for {n=}")
                         continue
-                    result = run_experiment(workdir, arguments.timeout, f"electric_motor_nondet_{action_mode.value}_{heuristic.value}",
+                    result = run_experiment(workdir, arguments.timeout, f"electric_motor_nondet_{n}_{action_mode.value}_{heuristic.value}",
                                    partial(build_services, n), build_goal, action_mode, heuristic)
                     if result.timed_out:
                         logging.info(f"Combination {(action_mode, heuristic)} timed out with n={n}, not continuing with this configuration...")

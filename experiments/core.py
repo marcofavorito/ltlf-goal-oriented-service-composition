@@ -19,9 +19,9 @@ class Heuristic(Enum):
 
 
 class ActionMode(Enum):
-    MODE_4 = "4"
-    MODE_3 = "3"
     MODE_2 = "2"
+    MODE_3 = "3"
+    MODE_4 = "4"
     MODE_1 = "1"
 
 
@@ -104,6 +104,6 @@ def save_results(tmpdirpath: Path, output_dir: Path, run_args: RunArgs, result: 
     copy_if_src_exists(problem_filepath, output_dir / "problem.pddl")
     copy_if_src_exists(tmpdirpath / "domain_compiled.pddl", output_dir / "domain_compiled.pddl")
     copy_if_src_exists(tmpdirpath / "problem_compiled.pddl", output_dir / "problem_compiled.pddl")
-    copy_if_src_exists(tmpdirpath / "policy.dot", output_dir / "problem.pddl")
+    copy_if_src_exists(tmpdirpath / "policy.dot", output_dir / "policy.dot")
     copy_if_src_exists(ROOT_PATH / "output.sas", output_dir / "output.sas")
     run_args.savejson(output_dir / "args.json")
