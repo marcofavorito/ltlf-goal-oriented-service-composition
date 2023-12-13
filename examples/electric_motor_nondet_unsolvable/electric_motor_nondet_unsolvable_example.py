@@ -8,9 +8,9 @@ from ltlf_goal_oriented_service_composition.services import Service
 from ltlf_goal_oriented_service_composition.to_pddl import services_to_pddl, _START_SYMB
 
 # all the atomic actions for the task
-BUILD_RETRIEVE_STATOR = "build_retrieve_stator"
-BUILD_RETRIEVE_ROTOR = "build_retrieve_rotor"
-BUILD_RETRIEVE_INVERTER = "build_retrieve_inverter"
+BUILD_STATOR = "build_stator"
+BUILD_ROTOR = "build_rotor"
+BUILD_INVERTER = "build_inverter"
 ASSEMBLE_MOTOR = "assemble_motor"
 
 
@@ -33,9 +33,9 @@ def breakable_forever_service(service_name: str, action: str) -> Service:
 
 def build_goal():
     formula_str = f"F({ASSEMBLE_MOTOR})"
-    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_RETRIEVE_ROTOR})"
-    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_RETRIEVE_STATOR})"
-    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_RETRIEVE_INVERTER})"
+    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_ROTOR})"
+    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_STATOR})"
+    formula_str += f" & (!{ASSEMBLE_MOTOR} U {BUILD_INVERTER})"
 
     return formula_str
 
@@ -47,9 +47,9 @@ if __name__ == "__main__":
     formula = parse_ltl(formula_str)
     formula_pddl = rewrite(formula)
 
-    rotor_builder = breakable_forever_service("rotor_builder", BUILD_RETRIEVE_ROTOR)
-    stator_builder = breakable_forever_service("stator_builder", BUILD_RETRIEVE_STATOR)
-    inverter_builder = breakable_forever_service("inverter_builder", BUILD_RETRIEVE_INVERTER)
+    rotor_builder = breakable_forever_service("rotor_builder", BUILD_ROTOR)
+    stator_builder = breakable_forever_service("stator_builder", BUILD_STATOR)
+    inverter_builder = breakable_forever_service("inverter_builder", BUILD_INVERTER)
     motor_assembler = breakable_forever_service("motor_assembler", ASSEMBLE_MOTOR)
 
     all_services = [

@@ -3,7 +3,7 @@ import json
 import shutil
 from enum import Enum
 from pathlib import Path
-from typing import Sequence
+from typing import Sequence, Optional
 
 from pylogics.parsers import parse_ltl
 
@@ -14,13 +14,13 @@ from ltlf_goal_oriented_service_composition.to_pddl import services_to_pddl, _ST
 
 
 class Heuristic(Enum):
-    FF = "ff"
     HMAX = "hmax"
+    FF = "ff"
 
 
 class ActionMode(Enum):
-    MODE_1 = "1"
     MODE_2 = "2"
+    MODE_1 = "1"
 
 
 @dataclasses.dataclass
@@ -30,6 +30,7 @@ class RunArgs:
     action_mode: ActionMode
     heuristic: Heuristic
     planner_args: Sequence[str]
+    timeout: Optional[float] = None
 
     def tolist(self):
         return [
@@ -37,14 +38,16 @@ class RunArgs:
             self.problem_filepath,
             self.action_mode,
             self.heuristic,
-            self.planner_args
+            self.planner_args,
+            self.timeout
         ]
 
     def savejson(self, output: Path):
         obj = dict(
             heuristic=self.heuristic.value,
             action_mode=self.action_mode.value,
-            planner_args=self.planner_args
+            planner_args=self.planner_args,
+            timeout=self.timeout
         )
         with open(output, "w") as f:
             json.dump(obj, f)
@@ -60,7 +63,7 @@ def composition_problem_to_pddl(services: Sequence[Service], goal_formula: str) 
 
 
 def run_script(run_args: RunArgs) -> Result:
-    domain_file, problem_file, action_mode, heuristic, planner_args = run_args.tolist()
+    domain_file, problem_file, action_mode, heuristic, planner_args, timeout = run_args.tolist()
     assert domain_file.parent == problem_file.parent
     tempdir = domain_file.parent
     mynd_args = " ".join([
@@ -80,19 +83,25 @@ def run_script(run_args: RunArgs) -> Result:
         mynd_args,
         *planner_args
     ],
-    cwd=ROOT_PATH)
+        cwd=ROOT_PATH, timeout=timeout)
+
+
+def copy_if_src_exists(src: Path, dest: Path) -> None:
+    if src.exists():
+        shutil.copy(src, dest)
 
 
 def save_results(tmpdirpath: Path, output_dir: Path, run_args: RunArgs, result: Result) -> None:
     domain_filepath = run_args.domain_filepath
     problem_filepath = run_args.problem_filepath
-    shutil.copy(domain_filepath, output_dir / "domain.pddl")
-    shutil.copy(problem_filepath, output_dir / "problem.pddl")
-    shutil.copy(tmpdirpath / "domain_compiled.pddl", output_dir / "domain_compiled.pddl")
-    shutil.copy(tmpdirpath / "problem_compiled.pddl", output_dir / "problem_compiled.pddl")
-    shutil.copy(tmpdirpath / "policy.dot", output_dir / "problem.pddl")
-    shutil.copy(ROOT_PATH / "output.sas", output_dir / "output.sas")
+
     (output_dir / "stdout.txt").write_text(result.stdout)
     (output_dir / "stderr.txt").write_text(result.stderr)
     (output_dir / "summary.txt").write_text(result.summary())
+    copy_if_src_exists(domain_filepath, output_dir / "domain.pddl")
+    copy_if_src_exists(problem_filepath, output_dir / "problem.pddl")
+    copy_if_src_exists(tmpdirpath / "domain_compiled.pddl", output_dir / "domain_compiled.pddl")
+    copy_if_src_exists(tmpdirpath / "problem_compiled.pddl", output_dir / "problem_compiled.pddl")
+    copy_if_src_exists(tmpdirpath / "policy.dot", output_dir / "problem.pddl")
+    copy_if_src_exists(ROOT_PATH / "output.sas", output_dir / "output.sas")
     run_args.savejson(output_dir / "args.json")

@@ -1,6 +1,7 @@
 import contextlib
 import dataclasses
 import inspect
+import logging
 import os
 import re
 import signal
@@ -31,7 +32,7 @@ class Result:
 
 
 def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optional[float] = None) -> Result:
-    print("Running command: ", " ".join(map(str, args)))
+    logging.info("Running command: " + " ".join(map(str, args)))
     start = time.perf_counter()
     timed_out = False
     proc = subprocess.Popen(
@@ -49,6 +50,7 @@ def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optiona
         timed_out = True
     end = time.perf_counter()
     total = end - start
+    logging.info("Command returned. Total time: {:.2f} seconds".format(total))
 
     stdout, stderr = proc.communicate()
     stdout = stdout.decode("utf-8")
