@@ -131,42 +131,47 @@ class PlanningConfig:
     def __str__(self):
         return f"{self.action_mode.value}_{self.heuristic.value}"
 
-    def action_mode_label(self):
-        if self.action_mode == ActionMode.MODE_1:
+    @classmethod
+    def action_mode_label(self, action_mode):
+        if action_mode == ActionMode.MODE_1:
             return "Simple"
-        elif self.action_mode == ActionMode.MODE_2:
+        elif action_mode == ActionMode.MODE_2:
             return "OSA"
+        elif action_mode == ActionMode.MODE_3:
+            return "PG"
+        elif action_mode == ActionMode.MODE_4:
+            return "OSA+PG"
         raise ValueError
 
-    def heuristic_label(self):
-        if self.heuristic == Heuristic.HMAX:
+    @classmethod
+    def heuristic_label(self, h: Heuristic):
+        if h == Heuristic.HMAX:
             return "$h_{\max}$"
-        elif self.heuristic == Heuristic.FF:
+        elif h == Heuristic.FF:
             return "$h_{\\mathsf{ff}}$"
         raise ValueError
 
     def to_label(self):
-        am_label = self.action_mode_label()
-        h_label = self.heuristic_label()
+        am_label = self.action_mode_label(self.action_mode)
+        h_label = self.heuristic_label(self.heuristic)
         return f"{am_label}+{h_label}"
+
+
+def heuristic_list():
+    # return [Heuristic.HMAX]
+    return list(Heuristic)
 
 
 class TableGenerator:
 
     metrics_headers = ('TT', 'PT', 'EN', 'PS')
-    non_pg_non_osa_ff = PlanningConfig(ActionMode.MODE_1, Heuristic.FF)
-    non_pg_non_osa_hmax = PlanningConfig(ActionMode.MODE_1, Heuristic.HMAX)
-    non_pg_osa_ff = PlanningConfig(ActionMode.MODE_2, Heuristic.FF)
-    non_pg_osa_hmax = PlanningConfig(ActionMode.MODE_2, Heuristic.HMAX)
     expcombs = [
-        non_pg_non_osa_ff,
-        non_pg_non_osa_hmax,
-        non_pg_osa_ff,
-        non_pg_osa_hmax,
+        PlanningConfig(am, h)
+        for h in heuristic_list() for am in ActionMode
     ]
     nb_metrics = len(metrics_headers)
     nb_configurations = len(expcombs)
-    nb_columns = nb_metrics * nb_configurations + 1
+    nb_columns = nb_metrics * len(ActionMode) + 1
 
     # 1 benchmark + 4 metrics times 4 planning configurations
     # table = Tabular('|c' * nb_metrics * nb_configurations + "|")
@@ -193,14 +198,14 @@ class TableGenerator:
 
     def _add_subheaders(self, table: Tabular):
         rows = []
-        for comb in self.expcombs:
-            row = MultiColumn(self.nb_configurations, align='|c|', data=make_small(comb.to_label()))
+        for am in ActionMode:
+            row = MultiColumn(self.nb_metrics, align='|c|', data=make_small(PlanningConfig.action_mode_label(am)))
             rows.append(row)
         table.add_row(tuple([""] + rows))
         table.add_hline()
 
         # add metrics
-        table.add_row([""] + list(map(make_small, self.metrics_headers)) * self.nb_configurations)
+        table.add_row([""] + list(map(make_small, self.metrics_headers)) * len(ActionMode))
         table.add_hline()
 
     def _handle_garden(self, table: Tabular):
@@ -212,40 +217,50 @@ class TableGenerator:
 
         self._add_subheaders(table)
 
-        stats_row = []
-        for comb in self.expcombs:
-            expname = f"{exptype}_{comb}"
-            resultdir = exptype_results[expname]
-            stats_row.extend(stats_as_row(resultdir.stats))
-        table.add_row(["i0"] + list(map(make_small, stats_row)))
-        table.add_hline()
+        for heuristic in self._iter_over_h(table):
+            stats_row = []
+            for comb in self.expcombs:
+                if comb.heuristic != heuristic:
+                    continue
+                expname = f"{exptype}_{comb}"
+                resultdir = exptype_results[expname]
+                stats_row.extend(stats_as_row(resultdir.stats))
+            table.add_row(["i0"] + list(map(make_small, stats_row)))
+            table.add_hline()
 
     def _handle_electric_motor(self, table: Tabular):
         exptypes = [
-            "electric_motor",
-            "electric_motor_nondet_unsolvable",
-            "electric_motor_nondet",
+            f"electric_motor_nondet_{i}"
+            for i in range(0, 4)
         ]
+        exptypes.append("electric_motor_nondet_unsolvable")
 
         table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Electric Motor scenario}"))])
         table.add_hline()
 
-        explabels = ["e0", "eu", "en"]
-        for label, exptype in zip(explabels, exptypes):
-            results = self.results_by_type[exptype]
-            stats_row = []
-            for comb in self.expcombs:
-                expname = f"{exptype}_{comb}"
-                resultdir = results[expname]
-                stats_row.extend(stats_as_row(resultdir.stats))
+        explabels = [f"e{i}" for i in range(0, 4)] + ["eu"]
 
-            if "unsolvable" in exptype:
-                for idx in range(2, self.nb_columns-1, self.nb_metrics):
-                    stats_row[idx] = NA
-                    stats_row[idx+1] = NA
+        for heuristic in self._iter_over_h(table):
+            for label, exptype in zip(explabels, exptypes):
+                results = self.results_by_type[exptype]
+                stats_row = []
+                for comb in self.expcombs:
+                    if comb.heuristic != heuristic:
+                        continue
+                    expname = f"{exptype}_{comb}"
+                    if expname in results:
+                        resultdir = results[expname]
+                        stats_row.extend(stats_as_row(resultdir.stats))
+                    else:
+                        stats_row.extend(empty_row())
 
-            table.add_row([label] + list(map(make_small, stats_row)))
-            table.add_hline()
+                if "unsolvable" in exptype:
+                    for idx in range(2, self.nb_columns-1, self.nb_metrics):
+                        stats_row[idx] = NA
+                        stats_row[idx+1] = NA
+
+                table.add_row([label] + list(map(make_small, stats_row)))
+                table.add_hline()
 
     def _handle_chip_production(self, table: Tabular):
         exptypes = [
@@ -256,18 +271,34 @@ class TableGenerator:
         table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario}"))])
         table.add_hline()
 
-        for idx, exptype in enumerate(exptypes):
-            if exptype not in self.results_by_type:
-                break
-            results = self.results_by_type[exptype]
-            stats_row = []
-            for comb in self.expcombs:
-                expname = f"{exptype}_{comb}"
-                if expname in results:
-                    resultdir = results[expname]
-                    stats_row.extend(stats_as_row(resultdir.stats))
-                else:
-                    stats_row.extend(empty_row())
+        for heuristic in self._iter_over_h(table):
+            for idx, exptype in enumerate(exptypes):
+                stats_row = []
+                if exptype not in self.results_by_type:
+                    break
+                results = self.results_by_type[exptype]
+                for comb in self.expcombs:
+                    if comb.heuristic != heuristic:
+                        continue
+                    expname = f"{exptype}_{comb}"
+                    if expname in results:
+                        resultdir = results[expname]
+                        stats_row.extend(stats_as_row(resultdir.stats))
+                    else:
+                        stats_row.extend(empty_row())
 
-            table.add_row([f"c{idx + 1}"] + list(map(make_small, stats_row)))
-            table.add_hline()
+                table.add_row([f"c{idx + 1}"] + list(map(make_small, stats_row)))
+                table.add_hline()
+
+    def _iter_over_h(self, table: Tabular):
+        hs = heuristic_list()
+        if len(hs) == 1:
+            # do nothing
+            yield hs[0]
+        else:
+            for h in hs:
+                table.add_row([MultiColumn((self.nb_columns), align='|c|',
+                                           data=NoEscape(PlanningConfig.heuristic_label(h)))])
+                table.add_hline()
+                yield h
+
