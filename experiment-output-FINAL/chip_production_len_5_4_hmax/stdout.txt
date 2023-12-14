@@ -1,0 +1,68 @@
+/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/pddl2effax.sh /tmp/tmpup6dt23a/domain.pddl /tmp/tmpup6dt23a/problem.pddl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-972202.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-972202.pl 4
+/usr/bin/swipl -s pddl2effax.pl -q -t pddl2effax('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-972202.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-972202.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl').
+No constraints have been declared.
+No metric declaration/usr/bin/swipl -s alt_aut_translator.pl -q -t time(effax2alt('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/trans_states.pl',4)).
+
+Translation CPU time: 0.548249749, Number of Inferences: 6198337
+
+swipl -s /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/topddl.pl -q -t topddl('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp','domain-problem','problem',dp).
+New Goal=and(not(q_67),and(q_1d,and(and(q_2d,and(q_59d,and(q_3d,and(q_4d,and(q_5d,and(q_66d,and(q_6d,and(q_49d,and(q_7d,and(q_48d,and(q_8d,and(q_50d,and(q_9d,and(and(q_10d,and(q_11d,and(q_62d,and(q_12d,and(q_52d,and(q_13d,and(q_48d,and(q_14d,and(q_50d,and(q_15d,and(and(q_16d,and(q_17d,and(q_60d,and(q_18d,and(q_52d,and(q_20d,and(q_49d,and(q_21d,and(q_50d,and(q_22d,and(and(q_24d,and(q_25d,and(q_64d,and(q_26d,and(q_52d,and(q_27d,and(q_49d,and(q_29d,and(q_48d,and(q_30d,and(and(q_32d,and(q_33d,and(q_65d,and(q_34d,and(q_52d,and(q_35d,and(q_49d,and(q_46d,and(q_50d,q_48d))))))))),q_51d))))))))))),q_51d))))))))))),q_51d))))))))))),q_51d)))))))))))))),and(q_19d,and(and(q_40d,and(q_45d,and(q_58d,and(q_47d,or(q_61d,and(q_53d,q_63d)))))),and(q_23d,and(and(q_39d,and(q_44d,and(q_57d,and(q_47d,or(q_61d,and(q_53d,q_63d)))))),and(q_28d,and(and(q_38d,and(q_43d,and(q_56d,and(q_47d,or(q_61d,and(q_53d,q_63d)))))),and(q_31d,and(and(q_37d,and(q_42d,and(q_55d,and(q_47d,or(q_61d,and(q_53d,q_63d)))))),and(q_36d,and(q_41d,and(q_54d,and(q_47d,or(q_61d,and(q_53d,q_63d)))))))))))))))))
+ToPddl CPU time: 0.067124861, Number of Inferences: 665419
+
+Parsing...
+Parsing: [0.020s CPU, 0.020s wall-clock]
+Normalizing task... [0.010s CPU, 0.006s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.005s wall-clock]
+Preparing model... [0.000s CPU, 0.010s wall-clock]
+Generated 555 rules.
+Computing model... [0.000s CPU, 0.003s wall-clock]
+387 relevant atoms
+0 auxiliary atoms
+387 final queue length
+517 total queue pushes
+Completing instantiation... [0.000s CPU, 0.004s wall-clock]
+Instantiating: [0.020s CPU, 0.024s wall-clock]
+Computing fact groups...
+Finding invariants...
+288 initial candidates
+Finding invariants: [17.490s CPU, 17.490s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+279 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [17.490s CPU, 17.492s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.010s CPU, 0.007s wall-clock]
+327 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+11 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Translator variables: 276
+Translator derived variables: 1
+Translator facts: 554
+Translator goal facts: 1
+Translator mutex groups: 2
+Translator total mutex groups size: 5
+Translator operators: 85
+Translator axioms: 1
+Translator task size: 3228
+Translator peak memory: 121880 KB
+Writing output... [0.010s CPU, 0.003s wall-clock]
+Done! [17.560s CPU, 17.554s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search

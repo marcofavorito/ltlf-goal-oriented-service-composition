@@ -1,0 +1,38 @@
++ ORIGINAL_DOMAIN=/tmp/tmpgthn5v7s/domain.pddl
++ ORIGINAL_PROBLEM=/tmp/tmpgthn5v7s/problem.pddl
++ ENCODING=TB
++ ENCODING_ARGS=4
++ PLANNER=mynd
++ PLANNER_ARGS='-heuristic hmax -exportDot /tmp/tmpgthn5v7s/policy.dot -dumpPlan'
++ [[ ! -e /tmp/tmpgthn5v7s/domain.pddl ]]
++ [[ ! -e /tmp/tmpgthn5v7s/problem.pddl ]]
++ [[ -z mynd ]]
++ [[ mynd != \m\y\n\d ]]
++ [[ -z TB ]]
++ [[ TB != \T\B ]]
++ [[ TB == \T\B ]]
++ TB_encode /tmp/tmpgthn5v7s/domain.pddl /tmp/tmpgthn5v7s/problem.pddl 4
+++ realpath /tmp/tmpgthn5v7s/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpgthn5v7s/domain.pddl
+++ realpath /tmp/tmpgthn5v7s/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpgthn5v7s/problem.pddl
++ local _ACTION_MODE=4
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpgthn5v7s/domain.pddl /tmp/tmpgthn5v7s/problem.pddl dp 4
+% 2,635,718 inferences, 0.182 CPU in 0.183 seconds (100% CPU, 14492613 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpgthn5v7s/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpgthn5v7s/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpgthn5v7s/domain_compiled.pddl
++ [[ mynd == \m\y\n\d ]]
++ run_mynd /tmp/tmpgthn5v7s/domain_compiled.pddl /tmp/tmpgthn5v7s/problem_compiled.pddl '-heuristic hmax -exportDot /tmp/tmpgthn5v7s/policy.dot -dumpPlan'
++ local '_ARGS=-heuristic hmax -exportDot /tmp/tmpgthn5v7s/policy.dot -dumpPlan'
++ ./planners/mynd/translator-fond/translate.py /tmp/tmpgthn5v7s/domain_compiled.pddl /tmp/tmpgthn5v7s/problem_compiled.pddl
++ cd ./planners/mynd
++ ./mynd.sh -search aostar -heuristic hmax -exportDot /tmp/tmpgthn5v7s/policy.dot -dumpPlan ../../output.sas
++ cd ../../

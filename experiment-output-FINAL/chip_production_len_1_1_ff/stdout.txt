@@ -1,0 +1,90 @@
+/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/pddl2effax.sh /tmp/tmp66zwartc/domain.pddl /tmp/tmp66zwartc/problem.pddl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-906247.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-906247.pl 1
+/usr/bin/swipl -s pddl2effax.pl -q -t pddl2effax('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-906247.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-906247.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl').
+No constraints have been declared.
+No metric declaration/usr/bin/swipl -s alt_aut_translator.pl -q -t time(effax2alt('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/trans_states.pl',1)).
+
+Translation CPU time: 0.099764979, Number of Inferences: 615810
+
+swipl -s /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/topddl.pl -q -t topddl('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp','domain-problem','problem',dp).
+New Goal=f_goal
+ToPddl CPU time: 0.034533708, Number of Inferences: 170850
+
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.000s wall-clock]
+Generated 63 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+55 relevant atoms
+0 auxiliary atoms
+55 final queue length
+62 total queue pushes
+Completing instantiation... [0.000s CPU, 0.000s wall-clock]
+Instantiating: [0.000s CPU, 0.002s wall-clock]
+Computing fact groups...
+Finding invariants...
+38 initial candidates
+Finding invariants: [5.920s CPU, 5.926s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.007s wall-clock]
+Instantiating groups... [0.000s CPU, 0.002s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+23 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [5.930s CPU, 5.943s wall-clock]
+Building STRIPS to SAS dictionary... [0.010s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.002s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.004s wall-clock]
+24 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+8 operators removed
+12 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 24
+Translator derived variables: 0
+Translator facts: 50
+Translator goal facts: 1
+Translator mutex groups: 639
+Translator total mutex groups size: 1535
+Translator operators: 24
+Translator axioms: 0
+Translator task size: 1828
+Translator peak memory: 203408 KB
+Writing output... [0.010s CPU, 0.002s wall-clock]
+Done! [5.950s CPU, 5.959s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.009 seconds.
+Time needed for search:                             0.036 seconds.
+Time needed:                                        0.045 seconds.
+Total Garbage Collections: 1
+Total Garbage Collection Time: 0 seconds.
+
+Out of 190 nodes, 41 are proven
+Number of node expansions: 138
+Policy entries: 19
+Number of sensing applications in policy: 0
+
+27 (cleaning) (f_copy) (f_sync) (f_world) (f_goal) (f_ok) (q_12) (q_12s) (q_10s) (q_11s) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_1s) (q_2) (q_2s) (q_3s) (q_4s) (q_5s) (q_6) (q_6s) (q_7) (q_7s) (q_8s) (q_9s) 
+%%
+17 (o_copy) (o_sync_q_12s) (o_sync_q_10s) (o_sync_q_4s) (o_sync_q_7s_2) (o_sync_q_9s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_7s_1) (o_sync_q_11s) (o_sync_q_13s_1) (o_sync_q_3s) (o_sync_q_14s) (o_sync_q_5s) (o_sync_q_6s_1) (o_sync_q_1s) (o_goal) 
+%%
+policy 19 3 1 5 6 0 3 2 5 7 1 4 2 5 8 24 2 5 2 5 19 24 26 3 4 2 5 24 26 4 5 2 5 11 23 26 5 5 2 5 11 21 23 6 5 3 5 11 21 23 7 6 0 1 5 11 21 23 0 6 0 2 5 12 22 24 8 6 0 2 5 9 12 22 9 7 0 2 5 10 12 20 22 10 7 0 2 5 12 18 20 22 11 7 0 2 5 12 13 20 22 12 6 0 2 5 13 20 22 13 5 0 2 5 13 22 14 5 0 2 5 13 15 15 4 0 2 5 13 6 4 0 3 5 13 16 
+Dot file: /tmp/tmp66zwartc/policy.dot

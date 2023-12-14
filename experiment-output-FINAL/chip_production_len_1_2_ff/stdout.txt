@@ -1,0 +1,90 @@
+/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/pddl2effax.sh /tmp/tmpadoy7vj1/domain.pddl /tmp/tmpadoy7vj1/problem.pddl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-904904.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-904904.pl 2
+/usr/bin/swipl -s pddl2effax.pl -q -t pddl2effax('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-904904.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-904904.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl').
+No constraints have been declared.
+No metric declaration/usr/bin/swipl -s alt_aut_translator.pl -q -t time(effax2alt('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/trans_states.pl',2)).
+
+Translation CPU time: 0.081058313, Number of Inferences: 634802
+
+swipl -s /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/topddl.pl -q -t topddl('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp','domain-problem','problem',dp).
+New Goal=f_goal
+ToPddl CPU time: 0.02931486, Number of Inferences: 199985
+
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 95 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+78 relevant atoms
+0 auxiliary atoms
+78 final queue length
+103 total queue pushes
+Completing instantiation... [0.000s CPU, 0.000s wall-clock]
+Instantiating: [0.000s CPU, 0.003s wall-clock]
+Computing fact groups...
+Finding invariants...
+53 initial candidates
+Finding invariants: [6.390s CPU, 6.388s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+47 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [6.390s CPU, 6.389s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.001s wall-clock]
+66 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+3 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 48
+Translator derived variables: 0
+Translator facts: 98
+Translator goal facts: 1
+Translator mutex groups: 2
+Translator total mutex groups size: 5
+Translator operators: 22
+Translator axioms: 0
+Translator task size: 481
+Translator peak memory: 201492 KB
+Writing output... [0.000s CPU, 0.000s wall-clock]
+Done! [6.390s CPU, 6.397s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.008 seconds.
+Time needed for search:                             0.019 seconds.
+Time needed:                                        0.027 seconds.
+Total Garbage Collections: 1
+Total Garbage Collection Time: 0 seconds.
+
+Out of 108 nodes, 35 are proven
+Number of node expansions: 99
+Policy entries: 34
+Number of sensing applications in policy: 0
+
+51 (cleaning) (f_copy) (f_sync) (f_world) (f_goal) (f_ok) (q_1) (q_1s) (q_10) (q_10s) (q_10t) (q_11) (q_11s) (q_11t) (q_12) (q_12s) (q_12t) (q_13) (q_13s) (q_13t) (q_14) (q_14s) (q_14t) (q_15) (q_15s) (q_15t) (q_1t) (q_2) (q_2s) (q_2t) (q_3) (q_3s) (q_3t) (q_4) (q_4s) (q_4t) (q_5) (q_5s) (q_5t) (q_6) (q_6s) (q_6t) (q_7) (q_7s) (q_7t) (q_8) (q_8s) (q_8t) (q_9) (q_9s) (q_9t) 
+%%
+19 (o_copy) (o_sync_q_1s) (o_sync_q_2s_2) (o_sync_q_3s) (o_sync_q_4s) (o_sync_q_5s_1) (o_sync_q_6s) (o_sync_q_7s) (o_sync_q_8s_1) (o_sync_q_9s) (o_sync_q_10s) (o_sync_q_11s) (o_sync_q_12s) (o_sync_q_13s) (o_sync_q_14s) (o_sync_q_15s) (cleaning_0_handler_cleaning_0) (o_sync_q_2s_1) (o_goal) 
+%%
+policy 34 3 1 5 6 0 4 2 5 7 26 1 5 2 5 28 29 34 2 6 2 5 20 27 32 34 3 6 2 5 20 27 34 35 4 7 2 5 9 20 27 38 40 5 7 2 5 9 20 27 40 41 6 7 2 5 9 20 27 44 45 7 7 2 5 9 20 27 45 47 8 7 2 5 9 20 27 45 50 9 7 2 5 9 10 20 27 45 10 6 2 5 13 20 27 45 11 6 2 5 16 20 27 45 12 6 2 5 19 20 27 45 13 6 2 5 20 22 27 45 14 6 2 5 20 25 27 45 15 5 3 5 20 27 45 16 6 0 1 5 20 27 45 0 7 0 2 5 21 26 28 46 1 7 0 2 5 21 28 29 46 17 7 0 2 5 21 31 32 46 3 8 0 2 5 21 35 37 46 49 4 8 0 2 5 21 37 38 46 49 5 8 0 2 5 12 21 41 46 49 6 8 0 2 5 12 21 44 46 49 7 8 0 2 5 12 21 46 47 49 8 8 0 2 5 12 18 21 49 50 9 7 0 2 5 10 12 18 21 10 7 0 2 5 12 13 18 21 11 7 0 2 5 16 18 21 23 12 7 0 2 5 18 19 21 23 13 6 0 2 5 21 22 23 14 5 0 2 5 23 25 15 4 0 3 5 23 18 
+Dot file: /tmp/tmpadoy7vj1/policy.dot

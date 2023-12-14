@@ -1,0 +1,142 @@
+/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/pddl2effax.sh /tmp/tmp__xt9zix/domain.pddl /tmp/tmp__xt9zix/problem.pddl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-918031.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-918031.pl 1
+/usr/bin/swipl -s pddl2effax.pl -q -t pddl2effax('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-918031.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-918031.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl').
+No constraints have been declared.
+No metric declaration/usr/bin/swipl -s alt_aut_translator.pl -q -t time(effax2alt('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/trans_states.pl',1)).
+
+Translation CPU time: 0.099541445, Number of Inferences: 683709
+
+swipl -s /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/topddl.pl -q -t topddl('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp','domain-problem','problem',dp).
+New Goal=f_goal
+ToPddl CPU time: 0.043124075, Number of Inferences: 258000
+
+Parsing...
+Parsing: [0.000s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 157 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+121 relevant atoms
+0 auxiliary atoms
+121 final queue length
+145 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.010s CPU, 0.005s wall-clock]
+Computing fact groups...
+Finding invariants...
+90 initial candidates
+Finding invariants: [17.250s CPU, 17.240s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+54 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [17.250s CPU, 17.241s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.002s wall-clock]
+61 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+2 operators removed
+9 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 53
+Translator derived variables: 0
+Translator facts: 108
+Translator goal facts: 1
+Translator mutex groups: 58
+Translator total mutex groups size: 145
+Translator operators: 53
+Translator axioms: 0
+Translator task size: 812
+Translator peak memory: 120740 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [17.260s CPU, 17.256s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.008 seconds.
+Time needed for search:                             91.886 seconds.
+Time needed:                                        91.894 seconds.
+Total Garbage Collections: 41
+Total Garbage Collection Time: 1 seconds.
+
+Out of 425053 nodes, 5478 are proven
+Number of node expansions: 297054
+Policy entries: 63
+Number of sensing applications in policy: 0
+
+56 (cleaning) (f_copy) (f_sync) (f_world) (f_goal) (f_ok) (film_deposition) (q_10) (q_10s) (q_11) (q_11s) (q_12) (q_12s) (q_13) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_2) (q_20s) (q_21s) (q_22s) (q_23s) (q_24s) (q_25s) (q_26s) (q_27s) (q_28s) (q_29s) (q_2s) (q_30s) (q_31s) (q_32s) (q_33s) (q_34s) (q_35) (q_35s) (q_36s) (q_37) (q_37s) (q_38) (q_38s) (q_3s) (q_4s) (q_5s) (q_6s) (q_7s) (q_8s) (q_9s) (resist_coating) 
+%%
+46 (o_copy) (o_sync_q_35s) (o_sync_q_30s) (o_sync_q_31s) (o_sync_q_13s_2) (o_sync_q_14s_2) (o_sync_q_15s_2) (o_sync_q_24s) (o_sync_q_6s) (o_sync_q_17s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_10s_1) (o_sync_q_21s) (o_sync_q_34s) (o_sync_q_19s) (o_sync_q_28s) (o_sync_q_37s) (o_sync_q_20s) (o_sync_q_11s_2) (o_sync_q_1s) (film_deposition_1_handler_film_deposition_0) (o_sync_q_11s_1) (o_sync_q_22s) (o_sync_q_33s) (o_sync_q_29s) (o_sync_q_3s) (o_sync_q_12s_2) (o_sync_q_18s) (resist_coating_2_handler_resist_coating_0) (o_sync_q_13s_1) (o_sync_q_14s_1) (o_sync_q_25s) (o_sync_q_15s_1) (o_sync_q_12s_1) (o_sync_q_23s) (o_sync_q_26s) (o_sync_q_27s) (o_sync_q_32s) (o_sync_q_36s_1) (o_sync_q_4s) (o_sync_q_7s) (o_sync_q_8s) (o_sync_q_9s) (o_sync_q_5s) (o_goal) 
+%%
+policy 63 3 1 5 41 0 3 2 5 42 1 4 2 5 29 36 2 5 2 5 14 29 37 3 6 2 5 14 16 18 29 4 7 2 5 13 16 18 29 44 5 7 2 5 13 15 18 29 44 6 7 2 5 13 15 17 29 44 7 8 2 5 13 15 17 20 44 51 8 7 2 5 13 15 17 20 44 9 7 2 5 7 13 15 17 44 10 7 3 5 7 13 15 17 44 11 8 0 1 5 7 13 15 17 44 0 8 0 2 5 8 14 16 18 45 12 8 0 2 5 14 16 18 26 45 4 9 0 2 5 13 16 18 26 44 45 5 9 0 2 5 13 15 18 26 44 45 13 10 0 2 5 13 15 18 23 40 44 45 6 10 0 2 5 13 15 17 23 40 44 45 14 11 0 2 5 13 15 17 22 23 33 44 45 15 10 0 2 5 13 15 17 23 33 44 45 16 11 0 2 5 10 13 15 17 23 25 44 45 17 10 0 2 5 10 13 15 17 23 25 44 18 9 0 2 5 10 13 15 17 23 44 19 9 0 2 5 9 13 15 17 23 44 20 8 0 2 5 9 13 15 17 44 10 8 0 3 5 9 13 15 17 44 21 8 1 5 6 9 13 15 17 44 0 8 2 5 6 10 14 16 18 45 22 8 2 5 6 14 16 18 27 45 4 9 2 5 6 13 16 18 27 44 45 5 9 2 5 6 13 15 18 27 44 45 23 10 2 5 6 13 15 18 39 44 45 48 6 10 2 5 6 13 15 17 39 44 45 48 24 11 2 5 6 13 15 17 21 34 44 45 48 25 12 2 5 6 12 13 15 17 21 25 44 45 48 17 11 2 5 6 12 13 15 17 21 25 44 48 26 10 2 5 6 12 13 15 17 21 25 44 18 9 2 5 6 12 13 15 17 21 44 27 9 2 5 6 11 13 15 17 21 44 28 8 2 5 6 11 13 15 17 44 10 8 3 5 6 11 13 15 17 44 29 8 1 5 11 13 15 17 44 55 0 8 2 5 12 14 16 18 45 55 30 8 2 5 12 16 18 30 45 55 31 8 2 5 12 18 30 31 45 55 32 9 2 5 12 18 31 43 45 52 55 33 9 2 5 12 31 32 43 45 52 55 34 9 2 5 28 31 32 43 45 52 55 35 10 2 5 31 32 38 43 45 50 52 55 36 10 2 5 32 38 43 45 50 52 53 55 37 10 2 5 38 43 45 50 52 53 54 55 38 11 2 5 21 22 43 45 50 52 53 54 55 39 11 2 5 21 22 45 49 50 52 53 54 55 40 11 2 5 21 22 45 46 50 52 53 54 55 41 10 2 5 21 22 45 46 50 53 54 55 42 9 2 5 21 22 45 46 50 54 55 43 8 2 5 21 22 45 46 50 55 44 7 2 5 21 22 45 46 55 17 6 2 5 21 22 46 55 28 5 2 5 22 46 55 15 4 2 5 46 55 10 4 3 5 46 55 45 
+Dot file: /tmp/tmp__xt9zix/policy.dot

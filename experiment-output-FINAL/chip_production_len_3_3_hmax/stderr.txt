@@ -1,0 +1,37 @@
++ ORIGINAL_DOMAIN=/tmp/tmptytqjdio/domain.pddl
++ ORIGINAL_PROBLEM=/tmp/tmptytqjdio/problem.pddl
++ ENCODING=TB
++ ENCODING_ARGS=3
++ PLANNER=mynd
++ PLANNER_ARGS='-heuristic hmax -exportDot /tmp/tmptytqjdio/policy.dot -dumpPlan'
++ [[ ! -e /tmp/tmptytqjdio/domain.pddl ]]
++ [[ ! -e /tmp/tmptytqjdio/problem.pddl ]]
++ [[ -z mynd ]]
++ [[ mynd != \m\y\n\d ]]
++ [[ -z TB ]]
++ [[ TB != \T\B ]]
++ [[ TB == \T\B ]]
++ TB_encode /tmp/tmptytqjdio/domain.pddl /tmp/tmptytqjdio/problem.pddl 3
+++ realpath /tmp/tmptytqjdio/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmptytqjdio/domain.pddl
+++ realpath /tmp/tmptytqjdio/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmptytqjdio/problem.pddl
++ local _ACTION_MODE=3
++ [[ -z 3 ]]
++ [[ 3 != \1 ]]
++ [[ 3 != \2 ]]
++ [[ 3 != \3 ]]
++ cd prologex
++ ./convert.sh /tmp/tmptytqjdio/domain.pddl /tmp/tmptytqjdio/problem.pddl dp 3
+% 1,170,986 inferences, 0.110 CPU in 0.110 seconds (100% CPU, 10612550 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmptytqjdio/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmptytqjdio/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmptytqjdio/domain_compiled.pddl
++ [[ mynd == \m\y\n\d ]]
++ run_mynd /tmp/tmptytqjdio/domain_compiled.pddl /tmp/tmptytqjdio/problem_compiled.pddl '-heuristic hmax -exportDot /tmp/tmptytqjdio/policy.dot -dumpPlan'
++ local '_ARGS=-heuristic hmax -exportDot /tmp/tmptytqjdio/policy.dot -dumpPlan'
++ ./planners/mynd/translator-fond/translate.py /tmp/tmptytqjdio/domain_compiled.pddl /tmp/tmptytqjdio/problem_compiled.pddl
++ cd ./planners/mynd
++ ./mynd.sh -search aostar -heuristic hmax -exportDot /tmp/tmptytqjdio/policy.dot -dumpPlan ../../output.sas
++ cd ../../

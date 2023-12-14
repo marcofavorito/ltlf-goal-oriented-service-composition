@@ -1,0 +1,144 @@
+/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/pddl2effax.sh /tmp/tmpad10497a/domain.pddl /tmp/tmpad10497a/problem.pddl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-924839.pl /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-924839.pl 3
+/usr/bin/swipl -s pddl2effax.pl -q -t pddl2effax('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddldom-Lafite-Pro-III-14-924839.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/plpddlprob-Lafite-Pro-III-14-924839.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl').
+No constraints have been declared.
+No metric declaration/usr/bin/swipl -s alt_aut_translator.pl -q -t time(effax2alt('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_domain.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/old_problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/domain-problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/problem.pl','/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp/trans_states.pl',3)).
+
+Translation CPU time: 0.238811295, Number of Inferences: 2664874
+
+swipl -s /home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/topddl.pl -q -t topddl('/home/marcofavorito/workfolder/ltlf-goal-oriented-service-composition/prologex/tmp','domain-problem','problem',dp).
+New Goal=and(not(q_51),and(q_49d,and(and(q_30d,and(q_7d,and(q_21d,and(q_12d,and(q_26d,and(q_1d,and(q_46d,and(q_24d,and(q_47d,and(q_25d,and(q_36d,and(and(q_14d,and(q_28d,and(q_4d,and(q_43d,and(q_22d,and(q_48d,and(q_25d,and(q_37d,and(and(q_15d,and(q_29d,and(q_6d,and(q_42d,and(q_22d,and(q_45d,and(q_24d,and(q_35d,and(and(q_13d,and(q_27d,and(q_2d,and(q_41d,and(q_22d,and(q_44d,and(q_24d,q_25d))))))),q_23d))))))))),q_23d))))))))),q_23d)))))))))))),and(q_38d,and(and(q_16d,and(q_31d,and(q_8d,and(q_50d,or(q_5d,and(q_20d,q_3d)))))),and(q_39d,and(and(q_17d,and(q_32d,and(q_9d,and(q_50d,or(q_5d,and(q_20d,q_3d)))))),and(q_40d,and(and(q_18d,and(q_33d,and(q_10d,and(q_50d,or(q_5d,and(q_20d,q_3d)))))),and(q_19d,and(q_34d,and(q_11d,and(q_50d,or(q_5d,and(q_20d,q_3d)))))))))))))))
+ToPddl CPU time: 0.050344097, Number of Inferences: 403493
+
+Parsing...
+Parsing: [0.010s CPU, 0.010s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.010s CPU, 0.004s wall-clock]
+Generated 295 rules.
+Computing model... [0.000s CPU, 0.002s wall-clock]
+208 relevant atoms
+0 auxiliary atoms
+208 final queue length
+245 total queue pushes
+Completing instantiation... [0.000s CPU, 0.002s wall-clock]
+Instantiating: [0.010s CPU, 0.011s wall-clock]
+Computing fact groups...
+Finding invariants...
+169 initial candidates
+Finding invariants: [19.820s CPU, 19.808s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+121 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [19.820s CPU, 19.810s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_10()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_10()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.004s wall-clock]
+85 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+1 operators removed
+11 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 119
+Translator derived variables: 1
+Translator facts: 240
+Translator goal facts: 1
+Translator mutex groups: 83
+Translator total mutex groups size: 208
+Translator operators: 68
+Translator axioms: 1
+Translator task size: 1809
+Translator peak memory: 120856 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [19.840s CPU, 19.841s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
