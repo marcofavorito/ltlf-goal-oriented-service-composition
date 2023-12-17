@@ -1,0 +1,23 @@
+digraph G {
+0 [label="{ (current_state_0 s0_a0), (f_copy), (q_4), }"];
+0 -> 6  [color="#A58678", fontcolor="#A58678", label="clean_0_a0"];
+0 -> 7  [color="#A58678", fontcolor="#A58678", label="clean_0_a0"];
+6 [label="{ (clean), (current_state_0 s0_a0), (f_copy), (q_1), (q_4d), (q_2d), (q_3d), (q_5), }"];
+7 [label="{ (clean), (current_state_0 s0_a1), (f_copy), (q_1), (q_4d), (q_2d), (q_3d), (q_5), }"];
+7 -> 14  [color="#643071", fontcolor="#643071", label="empty_0_a1"];
+14 [label="{ (current_state_0 s0_a0), (empty), (f_copy), (q_1d), (q_4d), (q_2d), (q_3d), }"];
+subgraph cluster_init {
+color=lightblue;
+label="INIT";
+style=filled;
+0;
+}
+
+subgraph cluster_goal_6 {
+color=palegreen;
+label="GOAL";
+style=filled;
+6;
+}
+
+}
