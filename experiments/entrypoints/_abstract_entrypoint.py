@@ -4,8 +4,9 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Callable, Optional
 
-from experiments.core import composition_problem_to_pddl, ActionMode, Heuristic, RunArgs, run_script, save_results
-from experiments.utils import Result
+from experiments.core import composition_problem_to_pddl, ActionMode, Heuristic, RunArgs
+from experiments.handler import launch_experiment_commands, ExperimentResult
+from ltlf_goal_oriented_service_composition.to_pddl import final_services_condition
 
 
 def configure_logging(filename: Optional[str] = None):
@@ -42,7 +43,7 @@ def run_experiment(workdir: Path,
                    service_builder_fn: Callable,
                    goal_builder_fn: Callable,
                    action_mode: ActionMode,
-                   heuristic: Heuristic) -> Result:
+                   heuristic: Heuristic) -> ExperimentResult:
     assert workdir.exists()
 
     output_dir = workdir / experiment_name
@@ -60,17 +61,41 @@ def run_experiment(workdir: Path,
         logging.info(f"Nb Services: {len(services)}")
         logging.info(f"Goal: {goal}")
         domain_txt, problem_txt = composition_problem_to_pddl(services, goal)
+        accepting_service_condition = final_services_condition(services)
 
         domain_filepath = (tmpdirpath / "domain.pddl")
         problem_filepath = (tmpdirpath / "problem.pddl")
+        service_accepting_condition_filepath = (tmpdirpath / "services_condition.txt")
         domain_filepath.write_text(domain_txt)
         problem_filepath.write_text(problem_txt)
+        service_accepting_condition_filepath.write_text(accepting_service_condition)
 
-        run_args = RunArgs(domain_filepath, problem_filepath, action_mode, heuristic, "", timeout)
-        result = run_script(run_args)
+        run_args = RunArgs(domain_filepath, problem_filepath, service_accepting_condition_filepath, action_mode, heuristic, "", timeout)
 
-        # save output
-        save_results(tmpdirpath, output_dir, run_args, result)
+        try:
+            result = launch_experiment_commands(run_args)
+            return result
+        finally:
+            # save output
+            logging.info("Saving results...")
+            result.save_results(output_dir)
+            if result.exception:
+                raise result.exception
+            logging.info("Done!")
 
-        logging.info("Done!")
-        return result
+
+def _main(job_fn):
+    arguments = parse_args()
+    workdir = Path(arguments.workdir)
+    if not workdir.exists():
+        workdir.mkdir(parents=True)
+    configure_logging(filename=str(workdir / "output.log"))
+
+    try:
+        job_fn(workdir, arguments.timeout)
+    except KeyboardInterrupt:
+        logging.warning("Interrupted by user")
+        return
+    except Exception:
+        logging.exception("Exception occurred")
+

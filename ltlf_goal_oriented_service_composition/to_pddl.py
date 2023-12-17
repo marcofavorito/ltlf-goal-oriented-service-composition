@@ -73,16 +73,22 @@ def services_to_pddl(services: Sequence[Service], formula_pddl: str) -> Tuple[st
     problem += init
     problem += "    (:goal (and\n"
     problem += f"            {formula_pddl}\n"
-    for idx, service in enumerate(services):
-        more_than_one_final_state = len(service.final_states) > 1
-        disjunction = "    (eventually (and\n"
-        if more_than_one_final_state:
-            disjunction += "        (or\n"
-        for final_state in sorted(service.final_states):
-            disjunction += f"           (current_state_{idx} s{idx}_{final_state})\n"
-        if more_than_one_final_state:
-            disjunction += "       )\n"
-        disjunction += "        (not (next (true) ))))\n"
-        problem += disjunction
-    problem += ")))"
+    problem += "            )\n"
+    problem += "    )\n"
+    problem += ")\n"
     return pddl, problem
+
+
+def final_services_condition(services: Sequence[Service]) -> str:
+    conditions = []
+    for idx, service in enumerate(services):
+        condition = ""
+        more_than_one_final_state = len(service.final_states) > 1
+        if more_than_one_final_state:
+            condition += "(or "
+        for final_state in sorted(service.final_states):
+            condition += f"(current_state_{idx} s{idx}_{final_state}) "
+        if more_than_one_final_state:
+            condition += ")"
+        conditions.append(condition)
+    return " ".join(conditions)

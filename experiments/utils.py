@@ -1,62 +1,17 @@
 import contextlib
-import dataclasses
 import inspect
-import logging
 import os
 import re
-import signal
-import subprocess
-import time
+import shutil
 from collections import deque
 from copy import copy
 from pathlib import Path
-from typing import Sequence, Optional, Generator
+from typing import Generator
 
 import pydot
 
 CURPATH = Path(inspect.getfile(inspect.currentframe())).resolve()
 ROOT_PATH = CURPATH.parent.parent
-RUNNER_SCRIPT = ROOT_PATH / "scripts" / "run.sh"
-
-
-@dataclasses.dataclass
-class Result:
-    stdout: str
-    stderr: str
-    total: float
-    returncode: int
-    timed_out: bool
-
-    def summary(self):
-        return f"{self.total=}\n{self.returncode=}\n{self.timed_out=}"
-
-
-def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optional[float] = None) -> Result:
-    logging.info("Running command: " + " ".join(map(str, args)))
-    start = time.perf_counter()
-    timed_out = False
-    proc = subprocess.Popen(
-        args,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=cwd,
-        preexec_fn=os.setsid,
-    )
-    try:
-        proc.wait(timeout=timeout)
-    except subprocess.TimeoutExpired:
-        os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
-        proc.wait()
-        timed_out = True
-    end = time.perf_counter()
-    total = end - start
-    logging.info("Command returned. Total time: {:.2f} seconds".format(total))
-
-    stdout, stderr = proc.communicate()
-    stdout = stdout.decode("utf-8")
-    stderr = stderr.decode("utf-8")
-
-    return Result(stdout, stderr, total, proc.returncode, timed_out)
 
 
 @contextlib.contextmanager
@@ -144,7 +99,7 @@ def remove_auxiliary_actions(graph: pydot.Dot):
     return newgraph
 
 
-def simplify_dot_policy(input_dot_file: Path):
+def simplify_dot_policy(input_dot_file: Path) -> pydot.Dot:
     graph = pydot.graph_from_dot_file(str(input_dot_file))[0]
 
     # remove "not" predicates
@@ -155,6 +110,9 @@ def simplify_dot_policy(input_dot_file: Path):
 
     # remove auxiliary actions
     graph = remove_auxiliary_actions(graph)
+    return graph
 
-    new_input_dot_file = input_dot_file.parent / "new_policy.dot"
-    graph.write(new_input_dot_file)
+
+def copy_if_src_exists(src: Path, dest: Path) -> None:
+    if src.exists():
+        shutil.copy(src, dest)
