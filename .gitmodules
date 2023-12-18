@@ -1,6 +1,3 @@
 [submodule "planners/mynd"]
 	path = planners/mynd
 	url = https://bitbucket.org/robertmattmueller/mynd.git
-[submodule "planners/fond-sat"]
-	path = planners/fond-sat
-	url = https://github.com/tomsons22/FOND-SAT.git
