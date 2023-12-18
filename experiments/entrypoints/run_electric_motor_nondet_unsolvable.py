@@ -1,20 +1,28 @@
-import logging
 from pathlib import Path
 from typing import Sequence
 
-from examples.electric_motor_nondet_unsolvable.electric_motor_nondet_unsolvable_example import \
-    breakable_forever_service, BUILD_ROTOR, BUILD_STATOR, BUILD_INVERTER, ASSEMBLE_MOTOR, build_goal
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging, _main
+from experiments.domains.electric_motor import BUILD_STATOR, BUILD_ROTOR, BUILD_INVERTER, ASSEMBLE_MOTOR, ELECTRIC_TEST, \
+    STATIC_TEST, build_goal
+from experiments.entrypoints._abstract_entrypoint import run_experiment, _main
+from experiments.services import breakable_forever_service
 from ltlf_goal_oriented_service_composition.services import Service
 
 
 def build_services() -> Sequence[Service]:
-    rotor_builder = breakable_forever_service("rotor_builder", BUILD_ROTOR)
-    stator_builder = breakable_forever_service("stator_builder", BUILD_STATOR)
-    inverter_builder = breakable_forever_service("inverter_builder", BUILD_INVERTER)
-    motor_assembler = breakable_forever_service("motor_assembler", ASSEMBLE_MOTOR)
-    return [rotor_builder, stator_builder, inverter_builder, motor_assembler]
+    services = []
+    action_to_name = {
+        BUILD_STATOR: "rotor_builder",
+        BUILD_ROTOR:  "stator_builder",
+        BUILD_INVERTER: "inverter_builder",
+        ASSEMBLE_MOTOR: "motor_assembler",
+        ELECTRIC_TEST: "mechanical_engineer_1",
+        STATIC_TEST: "mechanical_engineer_2",
+    }
+    for action, service_name in action_to_name.items():
+        service_name = action_to_name[action]
+        services.append(breakable_forever_service(service_name, action))
+    return services
 
 
 def _do_job(workdir: Path, timeout: float):

@@ -1,11 +1,65 @@
-import logging
+from pathlib import Path
 from pathlib import Path
 from typing import Sequence
 
-from examples.garden.garden_example import bot_1, bot_2, bot_0, get_goal
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging, _main
+from experiments.entrypoints._abstract_entrypoint import run_experiment, _main
 from ltlf_goal_oriented_service_composition.services import Service
+
+
+def get_goal():
+    return "clean & X[!]((clean U ((water & X[!](pluck)) | (pluck & X[!](water)))))"
+
+
+def bot_0():
+    return Service(
+        {"a0", "a1"},
+        {"clean", "empty"},
+        {"a0"},
+        "a0",
+        {
+            "a0": {
+                "clean": {"a0", "a1"},
+            },
+            "a1": {"empty": {"a0"}},
+        },
+    )
+
+
+def bot_1():
+    return Service(
+        {"b0", "b1", "b2"},
+        {"water", "pluck", "empty"},
+        {"b0"},
+        "b0",
+        {
+            "b0": {
+                "water": {"b0"},
+                "pluck": {"b1", "b2"},
+            },
+            "b1": {
+                "water": {"b1"},
+                "empty": {"b0"},
+            }
+        },
+    )
+
+
+def bot_2():
+    return Service(
+        {"c0", "c1"},
+        {"pluck", "empty"},
+        {"c0"},
+        "c0",
+        {
+            "c0": {
+                "pluck": {"c1"},
+            },
+            "c1": {
+                "empty": {"c0"}
+            },
+        },
+    )
 
 
 def build_services() -> Sequence[Service]:

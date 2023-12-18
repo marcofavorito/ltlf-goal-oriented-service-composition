@@ -3,31 +3,19 @@ from functools import partial
 from pathlib import Path
 from typing import Sequence
 
-from examples.electric_motor_nondet.electric_motor_nondet_example import BUILD_ROTOR, BUILD_STATOR, BUILD_INVERTER, \
-    ASSEMBLE_MOTOR, build_goal, breakable_state_service, PAINTING, RUNNING_IN, ELECTRIC_TEST, STATIC_TEST
-from examples.simple_electric_motor.electric_motor_example import one_state_service
 from experiments.core import ActionMode, Heuristic
-from experiments.entrypoints._abstract_entrypoint import run_experiment, parse_args, configure_logging, _main
+from experiments.domains.electric_motor import BUILD_STATOR, BUILD_ROTOR, BUILD_INVERTER, ASSEMBLE_MOTOR, ELECTRIC_TEST, \
+    STATIC_TEST, ALL_SYMBOLS, build_goal
+from experiments.entrypoints._abstract_entrypoint import run_experiment, _main
+from experiments.services import breakable_state_service, one_state_service
 from ltlf_goal_oriented_service_composition.services import Service
-
-
-ALL_SYMBOLS = [
-    BUILD_STATOR,
-    BUILD_ROTOR,
-    BUILD_INVERTER,
-    ASSEMBLE_MOTOR,
-    PAINTING,
-    RUNNING_IN,
-    ELECTRIC_TEST,
-    STATIC_TEST,
-]
 
 
 def build_services(n: int) -> Sequence[Service]:
     services = []
     action_to_name = {
         BUILD_STATOR: "rotor_builder",
-        BUILD_ROTOR:  "stator_builder",
+        BUILD_ROTOR: "stator_builder",
         BUILD_INVERTER: "inverter_builder",
         ASSEMBLE_MOTOR: "motor_assembler",
         ELECTRIC_TEST: "mechanical_engineer_1",

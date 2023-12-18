@@ -45,7 +45,7 @@ def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optiona
             stdout, stderr = proc.communicate(timeout=5.0)
     except BaseException as e:
         exception = e
-        logging.exception(e)
+        logging.error(f"{type(e).__name__}: {e}")
     finally:
         end = time.perf_counter()
         total = end - start

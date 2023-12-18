@@ -3,12 +3,12 @@ import json
 import pprint
 import re
 from pathlib import Path
-from typing import Optional, Mapping, Set
+from typing import Optional, Mapping
 
 # You need to add the following import at the beginning of your file
-from pylatex import MultiColumn, Command, NoEscape
+from pylatex import MultiColumn, NoEscape
 
-from pylatex import Document, Section, Tabular
+from pylatex import Document, Tabular
 
 from examples.chip_production.chip_production_example import ALL_SYMBOLS as ALL_SYMBOLS_CHIP_PRODUCTION
 from experiments.core import ActionMode, Heuristic
@@ -243,6 +243,8 @@ class TableGenerator:
             self._handle_garden(table)
             self._handle_electric_motor(table)
             self._handle_chip_production(table)
+            self._handle_chip_production_nondet(table)
+            self._handle_chip_production_nondet_unsolvable(table)
 
         return table, doc
 
@@ -291,40 +293,38 @@ class TableGenerator:
         table.add_hline()
 
         explabels = [f"e{i}" for i in range(0, 4)] + ["eu"]
-
-        for heuristic in self._iter_over_h(table):
-            for label, exptype in zip(explabels, exptypes):
-                results = self.results_by_type[exptype]
-                stats_row = []
-                for comb in self.expcombs:
-                    if comb.heuristic != heuristic:
-                        continue
-                    expname = f"{exptype}_{comb}"
-                    if expname in results:
-                        resultdir = results[expname]
-                        row = stats_as_row(resultdir.encoding_stats, resultdir.planning_stats)
-                    else:
-                        row = empty_row()
-                    stats_row.extend(row)
-
-                self._make_min_bold(stats_row)
-                if "unsolvable" in exptype:
-                    for idx in range(2, self.nb_columns-1, self.nb_metrics):
-                        stats_row[idx] = NA
-                        stats_row[idx+1] = NA
-
-                table.add_row([label] + list(map(make_small, stats_row)))
-                table.add_hline()
+        self._populate_table(table, exptypes, explabels)
+        # if "unsolvable" in exptype:
+        #     for idx in range(2, self.nb_columns-1, self.nb_metrics):
+        #         stats_row[idx] = NA
+        #         stats_row[idx+1] = NA
 
     def _handle_chip_production(self, table: Tabular):
         exptypes = [
             f"chip_production_len_{i}"
             for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
         ]
+        labels = [f"c{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+        self._populate_table(table, exptypes, labels)
 
-        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario}"))])
-        table.add_hline()
+    def _handle_chip_production_nondet(self, table: Tabular):
+        exptypes = [
+            f"chip_production_nondet_len_{i}"
+            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
+        ]
+        labels = [f"cn{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+        self._populate_table(table, exptypes, labels)
 
+    def _handle_chip_production_nondet_unsolvable(self, table: Tabular):
+        exptypes = [
+            f"chip_production_nondet_unsolvable_len_{i}"
+            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
+        ]
+        labels = [f"cu{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+        self._populate_table(table, exptypes, labels)
+
+    def _populate_table(self, table: Tabular, exptypes: list[str], labels: list[str]):
+        assert len(exptypes) == len(labels)
         for heuristic in self._iter_over_h(table):
             for idx, exptype in enumerate(exptypes):
                 stats_row = []
@@ -342,7 +342,7 @@ class TableGenerator:
                         stats_row.extend(empty_row())
 
                 self._make_min_bold(stats_row)
-                table.add_row([f"c{idx + 1}"] + list(map(make_small, stats_row)))
+                table.add_row([labels[idx]] + list(map(make_small, stats_row)))
                 table.add_hline()
 
     def _iter_over_h(self, table: Tabular):
@@ -364,4 +364,3 @@ class TableGenerator:
                                 key=lambda x: x[1] if isinstance(x[1], (float, int)) else float('inf'))
             if minel != float('inf'):
                 stats_row[minidx] = f"\\textbf{{{minel}}}"
-
