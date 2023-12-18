@@ -10,44 +10,82 @@ from pylatex import MultiColumn, Command, NoEscape
 
 from pylatex import Document, Section, Tabular
 
+from examples.chip_production.chip_production_example import ALL_SYMBOLS as ALL_SYMBOLS_CHIP_PRODUCTION
 from experiments.core import ActionMode, Heuristic
 
 NA = "N/A"
 
 
 @dataclasses.dataclass
-class Stats:
+class EncodingStats:
+    alt_aut_translator_time: Optional[float]
+    topddl_time: Optional[float]
+
+    @property
+    def total(self) -> float | None:
+        if self.alt_aut_translator_time is not None and self.topddl_time is not None:
+            return round(self.alt_aut_translator_time + self.topddl_time, 4)
+        return None
+
+    def pretty_print(self) -> str:
+        return pprint.pformat(dataclasses.asdict(self))
+
+    @classmethod
+    def parse(cls, stdout: str) -> "EncodingStats":
+        alt_aut_translator_time = None
+        topddl_time = None
+
+        lines = stdout.split("\n")
+        for line in lines:
+            if line.startswith("Translation CPU time:"):
+                if m := re.search(r"Translation CPU time: +([0-9.]+), Number of Inferences: +([0-9]+)", line):
+                    alt_aut_translator_time = float(m.group(1))
+            elif line.startswith("ToPddl CPU time:"):
+                if m := re.search("ToPddl CPU time: +([0-9.]+), Number of Inferences: +([0-9]+)", line):
+                    topddl_time = float(m.group(1))
+
+        return EncodingStats(alt_aut_translator_time, topddl_time)
+
+
+@dataclasses.dataclass
+class PlanningStats:
     translation_time: Optional[float]
     search_time: Optional[float]
     node_expansion: Optional[int]
     policy_size: Optional[int]
 
+    @property
+    def total(self) -> float | None:
+        if self.translation_time is not None and self.search_time is not None:
+            return round(self.translation_time + self.search_time, 4)
+        return None
+
     def pretty_print(self) -> str:
         return pprint.pformat(dataclasses.asdict(self))
 
+    @classmethod
+    def parse(cls, stdout: str) -> "PlanningStats":
+        translation_time = None
+        search_time = None
+        node_expansion = None
+        policy_size = None
 
-def _parse_stdout(stdout: str) -> Stats:
-    translation_time = None
-    search_time = None
-    node_expansion = None
-    policy_size = None
+        lines = stdout.split("\n")
+        for line in lines:
+            if line.startswith("Done! ["):
+                if m := re.search(r"Done! \[([0-9.]+)s CPU, ([0-9.]+)s wall-clock]", line):
+                    translation_time = float(m.group(2))
+            elif line.startswith("Time needed: "):
+                if m := re.search("Time needed: +([0-9.]+) seconds\.", line):
+                    search_time = float(m.group(1))
+            elif line.startswith("Number of node expansions: "):
+                if m := re.search("Number of node expansions: +([0-9]+)", line):
+                    node_expansion = int(m.group(1))
+            elif line.startswith("Policy entries:"):
+                if m := re.search("Policy entries: +([0-9]+)", line):
+                    policy_size = int(m.group(1))
 
-    lines = stdout.split("\n")
-    for line in lines:
-        if line.startswith("Done! ["):
-            if m := re.search(r"Done! \[([0-9.]+)s CPU, ([0-9.]+)s wall-clock]", line):
-                translation_time = float(m.group(2))
-        elif line.startswith("Time needed: "):
-            if m := re.search("Time needed: +([0-9.]+) seconds\.", line):
-                search_time = float(m.group(1))
-        elif line.startswith("Number of node expansions: "):
-            if m := re.search("Number of node expansions: +([0-9]+)", line):
-                node_expansion = int(m.group(1))
-        elif line.startswith("Policy entries:"):
-            if m := re.search("Policy entries: +([0-9]+)", line):
-                policy_size = int(m.group(1))
-
-    return Stats(translation_time, search_time, node_expansion, policy_size)
+        return PlanningStats(translation_time, search_time, node_expansion, policy_size)
 
 
 class ResultDir:
@@ -58,14 +96,20 @@ class ResultDir:
         self.domain_compiled_path: Path = dirpath / "domain_compiled.pddl"
         self.problem_compiled_path: Path = dirpath / "problem_compiled.pddl"
         self.sas_file: Path = dirpath / "output.sas"
-        self.stderr_file: Path = dirpath / "stderr.txt"
-        self.stdout_file: Path = dirpath / "stdout.txt"
-        self.summary_file: Path = dirpath / "summary.txt"
+        self.encoding_stderr_file: Path = dirpath / "encoding_stderr.txt"
+        self.encoding_stdout_file: Path = dirpath / "encoding_stdout.txt"
+        self.encoding_summary_file: Path = dirpath / "encoding_summary.txt"
+        self.planning_stderr_file: Path = dirpath / "planning_stderr.txt"
+        self.planning_stdout_file: Path = dirpath / "planning_stdout.txt"
+        self.planning_summary_file: Path = dirpath / "planning_summary.txt"
         self.args_file: Path = dirpath / "args.json"
 
-        self.stdout = self.stdout_file.read_text()
-        self.stderr = self.stderr_file.read_text()
-        self.summary_file = self.summary_file.read_text()
+        self.encoding_stdout = self.encoding_stdout_file.read_text()
+        self.encoding_stderr = self.encoding_stderr_file.read_text()
+        self.encoding_summary_file = self.encoding_summary_file.read_text()
+        self.planning_stdout = self.planning_stdout_file.read_text()
+        self.planning_stderr = self.planning_stderr_file.read_text()
+        self.planning_summary_file = self.planning_summary_file.read_text()
         self.args = json.loads(Path(self.args_file).read_text())
 
         self.timeout = self.args["timeout"]
@@ -74,7 +118,8 @@ class ResultDir:
         self.experiment_name = dirpath.name
         self.experiment_type = self._extract_experiment_type(dirpath, self.action_mode, self.heuristic)
 
-        self.stats = _parse_stdout(self.stdout)
+        self.encoding_stats = EncodingStats.parse(self.encoding_stdout)
+        self.planning_stats = PlanningStats.parse(self.planning_stdout)
 
     def _extract_experiment_type(self, dirpath: Path, action_mode: ActionMode, heuristic: Heuristic) -> str:
         conf_suffix = f"_{action_mode.value}_{heuristic.value}"
@@ -89,13 +134,17 @@ class AllResultDirs:
         self.result_dirs_by_id = {}
         for dirpath in output_path.iterdir():
             if dirpath.is_dir():
-                result_dir = ResultDir(dirpath)
-                self.result_dirs_by_id[dirpath.name] = result_dir
+                try:
+                    result_dir = ResultDir(dirpath)
+                    self.result_dirs_by_id[dirpath.name] = result_dir
+                except:
+                    print(f"Could not parse {dirpath}")
+                    continue
 
-    def stats_by_name(self) -> Mapping[str, Stats]:
+    def stats_by_name(self) -> Mapping[str, tuple[EncodingStats, PlanningStats]]:
         result = {}
         for result_id, result_dir in self.result_dirs_by_id.items():
-            result[result_id] = result_dir.stats
+            result[result_id] = (result_dir.encoding_stats, result_dir.planning_stats)
         return result
 
     def by_experiment_type(self) -> Mapping[str, Mapping[str, ResultDir]]:
@@ -105,8 +154,9 @@ class AllResultDirs:
         return result
 
 
-def stats_as_row(stats: Stats):
-    statsrow = [stats.translation_time, stats.search_time, stats.node_expansion, stats.policy_size]
+def stats_as_row(encoding_stats: EncodingStats, planning_stats: PlanningStats):
+    total_enc_time = encoding_stats.total
+    statsrow = [total_enc_time, planning_stats.total, planning_stats.node_expansion, planning_stats.policy_size]
     statsrow = [el if el is not None else "---" for el in statsrow]
     return statsrow
 
@@ -170,31 +220,31 @@ class TableGenerator:
         for h in heuristic_list() for am in ActionMode
     ]
     nb_metrics = len(metrics_headers)
+    nb_heuristics = len(heuristic_list())
     nb_configurations = len(expcombs)
     nb_columns = nb_metrics * len(ActionMode) + 1
 
     # 1 benchmark + 4 metrics times 4 planning configurations
     # table = Tabular('|c' * nb_metrics * nb_configurations + "|")
-    table_config = '|c' * nb_columns + "|"
+    table_config = '||c||' + ("|".join(['c'] * nb_metrics) + "||") * (nb_configurations // nb_heuristics)
 
     def __init__(self, all_results: AllResultDirs):
         self.all_results = all_results
         self.results_by_type = self.all_results.by_experiment_type()
 
-    def generate(self) -> Tabular:
+    def generate(self) -> tuple[Tabular, Document]:
         geometry_options = {
-            "margin": "1in",
+            "margin": "0in",
             "includeheadfoot": True
         }
-        doc = Document(geometry_options=geometry_options)
+        doc = Document(documentclass="article", document_options=["landscape"], geometry_options=geometry_options)
 
         with doc.create(Tabular(self.table_config)) as table:
             self._handle_garden(table)
             self._handle_electric_motor(table)
             self._handle_chip_production(table)
 
-        doc.generate_pdf('multi_level_header_table', clean_tex=False)
-        return table
+        return table, doc
 
     def _add_subheaders(self, table: Tabular):
         rows = []
@@ -224,7 +274,9 @@ class TableGenerator:
                     continue
                 expname = f"{exptype}_{comb}"
                 resultdir = exptype_results[expname]
-                stats_row.extend(stats_as_row(resultdir.stats))
+                stats_row.extend(stats_as_row(resultdir.encoding_stats, resultdir.planning_stats))
+
+            self._make_min_bold(stats_row)
             table.add_row(["i0"] + list(map(make_small, stats_row)))
             table.add_hline()
 
@@ -250,10 +302,12 @@ class TableGenerator:
                     expname = f"{exptype}_{comb}"
                     if expname in results:
                         resultdir = results[expname]
-                        stats_row.extend(stats_as_row(resultdir.stats))
+                        row = stats_as_row(resultdir.encoding_stats, resultdir.planning_stats)
                     else:
-                        stats_row.extend(empty_row())
+                        row = empty_row()
+                    stats_row.extend(row)
 
+                self._make_min_bold(stats_row)
                 if "unsolvable" in exptype:
                     for idx in range(2, self.nb_columns-1, self.nb_metrics):
                         stats_row[idx] = NA
@@ -265,7 +319,7 @@ class TableGenerator:
     def _handle_chip_production(self, table: Tabular):
         exptypes = [
             f"chip_production_len_{i}"
-            for i in range(1, 10)
+            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
         ]
 
         table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario}"))])
@@ -283,10 +337,11 @@ class TableGenerator:
                     expname = f"{exptype}_{comb}"
                     if expname in results:
                         resultdir = results[expname]
-                        stats_row.extend(stats_as_row(resultdir.stats))
+                        stats_row.extend(stats_as_row(resultdir.encoding_stats, resultdir.planning_stats))
                     else:
                         stats_row.extend(empty_row())
 
+                self._make_min_bold(stats_row)
                 table.add_row([f"c{idx + 1}"] + list(map(make_small, stats_row)))
                 table.add_hline()
 
@@ -297,8 +352,16 @@ class TableGenerator:
             yield hs[0]
         else:
             for h in hs:
-                table.add_row([MultiColumn((self.nb_columns), align='|c|',
+                table.add_row([MultiColumn(self.nb_columns, align='||c||',
                                            data=NoEscape(PlanningConfig.heuristic_label(h)))])
                 table.add_hline()
                 yield h
+
+    def _make_min_bold(self, stats_row):
+        for metric_id in range(0, self.nb_metrics):
+            filtered_indexed_entries = list(enumerate(stats_row))[metric_id::self.nb_metrics]
+            minidx, minel = min(filtered_indexed_entries,
+                                key=lambda x: x[1] if isinstance(x[1], (float, int)) else float('inf'))
+            if minel != float('inf'):
+                stats_row[minidx] = f"\\textbf{{{minel}}}"
 

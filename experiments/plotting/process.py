@@ -2,8 +2,6 @@ import argparse
 import shutil
 from pathlib import Path
 
-from pylatex import Document, Tabular
-
 from experiments.plotting.utils import TableGenerator, AllResultDirs
 
 
@@ -25,12 +23,13 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=False)
 
     all_results = AllResultDirs(input_dir)
-    for name, stats in all_results.stats_by_name().items():
-        print(name, stats.pretty_print())
+    for name, (encoding_stats, planning_stats) in all_results.stats_by_name().items():
+        print(name, encoding_stats.pretty_print(), planning_stats.pretty_print())
     print([result.experiment_name for result in all_results.result_dirs_by_id.values()])
 
-    table: Tabular = TableGenerator(all_results).generate()
+    table, doc = TableGenerator(all_results).generate()
     (output_dir / "table.tex").write_text(table.dumps())
+    doc.generate_pdf('multi_level_header_table', clean_tex=False)
 
 
 if __name__ == '__main__':
