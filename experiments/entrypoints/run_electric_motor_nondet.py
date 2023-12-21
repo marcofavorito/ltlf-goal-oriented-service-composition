@@ -33,7 +33,7 @@ def build_services(n: int) -> Sequence[Service]:
 
 def _do_job(workdir: Path, timeout: float):
     combination_already_failed: set[tuple[ActionMode, Heuristic]] = set()
-    for n in range(0, len(ALL_SYMBOLS)):
+    for n in range(0, len(ALL_SYMBOLS) + 1):
         for action_mode in ActionMode:
             for heuristic in Heuristic:
                 if (action_mode, heuristic) in combination_already_failed:
@@ -43,10 +43,11 @@ def _do_job(workdir: Path, timeout: float):
                 result = run_experiment(workdir, timeout,
                                         f"electric_motor_nondet_{n}_{action_mode.value}_{heuristic.value}",
                                         partial(build_services, n), build_goal, action_mode, heuristic)
-                if result.planning_result and result.planning_result.timed_out:
-                    logging.info(
-                        f"Combination {(action_mode, heuristic)} timed out with n={n}, not continuing with this configuration...")
-                    combination_already_failed.add((action_mode, heuristic))
+                # don't skip
+                # if result.planning_result and result.planning_result.timed_out:
+                #     logging.info(
+                #         f"Combination {(action_mode, heuristic)} timed out with n={n}, not continuing with this configuration...")
+                #     combination_already_failed.add((action_mode, heuristic))
 
 
 if __name__ == '__main__':

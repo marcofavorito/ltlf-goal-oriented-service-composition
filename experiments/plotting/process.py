@@ -27,9 +27,11 @@ def main():
         print(name, encoding_stats.pretty_print(), planning_stats.pretty_print())
     print([result.experiment_name for result in all_results.result_dirs_by_id.values()])
 
-    table, doc = TableGenerator(all_results).generate()
-    (output_dir / "table.tex").write_text(table.dumps())
-    doc.generate_pdf('multi_level_header_table', clean_tex=False)
+    generator = TableGenerator(all_results)
+    for scenario in ["electric_motor", "chip_production", "chip_production_nondet", "chip_production_nondet_unsolvable"]:
+        table, doc = getattr(generator, f"generate_{scenario}")()
+        (output_dir / f"table_{scenario}.tex").write_text(table.dumps())
+        doc.generate_pdf(f'table_{scenario}.pdf', clean_tex=False)
 
 
 if __name__ == '__main__':

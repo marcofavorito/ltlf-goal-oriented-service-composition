@@ -21,7 +21,7 @@ def get_service_builder_fn(current_symbols: Sequence[str]) -> Callable:
 
 def _do_job(workdir: Path, timeout: float):
     combination_already_failed: set[tuple[ActionMode, Heuristic]] = set()
-    for n in range(1, len(ALL_SYMBOLS)):
+    for n in range(1, len(ALL_SYMBOLS) + 1):
         for action_mode in ActionMode:
             for heuristic in Heuristic:
                 if (action_mode, heuristic) in combination_already_failed:

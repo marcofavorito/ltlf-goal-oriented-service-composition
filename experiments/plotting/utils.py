@@ -10,8 +10,9 @@ from pylatex import MultiColumn, NoEscape
 
 from pylatex import Document, Tabular
 
-from examples.chip_production.chip_production_example import ALL_SYMBOLS as ALL_SYMBOLS_CHIP_PRODUCTION
+from experiments.domains.chip_production import ALL_SYMBOLS as ALL_SYMBOLS_CHIP_PRODUCTION
 from experiments.core import ActionMode, Heuristic
+from experiments.domains.electric_motor import ALL_SYMBOLS as ALL_SYMBOLS_ELECTRIC_MOTOR
 
 NA = "N/A"
 
@@ -232,20 +233,36 @@ class TableGenerator:
         self.all_results = all_results
         self.results_by_type = self.all_results.by_experiment_type()
 
-    def generate(self) -> tuple[Tabular, Document]:
+    def _get_document(self) -> Document:
         geometry_options = {
             "margin": "0in",
             "includeheadfoot": True
         }
         doc = Document(documentclass="article", document_options=["landscape"], geometry_options=geometry_options)
+        return doc
 
+    def generate_electric_motor(self) -> tuple[Tabular, Document]:
+        doc = self._get_document()
         with doc.create(Tabular(self.table_config)) as table:
-            self._handle_garden(table)
             self._handle_electric_motor(table)
-            self._handle_chip_production(table)
-            self._handle_chip_production_nondet(table)
-            self._handle_chip_production_nondet_unsolvable(table)
+        return table, doc
 
+    def generate_chip_production(self) -> tuple[Tabular, Document]:
+        doc = self._get_document()
+        with doc.create(Tabular(self.table_config)) as table:
+            self._handle_chip_production(table)
+        return table, doc
+
+    def generate_chip_production_nondet(self) -> tuple[Tabular, Document]:
+        doc = self._get_document()
+        with doc.create(Tabular(self.table_config)) as table:
+            self._handle_chip_production_nondet(table)
+        return table, doc
+
+    def generate_chip_production_nondet_unsolvable(self) -> tuple[Tabular, Document]:
+        doc = self._get_document()
+        with doc.create(Tabular(self.table_config)) as table:
+            self._handle_chip_production_nondet_unsolvable(table)
         return table, doc
 
     def _add_subheaders(self, table: Tabular):
@@ -285,34 +302,47 @@ class TableGenerator:
     def _handle_electric_motor(self, table: Tabular):
         exptypes = [
             f"electric_motor_nondet_{i}"
-            for i in range(0, 4)
+            for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)
         ]
-        exptypes.append("electric_motor_nondet_unsolvable")
 
         table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Electric Motor scenario}"))])
         table.add_hline()
 
-        explabels = [f"e{i}" for i in range(0, 4)] + ["eu"]
+        self._add_subheaders(table)
+
+        explabels = [f"e{i}" for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)]
+
+        # add unsolvable electric motor
+        # exptypes.append("electric_motor_nondet_unsolvable")
+        # explabels.append("eu")
+
         self._populate_table(table, exptypes, explabels)
-        # if "unsolvable" in exptype:
-        #     for idx in range(2, self.nb_columns-1, self.nb_metrics):
-        #         stats_row[idx] = NA
-        #         stats_row[idx+1] = NA
 
     def _handle_chip_production(self, table: Tabular):
         exptypes = [
             f"chip_production_len_{i}"
-            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
+            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
         ]
-        labels = [f"c{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+
+        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario (deterministic)}"))])
+        table.add_hline()
+
+        self._add_subheaders(table)
+
+        labels = [f"c{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
         self._populate_table(table, exptypes, labels)
 
     def _handle_chip_production_nondet(self, table: Tabular):
         exptypes = [
             f"chip_production_nondet_len_{i}"
-            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
+            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
         ]
-        labels = [f"cn{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario (nondeterministic)}"))])
+        table.add_hline()
+
+        self._add_subheaders(table)
+
+        labels = [f"cn{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
         self._populate_table(table, exptypes, labels)
 
     def _handle_chip_production_nondet_unsolvable(self, table: Tabular):
@@ -320,7 +350,12 @@ class TableGenerator:
             f"chip_production_nondet_unsolvable_len_{i}"
             for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
         ]
-        labels = [f"cu{i+1}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
+        table.add_row([MultiColumn(self.nb_columns, align='c',data=NoEscape(r"\textbf{Chip Production scenario (unsolvable)}"))])
+        table.add_hline()
+
+        self._add_subheaders(table)
+
+        labels = [f"cu{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
         self._populate_table(table, exptypes, labels)
 
     def _populate_table(self, table: Tabular, exptypes: list[str], labels: list[str]):
@@ -342,6 +377,12 @@ class TableGenerator:
                         stats_row.extend(empty_row())
 
                 self._make_min_bold(stats_row)
+
+                if "unsolvable" in exptype:
+                    for element_id in range(2, self.nb_columns - 1, self.nb_metrics):
+                        stats_row[element_id] = NA
+                        stats_row[element_id + 1] = NA
+
                 table.add_row([labels[idx]] + list(map(make_small, stats_row)))
                 table.add_hline()
 
