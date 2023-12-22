@@ -2,9 +2,12 @@ import dataclasses
 import json
 import pprint
 import re
+import sys
+from enum import Enum
 from pathlib import Path
-from typing import Optional, Mapping
+from typing import Optional, Mapping, Any
 
+import pandas as pd
 # You need to add the following import at the beginning of your file
 from pylatex import MultiColumn, NoEscape
 
@@ -89,6 +92,58 @@ class PlanningStats:
         return PlanningStats(translation_time, search_time, node_expansion, policy_size)
 
 
+class ExpType(Enum):
+    ELECTRIC_MOTOR_NONDET = "electric_motor_nondet"
+    CHIP_PRODUCTION_DET = "chip_production_det"
+    CHIP_PRODUCTION_NONDET = "chip_production_nondet"
+    CHIP_PRODUCTION_NONDET_UNSOLVABLE = "chip_production_nondet_unsolvable"
+
+    def names(self):
+        match self:
+            case self.ELECTRIC_MOTOR_NONDET:
+                return [
+                    f"electric_motor_nondet_{i}"
+                    for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)
+                ]
+            case self.CHIP_PRODUCTION_DET:
+                return [
+                    f"chip_production_len_{i}"
+                    for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
+                ]
+            case self.CHIP_PRODUCTION_NONDET:
+                return [
+                    f"chip_production_nondet_len_{i}"
+                    for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
+                ]
+            case self.CHIP_PRODUCTION_NONDET_UNSOLVABLE:
+                return [
+                    f"chip_production_nondet_unsolvable_len_{i}"
+                    for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
+                ]
+
+    def labels(self):
+        match self:
+            case self.ELECTRIC_MOTOR_NONDET:
+                return [f"e{i}" for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)]
+            case self.CHIP_PRODUCTION_DET:
+                return [f"c{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
+            case self.CHIP_PRODUCTION_NONDET:
+                return [f"cn{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
+            case self.CHIP_PRODUCTION_NONDET_UNSOLVABLE:
+                return [f"cu{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
+
+    def title(self):
+        match self:
+            case self.ELECTRIC_MOTOR_NONDET:
+                return "Electric motor scenario"
+            case self.CHIP_PRODUCTION_DET:
+                return "Chip Production scenario (deterministic)"
+            case self.CHIP_PRODUCTION_NONDET:
+                return "Chip Production scenario (nondeterministic)"
+            case self.CHIP_PRODUCTION_NONDET_UNSOLVABLE:
+                return "Chip Production scenario (unsolvable)"
+
+
 class ResultDir:
 
     def __init__(self, dirpath: Path) -> None:
@@ -154,11 +209,30 @@ class AllResultDirs:
             result.setdefault(result_dir.experiment_type, {})[result_dir.experiment_name] = result_dir
         return result
 
+    def get_dataframe(self, exptype: ExpType) -> pd.DataFrame:
+        df = pd.DataFrame(columns=["label", "encoding", "heuristic", "TT", "PT", "NE", "PS"])
 
-def stats_as_row(encoding_stats: EncodingStats, planning_stats: PlanningStats):
+        expnames = exptype.names()
+        explabels = exptype.labels()
+
+        for idx, (expname, explabel) in enumerate(zip(expnames, explabels)):
+            for action_mode in ActionMode:
+                for heuristic in heuristic_list():
+                    result_dirpath = self._output_path / f"{expname}_{action_mode.value}_{heuristic.value}"
+                    row_prefix = [expname, action_mode.value, heuristic.value]
+                    if result_dirpath.exists():
+                        subdir = ResultDir(result_dirpath)
+                        df.loc[len(df)] = row_prefix + stats_as_row(subdir.encoding_stats, subdir.planning_stats, 2000)
+                    else:
+                        df.loc[len(df)] = row_prefix + [float("nan")] * 4
+
+        return df
+
+
+def stats_as_row(encoding_stats: EncodingStats, planning_stats: PlanningStats, default: Any = "---"):
     total_enc_time = encoding_stats.total
     statsrow = [total_enc_time, planning_stats.total, planning_stats.node_expansion, planning_stats.policy_size]
-    statsrow = [el if el is not None else "---" for el in statsrow]
+    statsrow = [el if el is not None else default for el in statsrow]
     return statsrow
 
 
@@ -244,25 +318,25 @@ class TableGenerator:
     def generate_electric_motor(self) -> tuple[Tabular, Document]:
         doc = self._get_document()
         with doc.create(Tabular(self.table_config)) as table:
-            self._handle_electric_motor(table)
+            self._populate_table(ExpType.ELECTRIC_MOTOR_NONDET, table)
         return table, doc
 
     def generate_chip_production(self) -> tuple[Tabular, Document]:
         doc = self._get_document()
         with doc.create(Tabular(self.table_config)) as table:
-            self._handle_chip_production(table)
+            self._populate_table(ExpType.CHIP_PRODUCTION_DET, table)
         return table, doc
 
     def generate_chip_production_nondet(self) -> tuple[Tabular, Document]:
         doc = self._get_document()
         with doc.create(Tabular(self.table_config)) as table:
-            self._handle_chip_production_nondet(table)
+            self._populate_table(ExpType.CHIP_PRODUCTION_NONDET, table)
         return table, doc
 
     def generate_chip_production_nondet_unsolvable(self) -> tuple[Tabular, Document]:
         doc = self._get_document()
         with doc.create(Tabular(self.table_config)) as table:
-            self._handle_chip_production_nondet_unsolvable(table)
+            self._populate_table(ExpType.CHIP_PRODUCTION_NONDET_UNSOLVABLE, table)
         return table, doc
 
     def _add_subheaders(self, table: Tabular):
@@ -299,66 +373,14 @@ class TableGenerator:
             table.add_row(["i0"] + list(map(make_small, stats_row)))
             table.add_hline()
 
-    def _handle_electric_motor(self, table: Tabular):
-        exptypes = [
-            f"electric_motor_nondet_{i}"
-            for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)
-        ]
-
-        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Electric Motor scenario}"))])
+    def _populate_table(self, exptype: ExpType, table: Tabular):
+        exptypes = exptype.names()
+        labels = exptype.labels()
+        title = exptype.title()
+        table.add_row([MultiColumn(self.nb_columns, align='c',data=NoEscape(rf"\textbf{{{title}}}"))])
         table.add_hline()
-
         self._add_subheaders(table)
 
-        explabels = [f"e{i}" for i in range(0, len(ALL_SYMBOLS_ELECTRIC_MOTOR) + 1)]
-
-        # add unsolvable electric motor
-        # exptypes.append("electric_motor_nondet_unsolvable")
-        # explabels.append("eu")
-
-        self._populate_table(table, exptypes, explabels)
-
-    def _handle_chip_production(self, table: Tabular):
-        exptypes = [
-            f"chip_production_len_{i}"
-            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
-        ]
-
-        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario (deterministic)}"))])
-        table.add_hline()
-
-        self._add_subheaders(table)
-
-        labels = [f"c{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
-        self._populate_table(table, exptypes, labels)
-
-    def _handle_chip_production_nondet(self, table: Tabular):
-        exptypes = [
-            f"chip_production_nondet_len_{i}"
-            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)
-        ]
-        table.add_row([MultiColumn(self.nb_columns, align='c', data=NoEscape(r"\textbf{Chip Production scenario (nondeterministic)}"))])
-        table.add_hline()
-
-        self._add_subheaders(table)
-
-        labels = [f"cn{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION) + 1)]
-        self._populate_table(table, exptypes, labels)
-
-    def _handle_chip_production_nondet_unsolvable(self, table: Tabular):
-        exptypes = [
-            f"chip_production_nondet_unsolvable_len_{i}"
-            for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))
-        ]
-        table.add_row([MultiColumn(self.nb_columns, align='c',data=NoEscape(r"\textbf{Chip Production scenario (unsolvable)}"))])
-        table.add_hline()
-
-        self._add_subheaders(table)
-
-        labels = [f"cu{i}" for i in range(1, len(ALL_SYMBOLS_CHIP_PRODUCTION))]
-        self._populate_table(table, exptypes, labels)
-
-    def _populate_table(self, table: Tabular, exptypes: list[str], labels: list[str]):
         assert len(exptypes) == len(labels)
         for heuristic in self._iter_over_h(table):
             for idx, exptype in enumerate(exptypes):
@@ -378,7 +400,7 @@ class TableGenerator:
 
                 self._make_min_bold(stats_row)
 
-                if "unsolvable" in exptype:
+                if "unsolvable" in exptypes[0]:
                     for element_id in range(2, self.nb_columns - 1, self.nb_metrics):
                         stats_row[element_id] = NA
                         stats_row[element_id + 1] = NA
