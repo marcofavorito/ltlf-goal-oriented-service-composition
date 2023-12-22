@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Sequence, Optional
 
 from experiments.core import RunArgs, Result
-from experiments.utils import ROOT_PATH, copy_if_src_exists
+from experiments.utils import ROOT_PATH, copy_if_src_exists, terminate_process_tree
 
 RUNNER_SCRIPT = ROOT_PATH / "scripts" / "run.sh"
 MYND_PATH = ROOT_PATH / "planners" / "mynd"
@@ -27,7 +27,6 @@ def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optiona
         stderr=subprocess.PIPE,
         cwd=cwd,
         env=os.environ,
-        preexec_fn=os.setpgrp
     )
     stdout, stderr = b"", b""
     exception = None
@@ -36,13 +35,8 @@ def run_command(args: Sequence[str], cwd: Optional[str] = None, timeout: Optiona
     except subprocess.TimeoutExpired:
         # graceful termination
         timed_out = True
-        os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
-        try:
-            stdout, stderr = proc.communicate(timeout=5.0)
-        except subprocess.TimeoutExpired:
-            # forced termination
-            os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
-            stdout, stderr = proc.communicate(timeout=5.0)
+        terminate_process_tree(proc.pid, timeout=5.0)
+        stdout, stderr = proc.communicate(timeout=5.0)
     except BaseException as e:
         exception = e
         logging.error(f"{type(e).__name__}: {e}")

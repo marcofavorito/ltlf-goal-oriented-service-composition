@@ -33,9 +33,9 @@ def _do_job(workdir: Path, timeout: float):
                 build_goal = get_goal_fn(current_symbols)
                 result = run_experiment(workdir, timeout, f"chip_production_nondet_unsolvable_len_{n}_{action_mode.value}_{heuristic.value}",
                                build_services, build_goal, action_mode, heuristic)
-                if result.planning_result and result.planning_result.timed_out:
-                    logging.info(f"Combination {(action_mode, heuristic)} timed out with n={n}, not continuing with this configuration...")
-                    combination_already_failed.add((action_mode, heuristic))
+                # if result.planning_result and result.planning_result.timed_out:
+                #     logging.info(f"Combination {(action_mode, heuristic)} timed out with n={n}, not continuing with this configuration...")
+                #     combination_already_failed.add((action_mode, heuristic))
 
 
 if __name__ == '__main__':

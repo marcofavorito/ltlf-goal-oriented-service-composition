@@ -15,6 +15,7 @@ matplotlib = "*"
 pandas = "*"
 seaborn = "*"
 numpy = "*"
+psutil = "*"
 
 [dev-packages]
 

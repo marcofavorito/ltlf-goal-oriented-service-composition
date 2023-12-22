@@ -3,11 +3,14 @@ import inspect
 import os
 import re
 import shutil
+import signal
+import time
 from collections import deque
 from copy import copy
 from pathlib import Path
 from typing import Generator
 
+import psutil
 import pydot
 
 CURPATH = Path(inspect.getfile(inspect.currentframe())).resolve()
@@ -55,7 +58,8 @@ def remove_auxiliary_actions(graph: pydot.Dot):
         newgraph.add_node(nodes_by_id[current_node_id])
 
         for current_edge in current_edges.keys():
-            is_edge_a_sync_move = current_edge.get("label").startswith('\"o_') or current_edge.get("label").startswith('o_')
+            is_edge_a_sync_move = current_edge.get("label").startswith('\"o_') or current_edge.get("label").startswith(
+                'o_')
             _current_edge = current_edge
             _current_node_id = current_edge.get_destination()
             _next_edges = {current_edge}
@@ -73,7 +77,8 @@ def remove_auxiliary_actions(graph: pydot.Dot):
                     break
                 # otherwise, continue the search
                 _current_edge = list(_next_edges)[0]
-                is_edge_a_sync_move = _current_edge.get("label").startswith('\"o_') or _current_edge.get("label").startswith('o_')
+                is_edge_a_sync_move = _current_edge.get("label").startswith('\"o_') or _current_edge.get(
+                    "label").startswith('o_')
 
             for next_edge in _next_edges:
                 next_dest_id = next_edge.get_destination()
@@ -116,3 +121,32 @@ def simplify_dot_policy(input_dot_file: Path) -> pydot.Dot:
 def copy_if_src_exists(src: Path, dest: Path) -> None:
     if src.exists():
         shutil.copy(src, dest)
+
+
+def find_child_pids(pid, pids=None):
+    if pids is None:
+        pids = []
+    try:
+        parent = psutil.Process(pid)
+    except psutil.NoSuchProcess:
+        return pids
+    children = parent.children(recursive=True)
+    for child in children:
+        pids.append(child.pid)
+        find_child_pids(child.pid, pids)
+    return pids
+
+
+def terminate_process_tree(pid, timeout=5):
+    child_pids = find_child_pids(pid)
+    for child_pid in reversed(child_pids):
+        try:
+            os.kill(child_pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+    time.sleep(timeout)
+    for child_pid in child_pids:
+        try:
+            os.kill(child_pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
