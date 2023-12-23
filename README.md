@@ -100,14 +100,44 @@ cd ../../
 ## Run experiments
 
 ```
-./experiments/run-all.sh experiment-output 300.0
+./experiments/run-all.sh output-final 300.0
 ```
 
 ## Print table
 
 ```
-python3 ./experiments/plotting/process.py --input-dir experiment-output --output-dir output-plots
+python3 ./experiments/plotting/process.py --input-dir output-final --output-dir output-plots-final
 ```
+
+## Generate Plots
+
+```
+python3 ./experiments/plotting/plots.py --input-dir output-final --output-dir output-plots-final
+```
+
+## Visualize `policy.dot` files
+
+First, unzip large `policy.dot` files, stored as `policy.dot.zip` (do this only if you are processing the `output-final` folder):
+
+```
+./scripts/unzip-large-dot-files.sh output-final
+```
+
+Then, compute a "simplified" versions of the policies (i.e. without sync actions):
+```
+./scripts/compute-simplified-policies.sh output-final
+```
+
+Finally, transform each `.dot` file into `.svg` (requires)
+```
+./scripts/policy-to-svg.sh output-final
+```
+
+In each experiment directory, you will find new files:
+
+- `simplified-policy.dot`: the DOT file of the simplified policy;
+- `policy.svg`: the SVG file computed from the `policy.dot` file;
+- `simplified-policy.svg`: the SVG file computed from the `simplified-policy.dot` file.
 
 
 ## Tutorial: (Simplified) Garden scenario
