@@ -1,0 +1,96 @@
+Parsing...
+Parsing: [0.020s CPU, 0.016s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 655 rules.
+Computing model... [0.010s CPU, 0.001s wall-clock]
+414 relevant atoms
+0 auxiliary atoms
+414 final queue length
+557 total queue pushes
+Completing instantiation... [0.000s CPU, 0.002s wall-clock]
+Instantiating: [0.010s CPU, 0.010s wall-clock]
+Computing fact groups...
+Finding invariants...
+354 initial candidates
+Finding invariants: [59.510s CPU, 59.512s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+192 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [59.510s CPU, 59.514s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_10()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_12()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_49()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_51()
+not in strips_to_sas, left out: Atom q_52()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_8()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.006s wall-clock]
+289 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+2 operators removed
+26 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.001s wall-clock]
+Translator variables: 182
+Translator derived variables: 0
+Translator facts: 366
+Translator goal facts: 1
+Translator mutex groups: 42
+Translator total mutex groups size: 85
+Translator operators: 184
+Translator axioms: 0
+Translator task size: 2334
+Translator peak memory: 121884 KB
+Writing output... [0.000s CPU, 0.002s wall-clock]
+Done! [59.550s CPU, 59.551s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search

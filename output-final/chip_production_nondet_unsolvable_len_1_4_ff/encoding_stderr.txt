@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmppa02_ghp/domain.pddl /tmp/tmppa02_ghp/problem.pddl 4
+++ realpath /tmp/tmppa02_ghp/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmppa02_ghp/domain.pddl
+++ realpath /tmp/tmppa02_ghp/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmppa02_ghp/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmppa02_ghp/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmppa02_ghp/problem_compiled.pddl
+++ dirname /tmp/tmppa02_ghp/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmppa02_ghp/services_condition.txt
+++ cat /tmp/tmppa02_ghp/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmppa02_ghp/domain.pddl /tmp/tmppa02_ghp/problem.pddl dp 4
+% 484,985 inferences, 0.043 CPU in 0.043 seconds (100% CPU, 11312424 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmppa02_ghp/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmppa02_ghp/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmppa02_ghp/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0) /g' /tmp/tmppa02_ghp/problem_compiled.pddl

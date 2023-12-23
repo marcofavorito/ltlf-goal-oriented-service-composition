@@ -1,0 +1,5 @@
++ cd ./planners/mynd
++ rm -f ./output.sas
++ ./translator-fond/translate.py /tmp/tmph4_4_c18/domain_compiled.pddl /tmp/tmph4_4_c18/problem_compiled.pddl
++ java -Xmx16g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner -search aostar ./output.sas -heuristic ff -exportDot /tmp/tmph4_4_c18/policy.dot -dumpPlan
++ cd ../../

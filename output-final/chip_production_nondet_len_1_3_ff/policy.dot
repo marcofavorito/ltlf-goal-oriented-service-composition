@@ -1,0 +1,53 @@
+digraph G {
+0 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_copy), (q_5), (not (q_1d)), (not (q_1s)), (not (q_2d)), (not (q_2s)), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (not (q_4s)), (not (q_6)), (not (q_6s)), (not (repair)) }"];
+1 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5s), (not (q_1d)), (not (q_1s)), (not (q_2d)), (not (q_2s)), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (not (q_4s)), (not (q_6)), (not (q_6s)), (not (repair)) }"];
+2 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (not (q_2d)), (q_2s), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (q_4s), (not (q_6)), (not (q_6s)), (not (repair)) }"];
+3 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (not (q_2d)), (q_2s), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)), (not (repair)) }"];
+4 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)), (not (repair)) }"];
+5 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_world), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)), (not (repair)) }"];
+6 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_copy), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)), (not (repair)) }"];
+7 [label="{ (cleaning), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_copy), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)), (not (repair)) }"];
+8 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (not (q_3d)), (q_3s), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+9 [label="{ (cleaning), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (not (q_3d)), (q_3s), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+10 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_sync), (q_5d), (not (q_1d)), (q_1s), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+11 [label="{ (cleaning), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (not (q_1d)), (q_1s), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+12 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_sync), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+13 [label="{ (cleaning), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_sync), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s), (not (repair)) }"];
+14 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_sync), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (not (q_6s)), (not (repair)) }"];
+15 [label="{ (cleaning), (not (current_state_0 s0_handler_cleaning_0)), (current_state_0 s0_handler_cleaning_broken), (f_world), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (not (q_6s)), (not (repair)) }"];
+16 [label="{ (not (cleaning)), (current_state_0 s0_handler_cleaning_0), (not (current_state_0 s0_handler_cleaning_broken)), (f_copy), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (not (q_6s)), (repair) }"];
+0 -> 1 [label="o_copy", color="#47DC2E", fontcolor="#47DC2E"];
+1 -> 2 [label="o_sync_q_5s", color="#51868F", fontcolor="#51868F"];
+2 -> 3 [label="o_sync_q_4s", color="#BC3A7D", fontcolor="#BC3A7D"];
+3 -> 4 [label="o_sync_q_2s", color="#6B0C6B", fontcolor="#6B0C6B"];
+4 -> 5 [label="o_world", color="#85492A", fontcolor="#85492A"];
+5 -> 6 [label="cleaning_0_handler_cleaning_0", color="#1E82A3", fontcolor="#1E82A3"];
+5 -> 7 [label="cleaning_0_handler_cleaning_0", color="#1E82A3", fontcolor="#1E82A3"];
+6 -> 8 [label="o_copy", color="#A2D83D", fontcolor="#A2D83D"];
+7 -> 9 [label="o_copy", color="#4E6A75", fontcolor="#4E6A75"];
+8 -> 10 [label="o_sync_q_3s_1", color="#49B04D", fontcolor="#49B04D"];
+9 -> 11 [label="o_sync_q_3s_1", color="#255B37", fontcolor="#255B37"];
+10 -> 12 [label="o_sync_q_1s", color="#67598A", fontcolor="#67598A"];
+11 -> 13 [label="o_sync_q_1s", color="#EBE235", fontcolor="#EBE235"];
+12 -> 14 [label="o_sync_q_6s", color="#119263", fontcolor="#119263"];
+14 -> 15 [label="o_world", color="#B5AA74", fontcolor="#B5AA74"];
+15 -> 16 [label="repair_0_handler_cleaning_broken", color="#FE524E", fontcolor="#FE524E"];
+subgraph cluster_goal_13 {
+style=filled;
+color=palegreen;
+13;
+label="GOAL";
+}
+subgraph cluster_goal_16 {
+style=filled;
+color=palegreen;
+16;
+label="GOAL";
+}
+subgraph cluster_init {
+style=filled;
+color=lightblue;
+0;
+label="INIT";
+}
+}

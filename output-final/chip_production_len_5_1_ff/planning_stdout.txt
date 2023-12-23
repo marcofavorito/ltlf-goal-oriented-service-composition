@@ -1,0 +1,80 @@
+Parsing...
+Parsing: [0.000s CPU, 0.006s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 187 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+138 relevant atoms
+0 auxiliary atoms
+138 final queue length
+173 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.010s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+108 initial candidates
+Finding invariants: [16.710s CPU, 16.712s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.003s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+60 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [16.720s CPU, 16.723s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_44s()
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.004s wall-clock]
+73 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+4 operators removed
+67 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 56
+Translator derived variables: 0
+Translator facts: 114
+Translator goal facts: 1
+Translator mutex groups: 742
+Translator total mutex groups size: 1522
+Translator operators: 58
+Translator axioms: 0
+Translator task size: 2193
+Translator peak memory: 120740 KB
+Writing output... [0.010s CPU, 0.002s wall-clock]
+Done! [16.740s CPU, 16.743s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.008 seconds.
+Time needed for search:                             0.115 seconds.
+Time needed:                                        0.123 seconds.
+Total Garbage Collections: 4
+Total Garbage Collection Time: 0 seconds.
+
+Out of 898 nodes, 525 are proven
+Number of node expansions: 666
+Policy entries: 84
+Number of sensing applications in policy: 0
+
+59 (cleaning) (development) (exposure) (f_copy) (f_sync) (f_world) (f_goal) (film_deposition) (q_10) (q_10s) (q_11) (q_11s) (q_12s) (q_13s) (q_14s) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22s) (q_23) (q_23s) (q_24s) (q_25s) (q_26s) (q_27s) (q_28s) (q_29s) (q_2s) (q_30s) (q_31s) (q_32s) (q_33s) (q_34s) (q_35s) (q_36s) (q_37s) (q_38s) (q_39s) (q_3s) (q_40s) (q_41s) (q_42s) (q_43) (q_43s) (q_4s) (q_5s) (q_6s) (q_7) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (resist_coating) 
+%%
+55 (o_copy) (o_sync_q_23s) (o_sync_q_12s) (o_sync_q_6s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_7s_1) (o_sync_q_18s) (o_sync_q_39s) (o_sync_q_41s) (o_sync_q_34s) (o_sync_q_26s) (o_sync_q_10s_2) (o_sync_q_43s) (o_sync_q_14s) (o_sync_q_15s) (o_sync_q_16s) (o_sync_q_17s) (o_sync_q_1s) (film_deposition_1_handler_film_deposition_0) (o_sync_q_10s_1) (o_sync_q_21s) (o_sync_q_31s) (o_sync_q_42s) (o_sync_q_4s) (o_sync_q_35s) (o_sync_q_27s) (o_sync_q_13s) (o_sync_q_11s_2) (resist_coating_2_handler_resist_coating_0) (o_sync_q_11s_1) (o_sync_q_22s) (o_sync_q_29s) (o_sync_q_37s) (o_sync_q_33s) (o_sync_q_25s) (o_sync_q_5s) (o_sync_q_9s_2) (exposure_3_handler_exposure_0) (o_sync_q_9s_1) (o_sync_q_20s) (o_sync_q_3s) (o_sync_q_30s) (o_sync_q_38s) (o_sync_q_40s) (o_sync_q_24s) (o_sync_q_8s_2) (development_4_handler_development_0) (o_sync_q_8s_1) (o_sync_q_19s) (o_sync_q_2s) (o_sync_q_28s) (o_sync_q_36s) (o_sync_q_32s) (o_goal) 
+%%
+policy 84 2 3 24 0 2 4 25 1 3 4 12 51 2 4 4 47 51 52 3 3 4 47 52 4 3 5 47 52 5 4 0 3 47 52 0 4 0 4 48 53 6 4 0 4 18 48 7 5 0 4 20 42 48 8 6 0 4 16 20 45 48 9 7 0 4 16 17 20 37 48 10 8 0 4 15 16 17 20 28 48 11 9 0 4 9 14 15 16 17 20 48 12 10 0 4 8 14 15 16 17 20 47 48 13 9 0 4 8 14 15 16 17 20 47 14 8 0 4 8 15 16 17 20 47 15 7 0 4 8 16 17 20 47 16 6 0 4 8 17 20 47 17 5 0 4 8 20 47 18 4 0 4 8 47 4 4 0 5 8 47 19 4 3 7 8 47 0 4 4 7 9 48 20 4 4 7 22 48 21 5 4 7 34 48 49 22 6 4 7 13 46 48 49 23 7 4 7 13 17 38 48 49 24 6 4 7 13 17 38 48 25 7 4 7 13 15 17 29 48 15 6 4 7 13 17 29 48 26 7 4 7 11 13 14 17 48 27 6 4 7 11 14 17 48 14 5 4 7 11 17 48 28 6 4 7 10 17 47 48 17 5 4 7 10 47 48 13 4 4 7 10 47 4 4 5 7 10 47 29 4 3 10 47 58 0 4 4 11 48 58 30 4 4 23 48 58 31 5 4 31 48 50 58 13 4 4 31 50 58 32 5 4 13 40 50 58 27 4 4 40 50 58 33 5 4 16 36 50 58 16 4 4 36 50 58 34 5 4 15 27 50 58 15 4 4 27 50 58 35 5 4 14 50 57 58 14 4 4 50 57 58 36 3 4 57 58 37 4 4 47 56 58 4 4 5 47 56 58 38 4 2 3 47 56 0 4 2 4 48 57 39 4 2 4 21 48 13 3 2 4 21 40 4 2 4 33 43 41 3 2 4 33 42 4 2 4 13 41 27 3 2 4 41 43 4 2 4 16 44 16 3 2 4 44 44 4 2 4 17 26 17 3 2 4 26 45 4 2 4 14 55 14 3 2 4 55 46 4 2 4 47 54 4 4 2 5 47 54 47 4 1 3 47 54 0 4 1 4 48 55 48 4 1 4 19 48 13 3 1 4 19 49 4 1 4 30 32 50 3 1 4 30 51 4 1 4 13 39 27 3 1 4 39 52 4 1 4 16 35 16 3 1 4 35 53 4 1 4 15 17 15 3 1 4 17 17 2 1 4 4 2 1 5 54 
+Dot file: /tmp/tmp_9maxfni/policy.dot

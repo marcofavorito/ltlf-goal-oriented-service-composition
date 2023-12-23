@@ -1,0 +1,25 @@
++ TB_encode /tmp/tmpbq1yo1ek/domain.pddl /tmp/tmpbq1yo1ek/problem.pddl 2
+++ realpath /tmp/tmpbq1yo1ek/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpbq1yo1ek/domain.pddl
+++ realpath /tmp/tmpbq1yo1ek/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpbq1yo1ek/problem.pddl
++ local _ACTION_MODE=2
++ _COMPILED_DOMAIN_FILE=/tmp/tmpbq1yo1ek/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpbq1yo1ek/problem_compiled.pddl
+++ dirname /tmp/tmpbq1yo1ek/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpbq1yo1ek/services_condition.txt
+++ cat /tmp/tmpbq1yo1ek/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_rotor_builder_0)  (current_state_1 s1_stator_builder_0)  (current_state_2 s2_inverter_builder_0)  (current_state_3 s3_motor_assembler_0)  (current_state_4 s4_mechanical_engineer_1_0)  (current_state_5 s5_mechanical_engineer_2_0) '
++ [[ -z 2 ]]
++ [[ 2 != \1 ]]
++ [[ 2 != \2 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpbq1yo1ek/domain.pddl /tmp/tmpbq1yo1ek/problem.pddl dp 2
+% 663,028 inferences, 0.072 CPU in 0.073 seconds (100% CPU, 9145363 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpbq1yo1ek/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpbq1yo1ek/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpbq1yo1ek/domain_compiled.pddl
++ [[ 2 == \1 ]]
++ [[ 2 == \2 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_rotor_builder_0)  (current_state_1 s1_stator_builder_0)  (current_state_2 s2_inverter_builder_0)  (current_state_3 s3_motor_assembler_0)  (current_state_4 s4_mechanical_engineer_1_0)  (current_state_5 s5_mechanical_engineer_2_0) ))/g' /tmp/tmpbq1yo1ek/problem_compiled.pddl

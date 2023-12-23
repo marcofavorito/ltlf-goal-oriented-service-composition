@@ -1,0 +1,16 @@
+(define (problem service-problem)
+    (:domain composition)
+    (:init
+    (current_state_0 s0_rotor_builder_0)
+    (current_state_1 s1_stator_builder_0)
+    (current_state_2 s2_inverter_builder_0)
+    (current_state_3 s3_motor_assembler_0)
+    (current_state_4 s4_mechanical_engineer_1_0)
+    (current_state_5 s5_mechanical_engineer_2_0)
+    (startsymb)
+    )
+    (:goal (and
+            (and startsymb (next (and (eventually assemble_motor) (until (not assemble_motor) build_rotor) (until (not assemble_motor) build_stator) (until (not assemble_motor) build_inverter) (until (not electric_test) assemble_motor) (until (not static_test) assemble_motor) (eventually (or static_test electric_test)))))
+            )
+    )
+)

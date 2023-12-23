@@ -1,0 +1,23 @@
++ TB_encode /tmp/tmpqsykptv_/domain.pddl /tmp/tmpqsykptv_/problem.pddl 1
+++ realpath /tmp/tmpqsykptv_/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpqsykptv_/domain.pddl
+++ realpath /tmp/tmpqsykptv_/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpqsykptv_/problem.pddl
++ local _ACTION_MODE=1
++ _COMPILED_DOMAIN_FILE=/tmp/tmpqsykptv_/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpqsykptv_/problem_compiled.pddl
+++ dirname /tmp/tmpqsykptv_/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpqsykptv_/services_condition.txt
+++ cat /tmp/tmpqsykptv_/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0) '
++ [[ -z 1 ]]
++ [[ 1 != \1 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpqsykptv_/domain.pddl /tmp/tmpqsykptv_/problem.pddl dp 1
+% 470,663 inferences, 0.042 CPU in 0.042 seconds (99% CPU, 11314876 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpqsykptv_/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpqsykptv_/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpqsykptv_/domain_compiled.pddl
++ [[ 1 == \1 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_handler_cleaning_0) ))/g' /tmp/tmpqsykptv_/problem_compiled.pddl

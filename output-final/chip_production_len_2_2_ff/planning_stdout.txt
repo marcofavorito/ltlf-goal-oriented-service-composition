@@ -1,0 +1,79 @@
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 90 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+77 relevant atoms
+0 auxiliary atoms
+77 final queue length
+100 total queue pushes
+Completing instantiation... [0.000s CPU, 0.000s wall-clock]
+Instantiating: [0.000s CPU, 0.003s wall-clock]
+Computing fact groups...
+Finding invariants...
+53 initial candidates
+Finding invariants: [5.820s CPU, 5.820s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+43 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [5.820s CPU, 5.820s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.001s wall-clock]
+56 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+6 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 44
+Translator derived variables: 0
+Translator facts: 90
+Translator goal facts: 1
+Translator mutex groups: 2
+Translator total mutex groups size: 5
+Translator operators: 21
+Translator axioms: 0
+Translator task size: 447
+Translator peak memory: 200476 KB
+Writing output... [0.000s CPU, 0.000s wall-clock]
+Done! [5.820s CPU, 5.828s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.007 seconds.
+Time needed for search:                             0.026 seconds.
+Time needed:                                        0.033 seconds.
+Total Garbage Collections: 1
+Total Garbage Collection Time: 0 seconds.
+
+Out of 110 nodes, 90 are proven
+Number of node expansions: 102
+Policy entries: 48
+Number of sensing applications in policy: 0
+
+47 (cleaning) (f_copy) (f_sync) (f_world) (f_goal) (f_ok) (film_deposition) (q_1) (q_1s) (q_10) (q_10s) (q_10t) (q_11) (q_11s) (q_11t) (q_12) (q_12s) (q_12t) (q_13) (q_13s) (q_13t) (q_14t) (q_1t) (q_2) (q_2s) (q_2t) (q_3) (q_3s) (q_3t) (q_4) (q_4s) (q_4t) (q_5) (q_5s) (q_5t) (q_6) (q_6s) (q_6t) (q_7) (q_7s) (q_7t) (q_8) (q_8s) (q_8t) (q_9) (q_9s) (q_9t) 
+%%
+19 (o_copy) (o_sync_q_1s) (o_sync_q_2s) (o_sync_q_3s_1) (o_sync_q_4s) (o_sync_q_5s) (o_sync_q_6s_1) (o_sync_q_7s) (o_sync_q_8s) (o_sync_q_9s) (o_sync_q_10s) (o_sync_q_11s) (o_sync_q_12s) (o_sync_q_13s) (o_sync_q_14s) (cleaning_0_handler_cleaning_0) (o_sync_q_6s_2) (film_deposition_1_handler_film_deposition_0) (o_goal) 
+%%
+policy 48 3 1 5 7 0 4 2 5 8 22 1 5 2 5 10 24 25 2 6 2 5 10 18 26 28 3 6 2 5 10 18 26 31 4 6 2 5 10 18 26 34 5 6 2 5 10 18 26 37 6 6 2 5 10 18 26 40 7 6 2 5 10 18 26 43 8 6 2 5 10 18 26 46 9 6 2 5 10 11 18 26 10 5 2 5 14 18 26 11 5 2 5 17 18 26 12 5 2 5 18 20 26 13 5 2 5 18 21 26 14 4 3 5 18 26 15 5 0 1 5 18 26 0 6 0 2 5 19 22 27 1 6 0 2 5 19 25 27 2 6 0 2 5 19 27 28 3 6 0 2 5 19 30 31 4 7 0 2 5 16 19 33 34 5 8 0 2 5 16 19 36 37 42 16 9 0 2 5 16 18 19 35 40 42 7 9 0 2 5 16 18 19 35 42 43 8 8 0 2 5 16 18 19 35 46 9 8 0 2 5 11 16 18 19 35 10 8 0 2 5 14 16 18 19 35 11 8 0 2 5 16 17 18 19 35 12 7 0 2 5 18 19 20 35 13 6 0 2 5 18 21 35 14 5 0 3 5 18 35 17 5 1 5 6 18 35 0 6 2 5 6 19 22 36 1 6 2 5 6 19 25 36 2 6 2 5 6 19 28 36 3 6 2 5 6 19 31 36 4 6 2 5 6 19 34 36 5 6 2 5 6 19 36 37 6 6 2 5 6 19 39 40 7 7 2 5 6 13 19 43 45 8 7 2 5 6 13 19 45 46 9 6 2 5 6 11 13 19 10 6 2 5 6 13 14 19 11 5 2 5 6 17 19 12 5 2 5 6 19 20 13 4 2 5 6 21 14 3 3 5 6 18 
+Dot file: /tmp/tmp539o3p5e/policy.dot

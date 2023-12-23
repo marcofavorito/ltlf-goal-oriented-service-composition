@@ -1,0 +1,25 @@
++ TB_encode /tmp/tmparek33g1/domain.pddl /tmp/tmparek33g1/problem.pddl 2
+++ realpath /tmp/tmparek33g1/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmparek33g1/domain.pddl
+++ realpath /tmp/tmparek33g1/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmparek33g1/problem.pddl
++ local _ACTION_MODE=2
++ _COMPILED_DOMAIN_FILE=/tmp/tmparek33g1/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmparek33g1/problem_compiled.pddl
+++ dirname /tmp/tmparek33g1/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmparek33g1/services_condition.txt
+++ cat /tmp/tmparek33g1/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0) '
++ [[ -z 2 ]]
++ [[ 2 != \1 ]]
++ [[ 2 != \2 ]]
++ cd prologex
++ ./convert.sh /tmp/tmparek33g1/domain.pddl /tmp/tmparek33g1/problem.pddl dp 2
+% 506,263 inferences, 0.054 CPU in 0.054 seconds (100% CPU, 9349182 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmparek33g1/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmparek33g1/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmparek33g1/domain_compiled.pddl
++ [[ 2 == \1 ]]
++ [[ 2 == \2 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0) ))/g' /tmp/tmparek33g1/problem_compiled.pddl

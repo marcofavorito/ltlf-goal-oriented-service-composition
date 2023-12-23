@@ -1,0 +1,87 @@
+Parsing...
+Parsing: [0.000s CPU, 0.001s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.000s wall-clock]
+Preparing model... [0.000s CPU, 0.000s wall-clock]
+Generated 33 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+32 relevant atoms
+0 auxiliary atoms
+32 final queue length
+36 total queue pushes
+Completing instantiation... [0.000s CPU, 0.000s wall-clock]
+Instantiating: [0.000s CPU, 0.001s wall-clock]
+Computing fact groups...
+Finding invariants...
+22 initial candidates
+Finding invariants: [0.080s CPU, 0.082s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+11 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.080s CPU, 0.082s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+not in strips_to_sas, left out: Atom q_7s()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.001s wall-clock]
+8 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+9 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 11
+Translator derived variables: 0
+Translator facts: 24
+Translator goal facts: 1
+Translator mutex groups: 32
+Translator total mutex groups size: 80
+Translator operators: 13
+Translator axioms: 0
+Translator task size: 208
+Translator peak memory: 25864 KB
+Writing output... [0.000s CPU, 0.000s wall-clock]
+Done! [0.080s CPU, 0.085s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.006 seconds.
+Time needed for search:                             0.004 seconds.
+Time needed:                                        0.01 seconds.
+Total Garbage Collections: 1
+Total Garbage Collection Time: 0 seconds.
+
+Out of 18 nodes, 14 are proven
+Number of node expansions: 13
+Policy entries: 12
+Number of sensing applications in policy: 0
+
+14 (cleaning) (f_copy) (f_sync) (f_world) (f_goal) (q_1s) (q_2s) (q_3) (q_3s) (q_4s) (q_5) (q_5s) (q_6) (q_6s) 
+%%
+10 (o_copy) (o_sync_q_5s) (o_sync_q_4s) (o_sync_q_2s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_6s) (o_sync_q_3s_1) (o_sync_q_1s) (o_goal) 
+%%
+policy 12 2 1 10 0 2 2 11 1 3 2 6 9 2 4 2 6 7 12 3 3 2 7 12 4 3 3 7 12 5 4 0 1 7 12 0 4 0 2 8 13 6 3 0 2 8 7 3 0 2 5 8 2 0 2 4 2 0 3 9 
+Dot file: /tmp/tmp34k9dgla/policy.dot

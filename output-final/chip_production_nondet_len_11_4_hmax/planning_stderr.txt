@@ -1,0 +1,21 @@
++ cd ./planners/mynd
++ rm -f ./output.sas
++ ./translator-fond/translate.py /tmp/tmpd3qahmpx/domain_compiled.pddl /tmp/tmpd3qahmpx/problem_compiled.pddl
++ java -Xmx16g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner -search aostar ./output.sas -heuristic hmax -exportDot /tmp/tmpd3qahmpx/policy.dot -dumpPlan
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.resize(HashMap.java:705)
+	at java.base/java.util.HashMap.putVal(HashMap.java:664)
+	at java.base/java.util.HashMap.put(HashMap.java:613)
+	at java.base/java.util.HashSet.add(HashSet.java:221)
+	at mynd.heuristic.FFHeuristic.explore(FFHeuristic.java:279)
+	at mynd.heuristic.FFHeuristic.getRPGHeuristic(FFHeuristic.java:336)
+	at mynd.heuristic.FFHeuristic.getHeuristic(FFHeuristic.java:369)
+	at mynd.heuristic.HMaxHeuristic.getHeuristic(HMaxHeuristic.java:18)
+	at mynd.search.AOStarNode.<init>(AOStarNode.java:62)
+	at mynd.search.AOStarSearch.lookupAndInsert(AOStarSearch.java:371)
+	at mynd.search.AOStarSearch.expand(AOStarSearch.java:290)
+	at mynd.search.AOStarSearch.doIteration(AOStarSearch.java:209)
+	at mynd.search.AOStarSearch.run(AOStarSearch.java:773)
+	at mynd.MyNDPlanner.runProblemWithoutStats(MyNDPlanner.java:387)
+	at mynd.MyNDPlanner.runProblem(MyNDPlanner.java:244)
+	at mynd.MyNDPlanner.main(MyNDPlanner.java:114)

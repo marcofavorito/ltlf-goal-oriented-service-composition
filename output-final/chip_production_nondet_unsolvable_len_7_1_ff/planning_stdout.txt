@@ -1,0 +1,132 @@
+Parsing...
+Parsing: [0.010s CPU, 0.009s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 314 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+218 relevant atoms
+0 auxiliary atoms
+218 final queue length
+283 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.006s wall-clock]
+Computing fact groups...
+Finding invariants...
+174 initial candidates
+Finding invariants: [31.520s CPU, 31.516s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+97 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [31.520s CPU, 31.517s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_1()
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_49()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_51()
+not in strips_to_sas, left out: Atom q_52()
+not in strips_to_sas, left out: Atom q_53()
+not in strips_to_sas, left out: Atom q_54()
+not in strips_to_sas, left out: Atom q_55()
+not in strips_to_sas, left out: Atom q_56()
+not in strips_to_sas, left out: Atom q_57()
+not in strips_to_sas, left out: Atom q_58()
+not in strips_to_sas, left out: Atom q_59()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_60()
+not in strips_to_sas, left out: Atom q_61()
+not in strips_to_sas, left out: Atom q_62()
+not in strips_to_sas, left out: Atom q_63()
+not in strips_to_sas, left out: Atom q_64()
+not in strips_to_sas, left out: Atom q_65()
+not in strips_to_sas, left out: Atom q_66()
+not in strips_to_sas, left out: Atom q_67()
+not in strips_to_sas, left out: Atom q_68()
+not in strips_to_sas, left out: Atom q_69()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_70()
+not in strips_to_sas, left out: Atom q_71()
+not in strips_to_sas, left out: Atom q_72()
+not in strips_to_sas, left out: Atom q_74()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.003s wall-clock]
+136 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+2 operators removed
+16 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.001s wall-clock]
+Translator variables: 92
+Translator derived variables: 0
+Translator facts: 186
+Translator goal facts: 2
+Translator mutex groups: 67
+Translator total mutex groups size: 135
+Translator operators: 92
+Translator axioms: 0
+Translator task size: 1248
+Translator peak memory: 120872 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [31.540s CPU, 31.539s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist does not have a winning strategy.
+INITIAL IS DISPROVEN!
+
+Result: No strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.009 seconds.
+Time needed for search:                             0.75 seconds.
+Time needed:                                        0.759 seconds.
+Total Garbage Collections: 8
+Total Garbage Collection Time: 0 seconds.
+

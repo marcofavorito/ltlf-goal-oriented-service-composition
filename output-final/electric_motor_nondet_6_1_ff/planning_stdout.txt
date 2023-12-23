@@ -1,0 +1,79 @@
+Parsing...
+Parsing: [0.010s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 181 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+149 relevant atoms
+0 auxiliary atoms
+149 final queue length
+208 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+80 initial candidates
+Finding invariants: [11.080s CPU, 11.076s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+56 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [11.080s CPU, 11.078s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.003s wall-clock]
+163 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+4 operators removed
+30 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.001s wall-clock]
+Translator variables: 57
+Translator derived variables: 0
+Translator facts: 116
+Translator goal facts: 7
+Translator mutex groups: 191
+Translator total mutex groups size: 401
+Translator operators: 52
+Translator axioms: 0
+Translator task size: 1164
+Translator peak memory: 120732 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [11.100s CPU, 11.093s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.009 seconds.
+Time needed for search:                             44.554 seconds.
+Time needed:                                        44.563 seconds.
+Total Garbage Collections: 23
+Total Garbage Collection Time: 0 seconds.
+
+Out of 544188 nodes, 34576 are proven
+Number of node expansions: 136193
+Policy entries: 175
+Number of sensing applications in policy: 0
+
+60 (assemble_motor) (build_inverter) (build_rotor) (build_stator) (current_state_0 s0_rotor_builder_0) (current_state_0 s0_rotor_builder_broken) (current_state_1 s1_stator_builder_0) (current_state_1 s1_stator_builder_broken) (current_state_2 s2_inverter_builder_0) (current_state_2 s2_inverter_builder_broken) (current_state_3 s3_motor_assembler_0) (current_state_3 s3_motor_assembler_broken) (current_state_4 s4_mechanical_engineer_1_0) (current_state_4 s4_mechanical_engineer_1_broken) (current_state_5 s5_mechanical_engineer_2_0) (current_state_5 s5_mechanical_engineer_2_broken) (electric_test) (f_copy) (f_sync) (f_world) (f_goal) (q_10s) (q_11s) (q_12s) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22) (q_22s) (q_23) (q_23s) (q_24) (q_24s) (q_25) (q_25s) (q_26) (q_26s) (q_27) (q_27s) (q_2s) (q_3s) (q_4s) (q_5s) (q_6s) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (repair) (static_test) 
+%%
+45 (o_copy) (o_sync_q_14s) (o_sync_q_10s) (o_sync_q_6s) (o_world) (build_inverter_2_inverter_builder_0) (o_sync_q_15s) (o_sync_q_20s) (o_sync_q_19s) (o_sync_q_18s) (o_sync_q_24s_2) (o_sync_q_17s) (o_sync_q_16s) (o_sync_q_22s_1) (o_sync_q_23s_2) (o_sync_q_25s_2) (o_sync_q_12s) (o_sync_q_26s_2) (o_sync_q_8s_2) (o_sync_q_13s) (o_sync_q_9s_2) (o_sync_q_11s) (o_sync_q_27s) (o_sync_q_2s) (repair_2_inverter_builder_broken) (build_stator_0_rotor_builder_0) (o_sync_q_24s_1) (o_sync_q_4s) (repair_0_rotor_builder_broken) (build_rotor_1_stator_builder_0) (o_sync_q_23s_1) (o_sync_q_3s) (repair_1_stator_builder_broken) (assemble_motor_3_motor_assembler_0) (o_sync_q_25s_1) (o_sync_q_26s_1) (o_sync_q_8s_1) (o_sync_q_1s) (repair_3_motor_assembler_broken) (electric_test_4_mechanical_engineer_1_0) (o_sync_q_9s_1) (o_sync_q_21s_1) (o_sync_q_5s) (repair_4_mechanical_engineer_1_broken) (o_goal) 
+%%
+policy 175 8 4 6 8 10 12 14 17 25 0 8 4 6 8 10 12 14 18 26 1 9 4 6 8 10 12 14 18 21 52 2 10 4 6 8 10 12 14 18 27 46 52 3 9 4 6 8 10 12 14 18 27 46 4 9 4 6 8 10 12 14 19 27 46 5 10 1 4 6 9 10 12 14 17 27 46 0 10 1 4 6 8 10 12 14 17 27 46 0 10 1 4 6 9 10 12 14 18 28 47 6 10 1 4 6 8 10 12 14 18 28 47 6 11 1 4 6 9 10 12 14 18 34 47 55 7 11 1 4 6 8 10 12 14 18 34 47 55 7 12 1 4 6 9 10 12 14 18 32 39 47 55 8 12 1 4 6 8 10 12 14 18 32 39 47 55 8 13 1 4 6 9 10 12 14 18 31 39 41 47 55 9 13 1 4 6 8 10 12 14 18 31 39 41 47 55 10 14 1 4 6 9 10 12 14 18 30 37 39 41 47 55 11 15 1 4 6 8 10 12 14 18 22 31 39 40 46 47 55 9 15 1 4 6 9 10 12 14 18 29 37 39 41 43 47 55 12 16 1 4 6 8 10 12 14 18 22 30 37 39 40 46 47 55 11 16 1 4 6 9 10 12 14 18 37 39 41 43 45 47 55 57 13 17 1 4 6 8 10 12 14 18 22 29 37 39 40 43 46 47 55 12 16 1 4 6 9 10 12 14 18 39 41 43 45 47 48 55 57 14 18 1 4 6 8 10 12 14 18 22 37 39 40 43 45 46 47 55 57 15 18 1 4 6 9 10 12 14 18 22 38 41 43 45 46 47 48 55 57 15 19 1 4 6 8 10 12 14 18 22 23 37 39 40 42 45 46 47 55 57 16 19 1 4 6 9 10 12 14 18 22 23 38 41 42 45 46 47 48 55 57 17 18 1 4 6 8 10 12 14 18 22 37 39 40 42 45 46 47 55 57 13 20 1 4 6 9 10 12 14 18 22 23 24 38 41 42 44 46 47 48 55 57 18 18 1 4 6 8 10 12 14 18 22 39 40 42 45 46 47 48 55 57 17 20 1 4 6 9 10 12 14 18 22 23 24 38 41 42 44 46 47 48 54 57 10 19 1 4 6 8 10 12 14 18 22 24 39 40 42 44 46 47 48 55 57 19 20 1 4 6 9 10 12 14 18 22 23 24 38 40 42 44 46 47 48 54 57 20 18 1 4 6 8 10 12 14 18 22 39 40 42 44 46 47 48 55 57 14 20 1 4 6 9 10 12 14 18 22 23 24 38 40 42 44 46 47 48 54 56 21 18 1 4 6 8 10 12 14 18 22 38 40 42 44 46 47 48 55 57 18 19 1 4 6 9 10 12 14 18 23 24 38 40 42 44 46 47 48 54 56 16 18 1 4 6 8 10 12 14 18 22 38 40 42 44 46 47 48 54 57 20 18 1 4 6 9 10 12 14 18 24 38 40 42 44 46 47 48 54 56 19 18 1 4 6 8 10 12 14 18 22 38 40 42 44 46 47 48 54 56 21 17 1 4 6 9 10 12 14 18 38 40 42 44 46 47 48 54 56 22 17 1 4 6 8 10 12 14 18 38 40 42 44 46 47 48 54 56 22 16 1 4 6 9 10 12 14 18 38 40 42 44 46 48 54 56 23 16 1 4 6 8 10 12 14 18 38 40 42 44 46 48 54 56 23 15 1 4 6 9 10 12 14 18 38 40 42 44 46 54 56 4 15 1 4 6 8 10 12 14 18 38 40 42 44 46 54 56 4 15 1 4 6 9 10 12 14 19 38 40 42 44 46 54 56 24 15 1 4 6 8 10 12 14 19 38 40 42 44 46 54 56 25 15 4 6 8 10 12 14 17 38 40 42 44 46 54 56 58 0 15 3 5 6 8 10 12 14 17 38 40 42 44 46 54 56 0 15 3 4 6 8 10 12 14 17 38 40 42 44 46 54 56 0 15 4 6 8 10 12 14 18 39 41 43 45 47 55 57 58 10 15 3 5 6 8 10 12 14 18 39 41 43 45 47 55 57 14 15 3 4 6 8 10 12 14 18 39 41 43 45 47 55 57 17 17 4 6 8 10 12 14 18 22 39 40 43 45 46 47 55 57 58 15 17 3 5 6 8 10 12 14 18 22 38 41 43 45 46 47 55 57 22 17 3 4 6 8 10 12 14 18 24 39 41 43 44 46 47 55 57 19 18 4 6 8 10 12 14 18 22 23 39 40 42 45 46 47 55 57 58 18 16 3 5 6 8 10 12 14 18 22 38 41 43 45 46 55 57 21 16 3 4 6 8 10 12 14 18 39 41 43 44 46 47 55 57 14 18 4 6 8 10 12 14 18 22 23 39 40 42 45 46 47 54 57 58 17 15 3 5 6 8 10 12 14 18 38 41 43 45 46 55 57 26 17 3 4 6 8 10 12 14 18 22 38 41 43 44 46 47 55 57 22 19 4 6 8 10 12 14 18 22 23 24 39 40 42 44 46 47 54 57 58 16 15 3 5 6 8 10 12 14 18 38 43 45 46 50 55 57 17 16 3 4 6 8 10 12 14 18 22 38 41 43 44 46 55 57 21 18 4 6 8 10 12 14 18 22 24 39 40 42 44 46 47 54 57 58 19 16 3 5 6 8 10 12 14 18 24 38 43 44 46 50 55 57 27 15 3 4 6 8 10 12 14 18 38 41 43 44 46 55 57 15 17 4 6 8 10 12 14 18 22 39 40 42 44 46 47 54 57 58 14 15 3 5 6 8 10 12 14 18 24 38 43 44 46 55 57 19 16 3 4 6 8 10 12 14 18 23 38 41 42 44 46 55 57 16 17 4 6 8 10 12 14 18 22 38 40 42 44 46 47 54 57 58 21 14 3 5 6 8 10 12 14 18 38 43 44 46 55 57 15 15 3 4 6 8 10 12 14 18 38 41 42 44 46 55 57 26 16 4 6 8 10 12 14 18 38 40 42 44 46 47 54 57 58 22 15 3 5 6 8 10 12 14 18 23 38 42 44 46 55 57 16 15 3 4 6 8 10 12 14 18 38 42 44 46 50 55 57 27 15 4 6 8 10 12 14 18 38 40 42 44 46 54 57 58 20 14 3 5 6 8 10 12 14 18 38 42 44 46 55 57 20 14 3 4 6 8 10 12 14 18 38 42 44 46 55 57 20 15 4 6 8 10 12 14 18 38 40 42 44 46 54 56 58 4 14 3 5 6 8 10 12 14 18 38 42 44 46 55 56 18 14 3 4 6 8 10 12 14 18 38 42 44 46 55 56 18 15 4 6 8 10 12 14 19 38 40 42 44 46 54 56 58 25 14 3 5 6 8 10 12 14 18 38 42 44 46 54 56 4 14 3 4 6 8 10 12 14 18 38 42 44 46 54 56 4 14 3 5 6 8 10 12 14 19 38 42 44 46 54 56 28 14 3 4 6 8 10 12 14 19 38 42 44 46 54 56 29 14 4 6 8 10 12 14 17 38 42 44 46 54 56 58 0 14 2 4 7 8 10 12 14 17 38 42 44 46 54 56 0 14 2 4 6 8 10 12 14 17 38 42 44 46 54 56 0 14 4 6 8 10 12 14 18 39 43 45 47 55 57 58 22 14 2 4 7 8 10 12 14 18 39 43 45 47 55 57 22 14 2 4 6 8 10 12 14 18 39 43 45 47 55 57 22 13 4 6 8 10 12 14 18 39 43 45 55 57 58 15 13 2 4 7 8 10 12 14 18 39 43 45 55 57 30 13 2 4 6 8 10 12 14 18 39 43 45 55 57 20 15 4 6 8 10 12 14 18 23 39 42 45 46 55 57 58 16 13 2 4 7 8 10 12 14 18 43 45 49 55 57 15 14 2 4 6 8 10 12 14 18 39 43 45 46 55 56 30 14 4 6 8 10 12 14 18 39 42 45 46 55 57 58 17 15 2 4 7 8 10 12 14 18 23 42 45 46 49 55 57 31 14 2 4 6 8 10 12 14 18 43 45 46 49 55 56 31 15 4 6 8 10 12 14 18 24 39 42 44 46 55 57 58 19 14 2 4 7 8 10 12 14 18 23 42 45 46 55 57 16 13 2 4 6 8 10 12 14 18 43 45 46 55 56 17 14 4 6 8 10 12 14 18 39 42 44 46 55 57 58 14 13 2 4 7 8 10 12 14 18 42 45 46 55 57 18 14 2 4 6 8 10 12 14 18 24 43 44 46 55 56 19 15 4 6 8 10 12 14 18 22 38 42 44 46 55 57 58 21 13 2 4 7 8 10 12 14 18 42 45 46 54 57 17 13 2 4 6 8 10 12 14 18 43 44 46 55 56 18 14 4 6 8 10 12 14 18 38 42 44 46 55 57 58 20 14 2 4 7 8 10 12 14 18 24 42 44 46 54 57 19 13 2 4 6 8 10 12 14 18 43 44 46 54 56 15 14 4 6 8 10 12 14 18 38 42 44 46 55 56 58 18 13 2 4 7 8 10 12 14 18 42 44 46 54 57 20 14 2 4 6 8 10 12 14 18 23 42 44 46 54 56 16 14 4 6 8 10 12 14 18 38 42 44 46 54 56 58 4 13 2 4 7 8 10 12 14 18 42 44 46 54 56 4 13 2 4 6 8 10 12 14 18 42 44 46 54 56 4 14 4 6 8 10 12 14 19 38 42 44 46 54 56 58 29 13 2 4 7 8 10 12 14 19 42 44 46 54 56 32 13 2 4 6 8 10 12 14 19 42 44 46 54 56 33 13 4 6 8 10 12 14 17 42 44 46 54 56 58 0 13 0 4 6 8 11 12 14 17 42 44 46 54 56 0 13 0 4 6 8 10 12 14 17 42 44 46 54 56 0 13 4 6 8 10 12 14 18 43 45 47 55 57 58 22 13 0 4 6 8 11 12 14 18 43 45 47 55 57 22 13 0 4 6 8 10 12 14 18 43 45 47 55 57 22 12 4 6 8 10 12 14 18 43 45 55 57 58 15 12 0 4 6 8 11 12 14 18 43 45 55 57 34 12 0 4 6 8 10 12 14 18 43 45 55 57 34 14 4 6 8 10 12 14 18 23 42 45 46 55 57 58 16 12 0 4 6 8 11 12 14 18 33 45 55 57 35 12 0 4 6 8 10 12 14 18 33 45 55 57 35 13 4 6 8 10 12 14 18 42 45 46 55 57 58 17 11 0 4 6 8 11 12 14 18 33 55 57 36 11 0 4 6 8 10 12 14 18 33 55 57 36 14 4 6 8 10 12 14 18 24 42 44 46 55 57 58 19 10 0 4 6 8 11 12 14 18 33 57 37 10 0 4 6 8 10 12 14 18 33 57 37 13 4 6 8 10 12 14 18 42 44 46 55 57 58 20 9 0 4 6 8 11 12 14 18 57 20 9 0 4 6 8 10 12 14 18 57 20 13 4 6 8 10 12 14 18 42 44 46 55 56 58 18 10 0 4 6 8 11 12 14 18 46 56 4 10 0 4 6 8 10 12 14 18 46 56 4 13 4 6 8 10 12 14 18 42 44 46 54 56 58 4 10 0 4 6 8 11 12 14 19 46 56 38 10 0 4 6 8 10 12 14 19 46 56 39 13 4 6 8 10 12 14 19 42 44 46 54 56 58 33 10 4 6 8 10 12 14 17 46 56 58 0 10 4 6 8 10 13 14 16 17 46 56 0 10 4 6 8 10 12 14 16 17 46 56 0 10 4 6 8 10 12 14 18 47 57 58 22 10 4 6 8 10 13 14 16 18 47 57 22 10 4 6 8 10 12 14 16 18 47 57 22 9 4 6 8 10 12 14 18 57 58 20 9 4 6 8 10 13 14 16 18 57 40 9 4 6 8 10 12 14 16 18 57 40 10 4 6 8 10 12 14 18 46 56 58 4 9 4 6 8 10 13 14 16 18 35 41 9 4 6 8 10 12 14 16 18 35 41 10 4 6 8 10 12 14 19 46 56 58 39 9 4 6 8 10 13 14 16 18 51 42 9 4 6 8 10 12 14 16 18 51 42 8 4 6 8 10 13 14 16 18 4 8 4 6 8 10 12 14 16 18 4 8 4 6 8 10 13 14 16 19 43 8 4 6 8 10 12 14 16 19 44 8 4 6 8 10 12 14 17 58 0 8 4 6 8 10 12 14 18 58 4 8 4 6 8 10 12 14 19 58 44 
+Dot file: /tmp/tmpzu0d_k2i/policy.dot

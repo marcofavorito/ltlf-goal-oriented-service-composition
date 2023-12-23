@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmpiydk7mks/domain.pddl /tmp/tmpiydk7mks/problem.pddl 4
+++ realpath /tmp/tmpiydk7mks/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpiydk7mks/domain.pddl
+++ realpath /tmp/tmpiydk7mks/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpiydk7mks/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmpiydk7mks/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpiydk7mks/problem_compiled.pddl
+++ dirname /tmp/tmpiydk7mks/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpiydk7mks/services_condition.txt
+++ cat /tmp/tmpiydk7mks/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpiydk7mks/domain.pddl /tmp/tmpiydk7mks/problem.pddl dp 4
+% 38,403,423 inferences, 2.205 CPU in 2.205 seconds (100% CPU, 17419686 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpiydk7mks/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpiydk7mks/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpiydk7mks/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0) /g' /tmp/tmpiydk7mks/problem_compiled.pddl

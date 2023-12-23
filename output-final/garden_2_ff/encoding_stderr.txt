@@ -1,0 +1,25 @@
++ TB_encode /tmp/tmpgod71_mw/domain.pddl /tmp/tmpgod71_mw/problem.pddl 2
+++ realpath /tmp/tmpgod71_mw/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpgod71_mw/domain.pddl
+++ realpath /tmp/tmpgod71_mw/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpgod71_mw/problem.pddl
++ local _ACTION_MODE=2
++ _COMPILED_DOMAIN_FILE=/tmp/tmpgod71_mw/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpgod71_mw/problem_compiled.pddl
+++ dirname /tmp/tmpgod71_mw/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpgod71_mw/services_condition.txt
+++ cat /tmp/tmpgod71_mw/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_a0)  (current_state_1 s1_b0)  (current_state_2 s2_c0) '
++ [[ -z 2 ]]
++ [[ 2 != \1 ]]
++ [[ 2 != \2 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpgod71_mw/domain.pddl /tmp/tmpgod71_mw/problem.pddl dp 2
+% 548,025 inferences, 0.069 CPU in 0.069 seconds (100% CPU, 7989952 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpgod71_mw/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpgod71_mw/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpgod71_mw/domain_compiled.pddl
++ [[ 2 == \1 ]]
++ [[ 2 == \2 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_a0)  (current_state_1 s1_b0)  (current_state_2 s2_c0) ))/g' /tmp/tmpgod71_mw/problem_compiled.pddl

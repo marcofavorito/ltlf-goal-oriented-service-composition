@@ -1,0 +1,25 @@
++ TB_encode /tmp/tmpb6gmyipd/domain.pddl /tmp/tmpb6gmyipd/problem.pddl 2
+++ realpath /tmp/tmpb6gmyipd/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpb6gmyipd/domain.pddl
+++ realpath /tmp/tmpb6gmyipd/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpb6gmyipd/problem.pddl
++ local _ACTION_MODE=2
++ _COMPILED_DOMAIN_FILE=/tmp/tmpb6gmyipd/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpb6gmyipd/problem_compiled.pddl
+++ dirname /tmp/tmpb6gmyipd/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpb6gmyipd/services_condition.txt
+++ cat /tmp/tmpb6gmyipd/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0)  (current_state_10 s10_handler_testing_0)  (current_state_11 s11_handler_packaging_0) '
++ [[ -z 2 ]]
++ [[ 2 != \1 ]]
++ [[ 2 != \2 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpb6gmyipd/domain.pddl /tmp/tmpb6gmyipd/problem.pddl dp 2
+% 4,828,846 inferences, 1.570 CPU in 1.570 seconds (100% CPU, 3075216 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpb6gmyipd/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpb6gmyipd/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpb6gmyipd/domain_compiled.pddl
++ [[ 2 == \1 ]]
++ [[ 2 == \2 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0)  (current_state_10 s10_handler_testing_0)  (current_state_11 s11_handler_packaging_0) ))/g' /tmp/tmpb6gmyipd/problem_compiled.pddl

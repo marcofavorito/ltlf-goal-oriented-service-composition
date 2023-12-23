@@ -1,0 +1,79 @@
+Parsing...
+Parsing: [0.010s CPU, 0.004s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 146 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+124 relevant atoms
+0 auxiliary atoms
+124 final queue length
+158 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+80 initial candidates
+Finding invariants: [10.360s CPU, 10.353s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+51 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [10.360s CPU, 10.356s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.002s wall-clock]
+93 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+4 operators removed
+40 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 47
+Translator derived variables: 0
+Translator facts: 96
+Translator goal facts: 2
+Translator mutex groups: 191
+Translator total mutex groups size: 401
+Translator operators: 47
+Translator axioms: 0
+Translator task size: 989
+Translator peak memory: 120736 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [10.370s CPU, 10.369s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.008 seconds.
+Time needed for search:                             3.651 seconds.
+Time needed:                                        3.659 seconds.
+Total Garbage Collections: 12
+Total Garbage Collection Time: 0 seconds.
+
+Out of 117575 nodes, 8890 are proven
+Number of node expansions: 27876
+Policy entries: 98
+Number of sensing applications in policy: 0
+
+50 (assemble_motor) (build_inverter) (build_rotor) (build_stator) (current_state_0 s0_rotor_builder_0) (current_state_0 s0_rotor_builder_broken) (electric_test) (f_copy) (f_sync) (f_world) (f_goal) (q_10s) (q_11s) (q_12s) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22) (q_22s) (q_23) (q_23s) (q_24) (q_24s) (q_25) (q_25s) (q_26) (q_26s) (q_27) (q_27s) (q_2s) (q_3s) (q_4s) (q_5s) (q_6s) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (repair) (static_test) 
+%%
+44 (o_copy) (o_sync_q_14s) (o_sync_q_10s) (o_sync_q_6s) (o_world) (build_rotor_1_stator_builder_0) (o_sync_q_15s) (o_sync_q_20s) (o_sync_q_19s) (o_sync_q_18s) (o_sync_q_17s) (o_sync_q_16s) (o_sync_q_22s_2) (o_sync_q_25s_2) (o_sync_q_12s) (o_sync_q_23s_1) (o_sync_q_26s_2) (o_sync_q_24s_2) (o_sync_q_8s_2) (o_sync_q_11s) (o_sync_q_13s) (o_sync_q_27s) (o_sync_q_3s) (o_sync_q_9s_2) (build_inverter_2_inverter_builder_0) (o_sync_q_22s_1) (o_sync_q_2s) (build_stator_0_rotor_builder_0) (o_sync_q_24s_1) (o_sync_q_4s) (assemble_motor_3_motor_assembler_0) (o_sync_q_25s_1) (o_sync_q_26s_1) (o_sync_q_8s_1) (o_sync_q_1s) (static_test_5_mechanical_engineer_2_0) (electric_test_4_mechanical_engineer_1_0) (o_sync_q_9s_1) (o_sync_q_21s_2) (o_sync_q_21s_1) (o_sync_q_7s) (o_sync_q_5s) (o_goal) (repair_0_rotor_builder_broken) 
+%%
+policy 98 3 4 7 15 0 3 4 8 16 1 4 4 8 11 42 2 5 4 8 17 36 42 3 4 4 8 17 36 4 4 4 9 17 36 5 5 2 4 7 17 36 0 5 2 4 8 18 37 6 6 2 4 8 24 37 45 7 7 2 4 8 22 29 37 45 8 8 2 4 8 21 29 31 37 45 9 9 2 4 8 20 27 29 31 37 45 10 10 2 4 8 19 27 29 31 33 37 45 11 11 2 4 8 27 29 31 33 35 37 45 47 12 13 2 4 8 12 26 29 31 33 35 36 37 45 47 13 14 2 4 8 12 13 26 29 31 32 35 36 37 45 47 14 13 2 4 8 12 26 29 31 32 35 36 37 45 47 15 13 2 4 8 12 26 31 32 35 36 37 39 45 47 16 14 2 4 8 12 14 26 31 32 34 36 37 39 45 47 17 14 2 4 8 12 14 26 30 32 34 36 37 39 45 47 18 14 2 4 8 12 14 26 30 32 34 36 37 39 44 47 19 13 2 4 8 14 26 30 32 34 36 37 39 44 47 20 12 2 4 8 26 30 32 34 36 37 39 44 47 21 11 2 4 8 26 30 32 34 36 39 44 47 22 10 2 4 8 26 30 32 34 36 44 47 23 10 2 4 8 26 30 32 34 36 44 46 4 10 2 4 9 26 30 32 34 36 44 46 24 10 1 4 7 26 30 32 34 36 44 46 0 10 1 4 8 27 31 33 35 37 45 47 25 10 1 4 8 31 33 35 37 38 45 47 26 9 1 4 8 31 33 35 37 45 47 17 11 1 4 8 12 30 33 35 36 37 45 47 19 10 1 4 8 30 33 35 36 37 45 47 13 11 1 4 8 13 30 32 35 36 37 45 47 14 10 1 4 8 30 32 35 36 37 45 47 21 9 1 4 8 30 32 35 36 45 47 18 9 1 4 8 30 32 35 36 44 47 16 10 1 4 8 14 30 32 34 36 44 47 20 9 1 4 8 30 32 34 36 44 47 23 9 1 4 8 30 32 34 36 44 46 4 9 1 4 9 30 32 34 36 44 46 27 9 3 5 7 30 32 34 36 44 46 0 9 3 4 7 30 32 34 36 44 46 0 9 3 5 8 31 33 35 37 45 47 21 9 3 4 8 31 33 35 37 45 47 21 8 3 5 8 31 33 35 45 47 28 8 3 4 8 31 33 35 45 47 28 8 3 5 8 33 35 40 45 47 29 8 3 4 8 33 35 40 45 47 29 7 3 5 8 33 35 45 47 18 7 3 4 8 33 35 45 47 13 8 3 5 8 33 35 36 44 47 23 9 3 4 8 13 32 35 36 45 47 14 8 3 5 8 33 35 36 44 46 13 8 3 4 8 32 35 36 45 47 16 9 3 5 8 13 32 35 36 44 46 14 9 3 4 8 14 32 34 36 45 47 20 8 3 5 8 32 35 36 44 46 16 8 3 4 8 32 34 36 45 47 23 9 3 5 8 14 32 34 36 44 46 20 8 3 4 8 32 34 36 45 46 18 8 3 5 8 32 34 36 44 46 4 8 3 4 8 32 34 36 44 46 4 8 3 5 9 32 34 36 44 46 30 8 3 4 9 32 34 36 44 46 30 8 0 5 7 32 34 36 44 46 0 8 0 4 7 32 34 36 44 46 0 8 0 5 8 33 35 37 45 47 21 8 0 4 8 33 35 37 45 47 21 7 0 5 8 33 35 45 47 31 7 0 4 8 33 35 45 47 31 7 0 5 8 23 35 45 47 32 7 0 4 8 23 35 45 47 32 6 0 5 8 23 45 47 33 6 0 4 8 23 45 47 33 5 0 5 8 23 47 34 5 0 4 8 23 47 34 4 0 5 8 47 23 4 0 4 8 47 23 5 0 5 8 36 46 4 5 0 4 8 36 46 4 5 0 5 9 36 46 35 5 0 4 9 36 46 36 5 5 7 36 46 49 0 5 4 6 7 36 46 0 5 5 8 37 47 49 21 5 4 6 8 37 47 21 4 5 8 47 49 37 4 4 6 8 47 37 4 5 8 25 49 38 4 4 6 8 25 39 4 5 8 43 49 40 4 4 6 8 41 41 3 5 8 49 4 3 4 6 8 4 3 5 9 49 42 3 4 6 9 42 4 5 9 10 49 43 
+Dot file: /tmp/tmpw0ae7bco/policy.dot

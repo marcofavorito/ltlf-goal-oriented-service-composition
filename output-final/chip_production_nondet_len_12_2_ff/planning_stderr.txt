@@ -1,0 +1,5 @@
++ cd ./planners/mynd
++ rm -f ./output.sas
++ ./translator-fond/translate.py /tmp/tmpb6gmyipd/domain_compiled.pddl /tmp/tmpb6gmyipd/problem_compiled.pddl
++ java -Xmx16g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner -search aostar ./output.sas -heuristic ff -exportDot /tmp/tmpb6gmyipd/policy.dot -dumpPlan
+./scripts/run_mynd.sh: line 9: 1021969 Killed                  java -Xmx16g -cp target/mynd-1.0-SNAPSHOT.jar mynd.MyNDPlanner -search aostar ./output.sas ${@:3}

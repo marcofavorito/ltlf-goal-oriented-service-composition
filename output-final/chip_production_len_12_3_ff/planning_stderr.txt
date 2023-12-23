@@ -1,0 +1,5 @@
++ cd ./planners/mynd
++ rm -f ./output.sas
++ ./translator-fond/translate.py /tmp/tmp652p_0sj/domain_compiled.pddl /tmp/tmp652p_0sj/problem_compiled.pddl
+Error: Could not read file: /tmp/tmp652p_0sj/domain_compiled.pddl
+Reason: [Errno 2] No such file or directory: '/tmp/tmp652p_0sj/domain_compiled.pddl'.

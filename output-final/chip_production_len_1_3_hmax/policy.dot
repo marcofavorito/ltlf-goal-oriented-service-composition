@@ -1,0 +1,33 @@
+digraph G {
+0 [label="{ (not (cleaning)), (f_copy), (q_5), (not (q_1d)), (not (q_1s)), (not (q_2d)), (not (q_2s)), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (not (q_4s)), (not (q_6)), (not (q_6s)) }"];
+1 [label="{ (not (cleaning)), (f_sync), (q_5s), (not (q_1d)), (not (q_1s)), (not (q_2d)), (not (q_2s)), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (not (q_4s)), (not (q_6)), (not (q_6s)) }"];
+2 [label="{ (not (cleaning)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (not (q_2d)), (q_2s), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (q_4s), (not (q_6)), (not (q_6s)) }"];
+3 [label="{ (not (cleaning)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (not (q_3d)), (not (q_3s)), (not (q_4d)), (q_4s), (not (q_6)), (not (q_6s)) }"];
+4 [label="{ (not (cleaning)), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)) }"];
+5 [label="{ (not (cleaning)), (f_world), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)) }"];
+6 [label="{ (cleaning), (f_copy), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (q_3), (not (q_3d)), (not (q_3s)), (q_4d), (not (q_4s)), (q_6), (not (q_6s)) }"];
+7 [label="{ (cleaning), (f_sync), (q_5d), (not (q_1d)), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (not (q_3d)), (q_3s), (q_4d), (not (q_4s)), (not (q_6)), (q_6s) }"];
+8 [label="{ (cleaning), (f_sync), (q_5d), (not (q_1d)), (q_1s), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s) }"];
+9 [label="{ (cleaning), (f_sync), (q_5d), (q_1d), (not (q_1s)), (q_2d), (not (q_2s)), (not (q_3)), (q_3d), (not (q_3s)), (q_4d), (not (q_4s)), (not (q_6)), (q_6s) }"];
+0 -> 1 [label="o_copy", color="#47B9E5", fontcolor="#47B9E5"];
+1 -> 2 [label="o_sync_q_5s", color="#2187A1", fontcolor="#2187A1"];
+2 -> 3 [label="o_sync_q_2s", color="#B55A18", fontcolor="#B55A18"];
+3 -> 4 [label="o_sync_q_4s", color="#18EA5C", fontcolor="#18EA5C"];
+4 -> 5 [label="o_world", color="#16DAB4", fontcolor="#16DAB4"];
+5 -> 6 [label="cleaning_0_handler_cleaning_0", color="#888011", fontcolor="#888011"];
+6 -> 7 [label="o_copy", color="#ED3C41", fontcolor="#ED3C41"];
+7 -> 8 [label="o_sync_q_3s_1", color="#62F07F", fontcolor="#62F07F"];
+8 -> 9 [label="o_sync_q_1s", color="#6E56DE", fontcolor="#6E56DE"];
+subgraph cluster_goal_9 {
+style=filled;
+color=palegreen;
+9;
+label="GOAL";
+}
+subgraph cluster_init {
+style=filled;
+color=lightblue;
+0;
+label="INIT";
+}
+}

@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmpib27bezu/domain.pddl /tmp/tmpib27bezu/problem.pddl 4
+++ realpath /tmp/tmpib27bezu/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpib27bezu/domain.pddl
+++ realpath /tmp/tmpib27bezu/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpib27bezu/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmpib27bezu/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpib27bezu/problem_compiled.pddl
+++ dirname /tmp/tmpib27bezu/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpib27bezu/services_condition.txt
+++ cat /tmp/tmpib27bezu/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpib27bezu/domain.pddl /tmp/tmpib27bezu/problem.pddl dp 4
+% 38,403,423 inferences, 4.474 CPU in 4.474 seconds (100% CPU, 8584351 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpib27bezu/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpib27bezu/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpib27bezu/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0) /g' /tmp/tmpib27bezu/problem_compiled.pddl

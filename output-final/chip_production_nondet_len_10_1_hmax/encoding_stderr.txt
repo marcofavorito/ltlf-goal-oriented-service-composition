@@ -1,0 +1,23 @@
++ TB_encode /tmp/tmpkqqogyad/domain.pddl /tmp/tmpkqqogyad/problem.pddl 1
+++ realpath /tmp/tmpkqqogyad/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpkqqogyad/domain.pddl
+++ realpath /tmp/tmpkqqogyad/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpkqqogyad/problem.pddl
++ local _ACTION_MODE=1
++ _COMPILED_DOMAIN_FILE=/tmp/tmpkqqogyad/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpkqqogyad/problem_compiled.pddl
+++ dirname /tmp/tmpkqqogyad/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpkqqogyad/services_condition.txt
+++ cat /tmp/tmpkqqogyad/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) '
++ [[ -z 1 ]]
++ [[ 1 != \1 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpkqqogyad/domain.pddl /tmp/tmpkqqogyad/problem.pddl dp 1
+% 1,531,508 inferences, 0.347 CPU in 0.347 seconds (100% CPU, 4416331 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpkqqogyad/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpkqqogyad/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpkqqogyad/domain_compiled.pddl
++ [[ 1 == \1 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) ))/g' /tmp/tmpkqqogyad/problem_compiled.pddl

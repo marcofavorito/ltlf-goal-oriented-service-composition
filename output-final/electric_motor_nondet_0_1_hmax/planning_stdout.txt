@@ -1,0 +1,98 @@
+Parsing...
+Parsing: [0.000s CPU, 0.004s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 139 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+118 relevant atoms
+0 auxiliary atoms
+118 final queue length
+148 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+79 initial candidates
+Finding invariants: [10.460s CPU, 10.456s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+49 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [10.460s CPU, 10.459s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+not in strips_to_sas, left out: Atom q_11()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.002s wall-clock]
+73 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+5 operators removed
+39 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 45
+Translator derived variables: 0
+Translator facts: 91
+Translator goal facts: 1
+Translator mutex groups: 191
+Translator total mutex groups size: 401
+Translator operators: 44
+Translator axioms: 0
+Translator task size: 905
+Translator peak memory: 120736 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [10.470s CPU, 10.471s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.007 seconds.
+Time needed for search:                             4.849 seconds.
+Time needed:                                        4.856 seconds.
+Total Garbage Collections: 13
+Total Garbage Collection Time: 0 seconds.
+
+Out of 118078 nodes, 14942 are proven
+Number of node expansions: 31083
+Policy entries: 69
+Number of sensing applications in policy: 0
+
+47 (assemble_motor) (build_inverter) (build_rotor) (build_stator) (electric_test) (f_copy) (f_sync) (f_world) (f_goal) (q_14s) (q_10s) (q_11s) (q_12s) (q_13s) (q_14) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22) (q_22s) (q_23) (q_23s) (q_24) (q_24s) (q_25) (q_25s) (q_26) (q_26s) (q_27) (q_27s) (q_2s) (q_3s) (q_4s) (q_5s) (q_6s) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (static_test) 
+%%
+40 (o_copy) (o_sync_q_14s) (o_sync_q_10s) (o_sync_q_6s) (o_world) (build_rotor_1_stator_builder_0) (o_sync_q_15s) (o_sync_q_20s) (o_sync_q_19s) (o_sync_q_18s) (o_sync_q_17s) (o_sync_q_16s) (o_sync_q_23s_1) (o_sync_q_25s_2) (o_sync_q_12s) (o_sync_q_26s_2) (o_sync_q_13s) (o_sync_q_27s) (o_sync_q_3s) (o_sync_q_8s_2) (o_sync_q_24s_2) (o_sync_q_22s_2) (o_sync_q_11s) (o_sync_q_9s_2) (build_stator_0_rotor_builder_0) (o_sync_q_24s_1) (o_sync_q_4s) (build_inverter_2_inverter_builder_0) (o_sync_q_22s_1) (o_sync_q_2s) (assemble_motor_3_motor_assembler_0) (o_sync_q_25s_1) (o_sync_q_26s_1) (o_sync_q_8s_1) (o_sync_q_1s) (electric_test_4_mechanical_engineer_1_0) (o_sync_q_9s_1) (o_sync_q_21s_1) (o_sync_q_5s) (o_goal) 
+%%
+policy 69 2 5 14 0 2 6 9 1 3 6 10 40 2 4 6 15 34 40 3 3 6 15 34 4 3 7 15 34 5 4 2 5 15 34 0 4 2 6 16 35 6 5 2 6 22 35 43 7 6 2 6 20 27 35 43 8 7 2 6 19 27 29 35 43 9 8 2 6 18 25 27 29 35 43 10 9 2 6 17 25 27 29 31 35 43 11 10 2 6 25 27 29 31 33 35 43 45 12 10 2 6 25 29 31 33 35 37 43 45 13 12 2 6 12 25 29 30 33 34 35 37 43 45 14 11 2 6 25 29 30 33 34 35 37 43 45 15 12 2 6 13 25 29 30 32 34 35 37 43 45 16 11 2 6 25 29 30 32 34 35 37 43 45 17 10 2 6 25 29 30 32 34 37 43 45 18 9 2 6 25 29 30 32 34 43 45 19 9 2 6 25 29 30 32 34 42 45 20 10 2 6 11 25 28 30 32 34 42 45 21 10 2 6 11 24 28 30 32 34 42 45 22 9 2 6 24 28 30 32 34 42 45 23 9 2 6 24 28 30 32 34 42 44 4 9 2 7 24 28 30 32 34 42 44 24 9 3 5 24 28 30 32 34 42 44 0 9 3 6 25 29 31 33 35 43 45 21 11 3 6 11 24 29 31 33 34 35 43 45 25 11 3 6 11 24 31 33 34 35 38 43 45 15 12 3 6 11 13 24 31 32 34 35 38 43 45 13 13 3 6 11 12 13 24 30 32 34 35 38 43 45 22 12 3 6 12 13 24 30 32 34 35 38 43 45 14 11 3 6 13 24 30 32 34 35 38 43 45 26 10 3 6 13 24 30 32 34 35 43 45 19 10 3 6 13 24 30 32 34 35 42 45 16 9 3 6 24 30 32 34 35 42 45 17 8 3 6 24 30 32 34 42 45 23 8 3 6 24 30 32 34 42 44 4 8 3 7 24 30 32 34 42 44 27 8 1 5 24 30 32 34 42 44 0 8 1 6 25 31 33 35 43 45 13 10 1 6 12 25 30 33 34 35 43 45 14 9 1 6 25 30 33 34 35 43 45 15 10 1 6 13 25 30 32 34 35 43 45 16 9 1 6 25 30 32 34 35 43 45 28 9 1 6 30 32 34 35 36 43 45 29 8 1 6 30 32 34 35 43 45 19 8 1 6 30 32 34 35 42 45 17 7 1 6 30 32 34 42 45 23 7 1 6 30 32 34 42 44 4 7 1 7 30 32 34 42 44 30 7 0 5 30 32 34 42 44 0 7 0 6 31 33 35 43 45 31 7 0 6 21 33 35 43 45 32 6 0 6 21 35 43 45 17 5 0 6 21 43 45 33 4 0 6 21 45 23 5 0 6 21 34 44 34 4 0 6 34 44 4 4 0 7 34 44 35 4 4 5 34 44 0 4 4 6 35 45 36 4 4 6 23 35 17 3 4 6 23 37 3 4 6 39 38 2 4 6 4 2 4 7 39 
+Dot file: /tmp/tmpzu1ign77/policy.dot

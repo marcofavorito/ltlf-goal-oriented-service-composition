@@ -1,0 +1,23 @@
++ TB_encode /tmp/tmpankoneln/domain.pddl /tmp/tmpankoneln/problem.pddl 1
+++ realpath /tmp/tmpankoneln/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpankoneln/domain.pddl
+++ realpath /tmp/tmpankoneln/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpankoneln/problem.pddl
++ local _ACTION_MODE=1
++ _COMPILED_DOMAIN_FILE=/tmp/tmpankoneln/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpankoneln/problem_compiled.pddl
+++ dirname /tmp/tmpankoneln/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpankoneln/services_condition.txt
+++ cat /tmp/tmpankoneln/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0) '
++ [[ -z 1 ]]
++ [[ 1 != \1 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpankoneln/domain.pddl /tmp/tmpankoneln/problem.pddl dp 1
+% 746,290 inferences, 0.114 CPU in 0.114 seconds (100% CPU, 6521114 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpankoneln/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpankoneln/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpankoneln/domain_compiled.pddl
++ [[ 1 == \1 ]]
++ sed -i 's/(:goal (f_goal))/(:goal (and (f_goal) (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0) ))/g' /tmp/tmpankoneln/problem_compiled.pddl

@@ -1,0 +1,68 @@
+Parsing...
+Parsing: [0.030s CPU, 0.036s wall-clock]
+Normalizing task... [0.000s CPU, 0.003s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.005s wall-clock]
+Preparing model... [0.010s CPU, 0.005s wall-clock]
+Generated 984 rules.
+Computing model... [0.000s CPU, 0.003s wall-clock]
+720 relevant atoms
+0 auxiliary atoms
+720 final queue length
+1033 total queue pushes
+Completing instantiation... [0.000s CPU, 0.005s wall-clock]
+Instantiating: [0.020s CPU, 0.021s wall-clock]
+Computing fact groups...
+Finding invariants...
+512 initial candidates
+Finding invariants: [32.050s CPU, 32.397s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+494 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [32.050s CPU, 32.399s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.011s wall-clock]
+769 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+22 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.003s wall-clock]
+Translator variables: 487
+Translator derived variables: 0
+Translator facts: 976
+Translator goal facts: 2
+Translator mutex groups: 2
+Translator total mutex groups size: 5
+Translator operators: 183
+Translator axioms: 0
+Translator task size: 4926
+Translator peak memory: 122900 KB
+Writing output... [0.000s CPU, 0.004s wall-clock]
+Done! [32.120s CPU, 32.479s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
+The protagonist does not have a winning strategy.
+INITIAL IS DISPROVEN!
+
+Result: No strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.017 seconds.
+Time needed for search:                             8.761 seconds.
+Time needed:                                        8.778 seconds.
+Total Garbage Collections: 20
+Total Garbage Collection Time: 0 seconds.
+

@@ -1,0 +1,51 @@
+digraph G {
+0 [label="{ (not (cleaning)), (f_copy), (not (f_goal)), (f_ok), (not (f_sync)), (q_1), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+1 [label="{ (not (cleaning)), (q_1t), (not (f_goal)), (f_ok), (f_sync), (q_1s), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+2 [label="{ (not (cleaning)), (q_2t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (q_2s), (not (q_3)), (not (q_3s)), (not (q_4)), (q_4s), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+3 [label="{ (not (cleaning)), (q_3t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (q_4s), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+4 [label="{ (not (cleaning)), (q_4t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (q_4s), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+5 [label="{ (not (cleaning)), (q_5t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+6 [label="{ (not (cleaning)), (q_6t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+7 [label="{ (not (cleaning)), (q_7t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+8 [label="{ (not (cleaning)), (f_world), (not (f_goal)), (f_ok), (not (f_sync)), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+9 [label="{ (cleaning), (f_copy), (not (f_goal)), (f_ok), (not (f_sync)), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (q_3), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (q_6), (not (q_6s)) }"];
+10 [label="{ (cleaning), (q_1t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (q_3s), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (q_6s) }"];
+11 [label="{ (cleaning), (q_2t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (q_3s), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (q_6s) }"];
+12 [label="{ (cleaning), (q_3t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (q_3s), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (q_6s) }"];
+13 [label="{ (cleaning), (q_4t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (q_5s), (not (q_6)), (q_6s) }"];
+14 [label="{ (cleaning), (q_5t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (q_5s), (not (q_6)), (q_6s) }"];
+15 [label="{ (cleaning), (q_6t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (q_6s) }"];
+16 [label="{ (cleaning), (q_7t), (not (f_goal)), (f_ok), (f_sync), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+17 [label="{ (cleaning), (f_world), (not (f_goal)), (f_ok), (not (f_sync)), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+18 [label="{ (cleaning), (f_world), (f_goal), (f_ok), (not (f_sync)), (not ((q_1))) (not ((q_1s))), (not (q_2)), (not (q_2s)), (not (q_3)), (not (q_3s)), (not (q_4)), (not (q_4s)), (not (q_5)), (not (q_5s)), (not (q_6)), (not (q_6s)) }"];
+0 -> 1 [label="o_copy", color="#63BDC0", fontcolor="#63BDC0"];
+1 -> 2 [label="o_sync_q_1s", color="#1D4C26", fontcolor="#1D4C26"];
+2 -> 3 [label="o_sync_q_2s", color="#ED4467", fontcolor="#ED4467"];
+3 -> 4 [label="o_sync_q_3s_1", color="#BC16FC", fontcolor="#BC16FC"];
+4 -> 5 [label="o_sync_q_4s", color="#577D12", fontcolor="#577D12"];
+5 -> 6 [label="o_sync_q_5s", color="#015638", fontcolor="#015638"];
+6 -> 7 [label="o_sync_q_6s", color="#BE2C6C", fontcolor="#BE2C6C"];
+7 -> 8 [label="o_sync_q_7s", color="#06F2A0", fontcolor="#06F2A0"];
+8 -> 9 [label="cleaning_0_handler_cleaning_0", color="#13572B", fontcolor="#13572B"];
+9 -> 10 [label="o_copy", color="#106274", fontcolor="#106274"];
+10 -> 11 [label="o_sync_q_1s", color="#9A0A59", fontcolor="#9A0A59"];
+11 -> 12 [label="o_sync_q_2s", color="#E6076D", fontcolor="#E6076D"];
+12 -> 13 [label="o_sync_q_3s_1", color="#EE6918", fontcolor="#EE6918"];
+13 -> 14 [label="o_sync_q_4s", color="#D61A7D", fontcolor="#D61A7D"];
+14 -> 15 [label="o_sync_q_5s", color="#012377", fontcolor="#012377"];
+15 -> 16 [label="o_sync_q_6s", color="#B9F812", fontcolor="#B9F812"];
+16 -> 17 [label="o_sync_q_7s", color="#6B8111", fontcolor="#6B8111"];
+17 -> 18 [label="o_goal", color="#7B12E5", fontcolor="#7B12E5"];
+subgraph cluster_goal_18 {
+style=filled;
+color=palegreen;
+18;
+label="GOAL";
+}
+subgraph cluster_init {
+style=filled;
+color=lightblue;
+0;
+label="INIT";
+}
+}

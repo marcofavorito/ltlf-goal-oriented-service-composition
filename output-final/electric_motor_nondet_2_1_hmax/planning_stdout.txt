@@ -1,0 +1,79 @@
+Parsing...
+Parsing: [0.010s CPU, 0.004s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 153 rules.
+Computing model... [0.000s CPU, 0.000s wall-clock]
+129 relevant atoms
+0 auxiliary atoms
+129 final queue length
+168 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+80 initial candidates
+Finding invariants: [9.360s CPU, 9.364s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.007s wall-clock]
+Instantiating groups... [0.000s CPU, 0.002s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+52 uncovered facts
+Choosing groups: [0.000s CPU, 0.003s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [9.380s CPU, 9.386s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.002s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.007s wall-clock]
+107 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+6 operators removed
+35 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 49
+Translator derived variables: 0
+Translator facts: 100
+Translator goal facts: 3
+Translator mutex groups: 1160
+Translator total mutex groups size: 2492
+Translator operators: 48
+Translator axioms: 0
+Translator task size: 3115
+Translator peak memory: 199588 KB
+Writing output... [0.000s CPU, 0.003s wall-clock]
+Done! [9.410s CPU, 9.411s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.009 seconds.
+Time needed for search:                             8.92 seconds.
+Time needed:                                        8.929 seconds.
+Total Garbage Collections: 17
+Total Garbage Collection Time: 0 seconds.
+
+Out of 251647 nodes, 27508 are proven
+Number of node expansions: 65967
+Policy entries: 121
+Number of sensing applications in policy: 0
+
+52 (assemble_motor) (build_inverter) (build_rotor) (build_stator) (current_state_0 s0_rotor_builder_0) (current_state_0 s0_rotor_builder_broken) (current_state_1 s1_stator_builder_0) (current_state_1 s1_stator_builder_broken) (electric_test) (f_copy) (f_sync) (f_world) (f_goal) (q_10s) (q_11s) (q_12s) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22) (q_22s) (q_23) (q_23s) (q_24) (q_24s) (q_25) (q_25s) (q_26) (q_26s) (q_27) (q_27s) (q_2s) (q_3s) (q_4s) (q_5s) (q_6s) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (repair) (static_test) 
+%%
+42 (o_copy) (o_sync_q_14s) (o_sync_q_10s) (o_sync_q_6s) (o_world) (build_inverter_2_inverter_builder_0) (o_sync_q_15s) (o_sync_q_20s) (o_sync_q_19s) (o_sync_q_18s) (o_sync_q_17s) (o_sync_q_16s) (o_sync_q_22s_1) (o_sync_q_25s_2) (o_sync_q_12s) (o_sync_q_26s_2) (o_sync_q_13s) (o_sync_q_24s_2) (o_sync_q_23s_2) (o_sync_q_2s) (o_sync_q_11s) (o_sync_q_8s_2) (o_sync_q_27s) (o_sync_q_9s_2) (build_rotor_1_stator_builder_0) (o_sync_q_23s_1) (o_sync_q_3s) (repair_1_stator_builder_broken) (build_stator_0_rotor_builder_0) (o_sync_q_24s_1) (o_sync_q_4s) (assemble_motor_3_motor_assembler_0) (o_sync_q_25s_1) (o_sync_q_26s_1) (o_sync_q_8s_1) (o_sync_q_1s) (repair_0_rotor_builder_broken) (electric_test_4_mechanical_engineer_1_0) (o_sync_q_9s_1) (o_sync_q_21s_1) (o_sync_q_5s) (o_goal) 
+%%
+policy 121 4 4 6 9 17 0 4 4 6 10 18 1 5 4 6 10 13 44 2 6 4 6 10 19 38 44 3 5 4 6 10 19 38 4 5 4 6 11 19 38 5 6 1 4 6 9 19 38 0 6 1 4 6 10 20 39 6 7 1 4 6 10 26 39 47 7 8 1 4 6 10 24 31 39 47 8 9 1 4 6 10 23 31 33 39 47 9 10 1 4 6 10 22 29 31 33 39 47 10 11 1 4 6 10 21 29 31 33 35 39 47 11 12 1 4 6 10 29 31 33 35 37 39 47 49 12 12 1 4 6 10 31 33 35 37 39 40 47 49 13 14 1 4 6 10 15 31 33 34 37 38 39 40 47 49 14 13 1 4 6 10 31 33 34 37 38 39 40 47 49 15 14 1 4 6 10 16 31 33 34 36 38 39 40 47 49 16 13 1 4 6 10 31 33 34 36 38 39 40 47 49 17 14 1 4 6 10 14 31 32 34 36 38 39 40 47 49 18 14 1 4 6 10 14 30 32 34 36 38 39 40 47 49 19 13 1 4 6 10 14 30 32 34 36 38 39 47 49 20 12 1 4 6 10 30 32 34 36 38 39 47 49 21 12 1 4 6 10 30 32 34 36 38 39 46 49 22 11 1 4 6 10 30 32 34 36 38 46 49 23 11 1 4 6 10 30 32 34 36 38 46 48 4 11 1 4 6 11 30 32 34 36 38 46 48 24 11 2 4 7 9 30 32 34 36 38 46 48 0 11 2 4 6 9 30 32 34 36 38 46 48 0 11 2 4 7 10 31 33 35 37 39 47 49 17 11 2 4 6 10 31 33 35 37 39 47 49 17 13 2 4 7 10 14 31 32 35 37 38 39 47 49 20 13 2 4 6 10 14 31 32 35 37 38 39 47 49 20 12 2 4 7 10 31 32 35 37 38 39 47 49 15 12 2 4 6 10 31 32 35 37 38 39 47 49 15 13 2 4 7 10 16 31 32 35 36 38 39 47 49 16 13 2 4 6 10 16 31 32 35 36 38 39 47 49 25 12 2 4 7 10 31 32 35 36 38 39 47 49 13 13 2 4 6 10 16 32 35 36 38 39 41 47 49 13 13 2 4 7 10 15 31 32 34 36 38 39 47 49 14 14 2 4 6 10 15 16 32 34 36 38 39 41 47 49 14 12 2 4 7 10 31 32 34 36 38 39 47 49 21 13 2 4 6 10 16 32 34 36 38 39 41 47 49 21 12 2 4 7 10 31 32 34 36 38 39 46 49 25 13 2 4 6 10 16 32 34 36 38 39 41 46 49 26 12 2 4 7 10 32 34 36 38 39 41 46 49 26 12 2 4 6 10 16 32 34 36 38 39 46 49 22 11 2 4 7 10 32 34 36 38 39 46 49 22 11 2 4 6 10 16 32 34 36 38 46 49 16 10 2 4 7 10 32 34 36 38 46 49 23 10 2 4 6 10 32 34 36 38 46 49 23 10 2 4 7 10 32 34 36 38 46 48 4 10 2 4 6 10 32 34 36 38 46 48 4 10 2 4 7 11 32 34 36 38 46 48 27 10 2 4 6 11 32 34 36 38 46 48 28 10 4 6 9 32 34 36 38 46 48 50 0 10 3 5 6 9 32 34 36 38 46 48 0 10 3 4 6 9 32 34 36 38 46 48 0 10 4 6 10 33 35 37 39 47 49 50 13 10 3 5 6 10 33 35 37 39 47 49 13 10 3 4 6 10 33 35 37 39 47 49 13 12 4 6 10 15 33 34 37 38 39 47 49 50 17 12 3 5 6 10 15 33 34 37 38 39 47 49 14 12 3 4 6 10 15 33 34 37 38 39 47 49 14 13 4 6 10 14 15 32 34 37 38 39 47 49 50 15 11 3 5 6 10 33 34 37 38 39 47 49 15 11 3 4 6 10 33 34 37 38 39 47 49 15 14 4 6 10 14 15 16 32 34 36 38 39 47 49 50 16 12 3 5 6 10 16 33 34 36 38 39 47 49 16 12 3 4 6 10 16 33 34 36 38 39 47 49 16 13 4 6 10 14 15 32 34 36 38 39 47 49 50 22 11 3 5 6 10 33 34 36 38 39 47 49 29 11 3 4 6 10 33 34 36 38 39 47 49 29 12 4 6 10 14 15 32 34 36 38 47 49 50 21 11 3 5 6 10 34 36 38 39 42 47 49 30 11 3 4 6 10 34 36 38 39 42 47 49 30 12 4 6 10 14 15 32 34 36 38 46 49 50 20 10 3 5 6 10 34 36 38 39 47 49 21 10 3 4 6 10 34 36 38 39 47 49 21 11 4 6 10 15 32 34 36 38 46 49 50 14 10 3 5 6 10 34 36 38 39 46 49 22 10 3 4 6 10 34 36 38 39 46 49 22 10 4 6 10 32 34 36 38 46 49 50 23 9 3 5 6 10 34 36 38 46 49 23 9 3 4 6 10 34 36 38 46 49 23 10 4 6 10 32 34 36 38 46 48 50 4 9 3 5 6 10 34 36 38 46 48 4 9 3 4 6 10 34 36 38 46 48 4 10 4 6 11 32 34 36 38 46 48 50 28 9 3 5 6 11 34 36 38 46 48 31 9 3 4 6 11 34 36 38 46 48 31 9 0 5 6 9 34 36 38 46 48 0 9 0 4 6 9 34 36 38 46 48 0 9 0 5 6 10 35 37 39 47 49 32 9 0 4 6 10 35 37 39 47 49 32 9 0 5 6 10 25 37 39 47 49 33 9 0 4 6 10 25 37 39 47 49 33 8 0 5 6 10 25 39 47 49 22 8 0 4 6 10 25 39 47 49 22 7 0 5 6 10 25 47 49 34 7 0 4 6 10 25 47 49 34 6 0 5 6 10 25 49 23 6 0 4 6 10 25 49 23 7 0 5 6 10 25 38 48 35 7 0 4 6 10 25 38 48 35 6 0 5 6 10 38 48 4 6 0 4 6 10 38 48 4 6 0 5 6 11 38 48 36 6 0 4 6 11 38 48 37 6 4 6 9 38 48 50 0 6 4 6 8 9 38 48 0 6 4 6 10 39 49 50 23 6 4 6 8 10 39 49 38 7 4 6 10 38 39 48 50 22 6 4 6 8 10 27 39 22 6 4 6 10 38 48 50 4 5 4 6 8 10 27 39 6 4 6 11 38 48 50 37 5 4 6 8 10 43 40 4 4 6 8 10 4 4 4 6 8 11 41 
+Dot file: /tmp/tmp288erb5e/policy.dot

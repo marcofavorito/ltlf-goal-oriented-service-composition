@@ -1,0 +1,79 @@
+Parsing...
+Parsing: [0.020s CPU, 0.020s wall-clock]
+Normalizing task... [0.010s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.000s CPU, 0.003s wall-clock]
+Generated 761 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+474 relevant atoms
+0 auxiliary atoms
+474 final queue length
+642 total queue pushes
+Completing instantiation... [0.010s CPU, 0.003s wall-clock]
+Instantiating: [0.010s CPU, 0.011s wall-clock]
+Computing fact groups...
+Finding invariants...
+409 initial candidates
+Finding invariants: [68.330s CPU, 68.338s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+221 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [68.330s CPU, 68.339s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.006s wall-clock]
+339 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+27 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Translator variables: 210
+Translator derived variables: 0
+Translator facts: 422
+Translator goal facts: 1
+Translator mutex groups: 2
+Translator total mutex groups size: 5
+Translator operators: 212
+Translator axioms: 0
+Translator task size: 2608
+Translator peak memory: 121880 KB
+Writing output... [0.000s CPU, 0.002s wall-clock]
+Done! [68.380s CPU, 68.383s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.011 seconds.
+Time needed for search:                             1.026 seconds.
+Time needed:                                        1.037 seconds.
+Total Garbage Collections: 9
+Total Garbage Collection Time: 0 seconds.
+
+Out of 9290 nodes, 5574 are proven
+Number of node expansions: 6185
+Policy entries: 364
+Number of sensing applications in policy: 0
+
+213 (activation) (assembly) (cleaning) (development) (etching) (exposure) (f_copy) (f_sync) (f_world) (f_goal) (film_deposition) (impurities_implantation) (packaging) (q_100s) (q_101s) (q_102s) (q_103s) (q_104s) (q_105s) (q_106s) (q_107s) (q_108s) (q_109s) (q_10s) (q_110s) (q_111s) (q_112s) (q_113s) (q_114s) (q_115s) (q_116s) (q_117s) (q_118s) (q_119s) (q_11s) (q_120s) (q_121s) (q_122s) (q_123s) (q_124s) (q_125s) (q_126s) (q_127s) (q_128s) (q_129s) (q_12s) (q_130s) (q_131s) (q_132s) (q_133s) (q_134s) (q_135s) (q_136s) (q_137s) (q_138s) (q_139s) (q_13s) (q_14) (q_140s) (q_141s) (q_142s) (q_143s) (q_144s) (q_145s) (q_146s) (q_147s) (q_148s) (q_149s) (q_14s) (q_15) (q_150s) (q_151s) (q_152s) (q_153s) (q_154s) (q_155s) (q_156s) (q_157s) (q_158s) (q_159s) (q_15s) (q_16) (q_160s) (q_161s) (q_162s) (q_163s) (q_164s) (q_165s) (q_166s) (q_167s) (q_168s) (q_169s) (q_16s) (q_17) (q_170s) (q_171s) (q_172s) (q_173s) (q_174s) (q_175s) (q_176s) (q_177s) (q_178s) (q_179s) (q_17s) (q_18) (q_180s) (q_181s) (q_182s) (q_183) (q_183s) (q_18s) (q_19) (q_19s) (q_1s) (q_20) (q_20s) (q_21) (q_21s) (q_22) (q_22s) (q_23) (q_23s) (q_24) (q_24s) (q_25) (q_25s) (q_26s) (q_27s) (q_28s) (q_29s) (q_2s) (q_30s) (q_31s) (q_32s) (q_33s) (q_34s) (q_35s) (q_36s) (q_37s) (q_38s) (q_39s) (q_3s) (q_40s) (q_41s) (q_42s) (q_43s) (q_44s) (q_45s) (q_46s) (q_47s) (q_48s) (q_49s) (q_4s) (q_50) (q_50s) (q_51s) (q_52s) (q_53s) (q_54s) (q_55s) (q_56s) (q_57s) (q_58s) (q_59s) (q_5s) (q_60s) (q_61s) (q_62s) (q_63s) (q_64s) (q_65s) (q_66s) (q_67s) (q_68s) (q_69s) (q_6s) (q_70s) (q_71s) (q_72s) (q_73s) (q_74s) (q_75s) (q_76s) (q_77s) (q_78s) (q_79s) (q_7s) (q_80s) (q_81s) (q_82s) (q_83s) (q_84s) (q_85s) (q_86s) (q_87s) (q_88s) (q_89s) (q_8s) (q_90s) (q_91s) (q_92s) (q_93s) (q_94s) (q_95s) (q_96s) (q_97s) (q_98s) (q_99s) (q_9s) (resist_coating) (resist_stripping) (testing) 
+%%
+209 (o_copy) (o_sync_q_50s) (o_sync_q_26s) (o_sync_q_12s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_16s_1) (o_sync_q_41s) (o_sync_q_135s) (o_sync_q_156s) (o_sync_q_123s) (o_sync_q_102s) (o_sync_q_114s) (o_sync_q_31s) (o_sync_q_146s) (o_sync_q_34s) (o_sync_q_3s) (o_sync_q_33s) (o_sync_q_183s) (o_sync_q_70s) (o_sync_q_168s) (o_sync_q_37s) (o_sync_q_27s) (o_sync_q_30s) (o_sync_q_32s) (o_sync_q_81s) (o_sync_q_178s) (o_sync_q_38s) (o_sync_q_57s) (o_sync_q_28s) (o_sync_q_20s_2) (o_sync_q_35s) (o_sync_q_36s) (film_deposition_1_handler_film_deposition_0) (o_sync_q_20s_1) (o_sync_q_45s) (o_sync_q_95s) (o_sync_q_157s) (o_sync_q_124s) (o_sync_q_103s) (o_sync_q_29s) (o_sync_q_115s) (o_sync_q_148s) (o_sync_q_72s) (o_sync_q_170s) (o_sync_q_83s) (o_sync_q_180s) (o_sync_q_60s) (o_sync_q_23s_2) (o_sync_q_7s) (resist_coating_2_handler_resist_coating_0) (o_sync_q_23s_1) (o_sync_q_48s) (o_sync_q_85s) (o_sync_q_129s) (o_sync_q_10s) (o_sync_q_122s) (o_sync_q_101s) (o_sync_q_113s) (o_sync_q_145s) (o_sync_q_69s) (o_sync_q_167s) (o_sync_q_80s) (o_sync_q_177s) (o_sync_q_56s) (o_sync_q_19s_2) (exposure_3_handler_exposure_0) (o_sync_q_19s_1) (o_sync_q_44s) (o_sync_q_86s) (o_sync_q_130s) (o_sync_q_151s) (o_sync_q_100s) (o_sync_q_111s) (o_sync_q_143s) (o_sync_q_67s) (o_sync_q_165s) (o_sync_q_78s) (o_sync_q_175s) (o_sync_q_54s) (o_sync_q_17s_2) (o_sync_q_6s) (development_4_handler_development_0) (o_sync_q_17s_1) (o_sync_q_42s) (o_sync_q_94s) (o_sync_q_139s) (o_sync_q_161s) (o_sync_q_128s) (o_sync_q_4s) (o_sync_q_112s) (o_sync_q_144s) (o_sync_q_68s) (o_sync_q_166s) (o_sync_q_79s) (o_sync_q_176s) (o_sync_q_55s) (o_sync_q_18s_2) (etching_5_handler_etching_0) (o_sync_q_18s_1) (o_sync_q_43s) (o_sync_q_93s) (o_sync_q_138s) (o_sync_q_160s) (o_sync_q_127s) (o_sync_q_106s) (o_sync_q_147s) (o_sync_q_71s) (o_sync_q_169s) (o_sync_q_82s) (o_sync_q_179s) (o_sync_q_58s) (o_sync_q_21s_2) (o_sync_q_5s) (impurities_implantation_6_handler_impurities_implantation_0) (o_sync_q_21s_1) (o_sync_q_46s) (o_sync_q_87s) (o_sync_q_131s) (o_sync_q_152s) (o_sync_q_118s) (o_sync_q_96s) (o_sync_q_107s) (o_sync_q_66s) (o_sync_q_164s) (o_sync_q_76s) (o_sync_q_173s) (o_sync_q_52s) (o_sync_q_8s) (o_sync_q_14s_2) (activation_7_handler_activation_0) (o_sync_q_14s_1) (o_sync_q_39s) (o_sync_q_92s) (o_sync_q_1s) (o_sync_q_137s) (o_sync_q_159s) (o_sync_q_126s) (o_sync_q_105s) (o_sync_q_117s) (o_sync_q_150s) (o_sync_q_171s) (o_sync_q_84s) (o_sync_q_181s) (o_sync_q_61s) (o_sync_q_24s_2) (resist_stripping_8_handler_resist_stripping_0) (o_sync_q_24s_1) (o_sync_q_49s) (o_sync_q_88s) (o_sync_q_11s) (o_sync_q_132s) (o_sync_q_153s) (o_sync_q_119s) (o_sync_q_97s) (o_sync_q_108s) (o_sync_q_140s) (o_sync_q_63s) (o_sync_q_77s) (o_sync_q_174s) (o_sync_q_53s) (o_sync_q_15s_2) (assembly_9_handler_assembly_0) (o_sync_q_15s_1) (o_sync_q_40s) (o_sync_q_91s) (o_sync_q_136s) (o_sync_q_2s) (o_sync_q_158s) (o_sync_q_125s) (o_sync_q_104s) (o_sync_q_116s) (o_sync_q_149s) (o_sync_q_73s) (o_sync_q_172s) (o_sync_q_182s) (o_sync_q_62s) (o_sync_q_25s_2) (testing_10_handler_testing_0) (o_sync_q_25s_1) (o_sync_q_51s) (o_sync_q_90s) (o_sync_q_13s) (o_sync_q_134s) (o_sync_q_155s) (o_sync_q_121s) (o_sync_q_99s) (o_sync_q_110s) (o_sync_q_142s) (o_sync_q_65s) (o_sync_q_163s) (o_sync_q_75s) (o_sync_q_59s) (o_sync_q_22s_2) (packaging_11_handler_packaging_0) (o_sync_q_22s_1) (o_sync_q_47s) (o_sync_q_9s) (o_sync_q_89s) (o_sync_q_133s) (o_sync_q_154s) (o_sync_q_120s) (o_sync_q_98s) (o_sync_q_109s) (o_sync_q_141s) (o_sync_q_64s) (o_sync_q_162s) (o_sync_q_74s) (o_goal) 
+%%
+policy 364 2 6 154 0 2 7 155 1 3 7 45 127 2 4 7 45 81 109 3 3 7 81 109 4 3 8 81 109 5 4 2 6 81 109 0 4 2 7 92 110 6 4 2 7 110 144 7 5 2 7 51 110 142 8 6 2 7 76 110 135 142 9 7 2 7 38 110 135 138 142 10 8 2 7 15 110 134 135 138 142 11 9 2 7 28 110 132 134 135 138 142 12 10 2 7 64 110 132 133 134 135 138 142 13 9 2 7 64 110 132 134 135 138 142 14 10 2 7 110 132 134 135 136 138 142 177 15 9 2 7 110 132 134 135 138 142 177 16 8 2 7 110 132 134 135 138 177 17 7 2 7 110 132 134 138 177 18 6 2 7 132 134 138 177 19 7 2 7 90 128 132 134 138 20 8 2 7 128 132 134 138 139 189 21 7 2 7 128 132 134 138 189 22 6 2 7 132 134 138 189 23 5 2 7 134 138 189 24 4 2 7 138 189 25 5 2 7 102 129 138 26 6 2 7 129 138 140 162 27 5 2 7 129 138 162 28 6 2 7 116 129 137 138 29 5 2 7 116 137 138 30 6 2 7 109 115 137 138 31 5 2 7 109 115 138 32 4 2 7 109 115 4 4 2 8 109 115 33 4 6 10 109 115 0 4 7 10 110 116 34 4 7 10 110 148 35 5 7 10 110 187 204 36 6 7 10 77 110 130 187 37 7 7 10 39 110 130 138 187 32 6 7 10 39 110 130 187 18 5 7 10 39 130 187 38 6 7 10 16 130 134 187 39 7 7 10 29 130 132 134 187 23 6 7 10 29 130 134 187 40 5 7 10 29 134 187 41 6 7 10 66 133 134 187 13 5 7 10 66 134 187 24 4 7 10 66 187 42 5 7 10 136 179 187 43 6 7 10 94 128 136 187 44 7 7 10 128 136 139 187 191 22 6 7 10 136 139 187 191 21 5 7 10 136 187 191 15 4 7 10 187 191 45 5 7 10 106 129 187 46 6 7 10 129 140 166 187 27 5 7 10 129 166 187 47 6 7 10 122 129 137 187 29 5 7 10 122 137 187 48 6 7 10 109 121 137 187 31 5 7 10 109 121 187 49 4 7 10 109 121 4 4 8 10 109 121 50 4 6 109 121 210 0 4 7 110 122 210 51 4 7 110 151 210 52 5 7 23 110 193 210 53 6 7 23 44 110 130 210 54 7 7 23 37 110 130 135 210 55 6 7 37 110 130 135 210 17 5 7 37 110 130 210 56 6 7 14 110 130 134 210 18 5 7 14 130 134 210 57 6 7 27 130 132 134 210 58 7 7 63 130 132 133 134 210 40 6 7 63 132 133 134 210 59 7 7 132 133 134 136 175 210 23 6 7 133 134 136 175 210 15 5 7 133 134 175 210 60 6 7 89 128 133 134 210 22 5 7 89 133 134 210 13 4 7 89 134 210 61 5 7 134 139 188 210 62 6 7 101 129 134 139 210 63 7 7 129 134 139 140 161 210 29 6 7 134 139 140 161 210 27 5 7 134 139 161 210 24 4 7 139 161 210 64 5 7 113 137 139 210 65 6 7 109 112 137 139 210 31 5 7 109 112 139 210 21 4 7 109 112 210 4 4 8 109 112 210 66 4 5 6 109 112 0 4 5 7 110 113 67 4 5 7 110 147 68 5 5 7 110 176 194 69 6 5 7 46 110 130 176 40 5 5 7 46 110 176 18 4 5 7 46 176 70 5 5 7 71 135 176 71 6 5 7 13 135 138 176 32 5 5 7 13 135 176 17 4 5 7 13 176 72 5 5 7 25 132 176 73 6 5 7 61 132 133 176 13 5 5 7 61 132 176 23 4 5 7 61 176 74 5 5 7 136 173 176 75 6 5 7 87 128 136 176 22 5 5 7 87 136 176 15 4 5 7 87 176 76 5 5 7 139 176 185 77 6 5 7 99 129 139 176 29 5 5 7 99 139 176 21 4 5 7 99 176 78 5 5 7 140 159 176 79 6 5 7 104 137 140 176 31 5 5 7 104 140 176 27 4 5 7 104 176 80 5 5 7 93 109 176 81 4 5 7 93 109 4 4 5 8 93 109 82 4 3 6 93 109 0 4 3 7 104 110 83 4 3 7 110 145 84 5 3 7 110 153 203 85 6 3 7 55 110 130 153 40 5 3 7 55 110 153 18 4 3 7 55 153 86 5 3 7 83 135 153 87 6 3 7 43 135 138 153 17 5 3 7 43 138 153 32 4 3 7 43 153 88 5 3 7 26 134 153 24 4 3 7 26 153 89 3 3 7 26 90 4 3 7 62 133 91 5 3 7 133 136 174 13 4 3 7 136 174 92 5 3 7 88 128 136 93 6 3 7 128 136 139 186 21 5 3 7 128 136 186 22 4 3 7 136 186 94 5 3 7 100 129 136 95 6 3 7 129 136 140 160 27 5 3 7 129 136 160 29 4 3 7 136 160 96 5 3 7 111 136 137 97 6 3 7 105 109 136 137 31 5 3 7 105 109 136 15 4 3 7 105 109 4 4 3 8 105 109 98 4 4 6 105 109 0 4 4 7 110 111 99 4 4 7 110 146 100 5 4 7 110 165 202 18 4 4 7 165 202 101 5 4 7 54 130 165 102 6 4 7 82 130 135 165 17 5 4 7 82 130 165 40 4 4 7 82 165 103 5 4 7 42 138 165 104 6 4 7 19 134 138 165 24 5 4 7 19 138 165 32 4 4 7 19 165 105 5 4 7 65 132 165 106 6 4 7 132 136 165 178 15 5 4 7 132 165 178 23 4 4 7 165 178 107 5 4 7 91 128 165 108 6 4 7 128 139 165 190 21 5 4 7 128 165 190 22 4 4 7 165 190 109 5 4 7 103 129 165 110 6 4 7 129 140 163 165 27 5 4 7 129 163 165 29 4 4 7 163 165 111 5 4 7 118 137 165 112 6 4 7 109 117 137 165 31 5 4 7 109 117 165 113 4 4 7 109 117 4 4 4 8 109 117 114 4 6 11 109 117 0 4 7 11 110 118 18 3 7 11 118 115 3 7 11 149 116 4 7 11 195 198 117 5 7 11 47 130 198 40 4 7 11 47 198 118 5 7 11 72 135 198 17 4 7 11 72 198 119 5 7 11 32 138 198 32 4 7 11 32 198 120 5 7 11 134 198 205 24 4 7 11 198 205 121 5 7 11 20 132 198 23 4 7 11 20 198 122 5 7 11 133 172 198 13 4 7 11 172 198 123 5 7 11 86 128 198 22 4 7 11 86 198 124 5 7 11 139 183 198 21 4 7 11 183 198 125 5 7 11 97 129 198 29 4 7 11 97 198 126 5 7 11 140 157 198 27 4 7 11 157 198 127 5 7 11 68 137 198 31 4 7 11 68 198 128 3 7 11 68 129 4 7 11 57 109 4 4 8 11 57 109 130 4 0 6 57 109 0 4 0 7 68 110 131 4 0 7 110 141 132 5 0 7 110 114 201 18 4 0 7 114 201 133 5 0 7 53 114 130 134 4 0 7 53 130 135 5 0 7 79 130 135 40 4 0 7 79 135 136 5 0 7 41 135 138 17 4 0 7 41 138 137 5 0 7 18 134 138 24 4 0 7 18 138 138 5 0 7 31 132 138 23 4 0 7 31 138 139 5 0 7 70 133 138 13 4 0 7 70 138 140 5 0 7 95 136 138 15 4 0 7 95 138 141 5 0 7 138 139 192 32 4 0 7 139 192 142 5 0 7 107 129 139 29 4 0 7 107 139 143 5 0 7 139 140 167 21 4 0 7 140 167 144 5 0 7 124 137 140 31 4 0 7 124 140 27 3 0 7 124 145 4 0 7 109 123 4 4 0 8 109 123 146 4 6 109 123 211 0 4 7 110 124 211 18 3 7 124 211 147 3 7 152 211 148 4 7 34 196 211 149 5 7 34 48 130 211 150 4 7 48 130 211 151 5 7 73 130 135 211 40 4 7 73 135 211 152 5 7 33 135 138 211 17 4 7 33 138 211 153 5 7 134 138 206 211 24 4 7 138 206 211 154 5 7 21 132 138 211 23 4 7 21 138 211 32 3 7 21 211 155 4 7 58 133 211 156 5 7 133 136 169 211 13 4 7 136 169 211 157 5 7 128 136 184 211 22 4 7 136 184 211 158 5 7 98 129 136 211 29 4 7 98 136 211 15 3 7 98 211 159 4 7 140 158 211 160 5 7 80 137 140 211 31 4 7 80 140 211 27 3 7 80 211 161 4 7 69 109 211 4 4 8 69 109 211 162 4 1 6 69 109 0 4 1 7 80 110 163 4 1 7 110 143 164 5 1 7 110 131 200 18 4 1 7 131 200 165 5 1 7 52 130 131 40 4 1 7 52 131 166 5 1 7 78 131 135 167 4 1 7 78 135 168 5 1 7 40 135 138 32 4 1 7 40 135 17 3 1 7 40 169 4 1 7 17 134 170 5 1 7 30 132 134 23 4 1 7 30 134 171 5 1 7 67 133 134 13 4 1 7 67 134 172 5 1 7 134 136 180 15 4 1 7 134 180 24 3 1 7 180 173 4 1 7 96 128 174 5 1 7 108 128 139 22 4 1 7 108 139 175 5 1 7 139 140 168 21 4 1 7 140 168 27 3 1 7 168 176 4 1 7 126 137 31 3 1 7 126 177 4 1 7 109 125 4 4 1 8 109 125 178 4 6 109 125 212 0 4 7 110 126 212 18 3 7 126 212 179 3 7 156 212 180 4 7 56 199 212 181 5 7 50 56 130 212 182 4 7 50 130 212 40 3 7 50 212 183 4 7 75 135 212 184 5 7 36 135 138 212 17 4 7 36 138 212 185 5 7 134 138 208 212 24 4 7 138 208 212 186 5 7 24 132 138 212 23 4 7 24 138 212 187 5 7 60 133 138 212 13 4 7 60 138 212 188 5 7 136 138 171 212 15 4 7 138 171 212 189 5 7 85 128 138 212 22 4 7 85 138 212 190 5 7 138 139 182 212 32 4 7 139 182 212 191 5 7 129 139 164 212 29 4 7 139 164 212 192 5 7 120 137 139 212 31 4 7 120 139 212 21 3 7 120 212 193 4 7 109 119 212 4 4 8 109 119 212 194 4 6 12 109 119 0 4 7 12 110 120 195 4 7 12 110 150 18 3 7 12 150 196 4 7 12 197 209 197 3 7 12 197 198 4 7 12 49 130 40 3 7 12 49 199 4 7 12 74 135 17 3 7 12 74 200 4 7 12 35 138 32 3 7 12 35 201 4 7 12 134 207 24 3 7 12 207 202 4 7 12 22 132 23 3 7 12 22 203 4 7 12 59 133 13 3 7 12 59 204 4 7 12 136 170 15 3 7 12 170 205 4 7 12 84 128 22 3 7 12 84 206 4 7 12 139 181 21 3 7 12 181 207 4 7 12 129 140 29 3 7 12 140 27 2 7 12 4 2 8 12 208 
+Dot file: /tmp/tmpm4nge_dt/policy.dot

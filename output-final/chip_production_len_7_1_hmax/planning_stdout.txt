@@ -1,0 +1,203 @@
+Parsing...
+Parsing: [0.010s CPU, 0.009s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 311 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+214 relevant atoms
+0 auxiliary atoms
+214 final queue length
+277 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.006s wall-clock]
+Computing fact groups...
+Finding invariants...
+174 initial candidates
+Finding invariants: [29.610s CPU, 29.608s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+96 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [29.610s CPU, 29.611s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_49()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_51()
+not in strips_to_sas, left out: Atom q_52()
+not in strips_to_sas, left out: Atom q_53()
+not in strips_to_sas, left out: Atom q_54()
+not in strips_to_sas, left out: Atom q_55()
+not in strips_to_sas, left out: Atom q_56()
+not in strips_to_sas, left out: Atom q_57()
+not in strips_to_sas, left out: Atom q_58()
+not in strips_to_sas, left out: Atom q_59()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_60()
+not in strips_to_sas, left out: Atom q_61()
+not in strips_to_sas, left out: Atom q_62()
+not in strips_to_sas, left out: Atom q_63()
+not in strips_to_sas, left out: Atom q_64()
+not in strips_to_sas, left out: Atom q_65()
+not in strips_to_sas, left out: Atom q_66()
+not in strips_to_sas, left out: Atom q_67()
+not in strips_to_sas, left out: Atom q_68()
+not in strips_to_sas, left out: Atom q_69()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_70()
+not in strips_to_sas, left out: Atom q_71()
+not in strips_to_sas, left out: Atom q_72()
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_2()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_27()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_49()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_51()
+not in strips_to_sas, left out: Atom q_52()
+not in strips_to_sas, left out: Atom q_53()
+not in strips_to_sas, left out: Atom q_54()
+not in strips_to_sas, left out: Atom q_55()
+not in strips_to_sas, left out: Atom q_56()
+not in strips_to_sas, left out: Atom q_57()
+not in strips_to_sas, left out: Atom q_58()
+not in strips_to_sas, left out: Atom q_59()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_60()
+not in strips_to_sas, left out: Atom q_61()
+not in strips_to_sas, left out: Atom q_62()
+not in strips_to_sas, left out: Atom q_63()
+not in strips_to_sas, left out: Atom q_64()
+not in strips_to_sas, left out: Atom q_65()
+not in strips_to_sas, left out: Atom q_66()
+not in strips_to_sas, left out: Atom q_67()
+not in strips_to_sas, left out: Atom q_68()
+not in strips_to_sas, left out: Atom q_69()
+not in strips_to_sas, left out: Atom q_7()
+not in strips_to_sas, left out: Atom q_70()
+not in strips_to_sas, left out: Atom q_71()
+not in strips_to_sas, left out: Atom q_72()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.005s wall-clock]
+129 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+3 operators removed
+21 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 91
+Translator derived variables: 0
+Translator facts: 183
+Translator goal facts: 1
+Translator mutex groups: 132
+Translator total mutex groups size: 330
+Translator operators: 90
+Translator axioms: 0
+Translator task size: 1338
+Translator peak memory: 120756 KB
+Writing output... [0.010s CPU, 0.001s wall-clock]
+Done! [29.630s CPU, 29.634s wall-clock]
+Heuristic: HMAX heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.009 seconds.
+Time needed for search:                             2.264 seconds.
+Time needed:                                        2.273 seconds.
+Total Garbage Collections: 9
+Total Garbage Collection Time: 0 seconds.
+
+Out of 8480 nodes, 5098 are proven
+Number of node expansions: 6857
+Policy entries: 144
+Number of sensing applications in policy: 0
+
+93 (cleaning) (development) (etching) (exposure) (f_copy) (f_sync) (f_world) (f_goal) (film_deposition) (impurities_implantation) (q_31s) (q_10) (q_10s) (q_11) (q_11s) (q_12) (q_12s) (q_13) (q_13s) (q_14) (q_14s) (q_15) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22s) (q_23s) (q_24s) (q_25s) (q_26s) (q_27s) (q_28s) (q_29s) (q_2s) (q_30s) (q_31) (q_32s) (q_33s) (q_34s) (q_35s) (q_36s) (q_37s) (q_38s) (q_39s) (q_3s) (q_40s) (q_41s) (q_42s) (q_43s) (q_44s) (q_45s) (q_46s) (q_47s) (q_48s) (q_49s) (q_4s) (q_50s) (q_51s) (q_52s) (q_53s) (q_54s) (q_55s) (q_56s) (q_57s) (q_58s) (q_59s) (q_5s) (q_60s) (q_61s) (q_62s) (q_63s) (q_64s) (q_65s) (q_66s) (q_67s) (q_68s) (q_69s) (q_6s) (q_70s) (q_71s) (q_72s) (q_73) (q_73s) (q_7s) (q_8s) (q_9) (q_9s) (resist_coating) 
+%%
+89 (o_copy) (o_sync_q_31s) (o_sync_q_16s) (o_sync_q_8s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_9s_1) (o_sync_q_24s) (o_sync_q_65s) (o_sync_q_70s) (o_sync_q_58s) (o_sync_q_48s) (o_sync_q_53s) (o_sync_q_18s) (o_sync_q_35s) (o_sync_q_13s_2) (o_sync_q_1s) (o_sync_q_20s) (o_sync_q_21s) (o_sync_q_22s) (o_sync_q_23s) (o_sync_q_73s) (o_sync_q_19s) (film_deposition_1_handler_film_deposition_0) (o_sync_q_13s_1) (o_sync_q_28s) (o_sync_q_43s) (o_sync_q_71s) (o_sync_q_59s) (o_sync_q_49s) (o_sync_q_54s) (o_sync_q_37s) (o_sync_q_15s_2) (o_sync_q_17s) (o_sync_q_5s) (resist_coating_2_handler_resist_coating_0) (o_sync_q_15s_1) (o_sync_q_30s) (o_sync_q_38s) (o_sync_q_61s) (o_sync_q_57s) (o_sync_q_47s) (o_sync_q_52s) (o_sync_q_34s) (o_sync_q_12s_2) (o_sync_q_7s) (exposure_3_handler_exposure_0) (o_sync_q_12s_1) (o_sync_q_27s) (o_sync_q_39s) (o_sync_q_62s) (o_sync_q_67s) (o_sync_q_46s) (o_sync_q_50s) (o_sync_q_32s) (o_sync_q_10s_2) (o_sync_q_4s) (development_4_handler_development_0) (o_sync_q_10s_1) (o_sync_q_25s) (o_sync_q_42s) (o_sync_q_66s) (o_sync_q_72s) (o_sync_q_60s) (o_sync_q_51s) (o_sync_q_33s) (o_sync_q_11s_2) (o_sync_q_2s) (etching_5_handler_etching_0) (o_sync_q_11s_1) (o_sync_q_26s) (o_sync_q_41s) (o_sync_q_64s) (o_sync_q_69s) (o_sync_q_56s) (o_sync_q_45s) (o_sync_q_36s) (o_sync_q_14s_2) (o_sync_q_3s) (impurities_implantation_6_handler_impurities_implantation_0) (o_sync_q_14s_1) (o_sync_q_29s) (o_sync_q_40s) (o_sync_q_63s) (o_sync_q_68s) (o_sync_q_55s) (o_sync_q_44s) (o_sync_q_6s) (o_goal) 
+%%
+policy 144 2 4 40 0 2 5 10 1 3 5 23 89 2 4 5 86 89 90 3 3 5 86 90 4 3 6 86 90 5 4 0 4 86 90 0 4 0 5 87 91 6 4 0 5 32 87 7 5 0 5 27 77 87 8 6 0 5 27 29 83 87 9 7 0 5 27 29 31 69 87 10 8 0 5 27 28 29 31 58 87 11 9 0 5 25 27 28 29 31 64 87 12 10 0 5 25 26 27 28 29 31 44 87 13 9 0 5 26 27 28 29 31 44 87 14 10 0 5 18 26 27 28 29 30 31 87 15 11 0 5 17 26 27 28 29 30 31 86 87 16 10 0 5 17 26 28 29 30 31 86 87 17 9 0 5 17 26 29 30 31 86 87 18 8 0 5 17 26 30 31 86 87 19 7 0 5 17 26 31 86 87 20 6 0 5 17 26 86 87 21 5 0 5 17 26 86 22 4 0 5 17 86 4 4 0 6 17 86 23 4 4 8 17 86 0 4 5 8 18 87 24 4 5 8 36 87 25 5 5 8 53 71 87 26 6 5 8 24 71 84 87 27 7 5 8 24 31 70 71 87 28 8 5 8 24 28 31 59 71 87 29 9 5 8 24 25 28 31 65 71 87 30 10 5 8 24 25 26 28 31 46 71 87 31 11 5 8 22 24 25 26 28 30 31 71 87 32 12 5 8 21 24 25 26 28 30 31 71 86 87 33 11 5 8 21 25 26 28 30 31 71 86 87 22 10 5 8 21 25 28 30 31 71 86 87 17 9 5 8 21 25 30 31 71 86 87 19 8 5 8 21 25 31 71 86 87 34 7 5 8 21 25 31 86 87 21 6 5 8 21 25 31 86 20 5 5 8 21 25 86 13 4 5 8 21 86 4 4 6 8 21 86 35 4 4 21 86 92 0 4 5 22 87 92 36 4 5 39 87 92 37 5 5 47 87 88 92 38 6 5 24 73 87 88 92 39 7 5 24 29 68 87 88 92 40 8 5 24 28 29 57 87 88 92 41 9 5 24 25 28 29 63 87 88 92 42 10 5 24 25 26 28 29 43 87 88 92 33 9 5 25 26 28 29 43 87 88 92 43 10 5 16 25 26 28 29 30 87 88 92 44 11 5 15 25 26 28 29 30 86 87 88 92 17 10 5 15 25 26 29 30 86 87 88 92 18 9 5 15 25 26 30 86 87 88 92 19 8 5 15 25 26 86 87 88 92 21 7 5 15 25 26 86 88 92 45 6 5 15 25 26 86 92 22 5 5 15 25 86 92 13 4 5 15 86 92 4 4 6 15 86 92 46 4 3 4 15 86 0 4 3 5 16 87 47 4 3 5 35 87 48 5 3 5 48 60 87 49 6 3 5 24 60 74 87 50 7 3 5 24 29 60 79 87 51 8 3 5 24 29 31 56 60 87 52 9 3 5 24 25 29 31 60 61 87 53 10 3 5 24 25 26 29 31 41 60 87 54 11 3 5 12 24 25 26 29 30 31 60 87 55 12 3 5 11 24 25 26 29 30 31 60 86 87 33 11 3 5 11 25 26 29 30 31 60 86 87 22 10 3 5 11 25 29 30 31 60 86 87 18 9 3 5 11 25 30 31 60 86 87 19 8 3 5 11 25 31 60 86 87 56 7 3 5 11 25 31 86 87 21 6 3 5 11 25 31 86 20 5 3 5 11 25 86 13 4 3 5 11 86 4 4 3 6 11 86 57 4 1 4 11 86 0 4 1 5 12 87 58 4 1 5 33 87 59 5 1 5 38 52 87 60 6 1 5 24 38 78 87 61 7 1 5 24 29 38 85 87 62 8 1 5 24 29 31 38 72 87 63 9 1 5 24 28 29 31 38 62 87 64 10 1 5 24 26 28 29 31 38 42 87 33 9 1 5 26 28 29 31 38 42 87 65 10 1 5 14 26 28 29 30 31 38 87 66 11 1 5 13 26 28 29 30 31 38 86 87 17 10 1 5 13 26 29 30 31 38 86 87 18 9 1 5 13 26 30 31 38 86 87 19 8 1 5 13 26 31 38 86 87 20 7 1 5 13 26 38 86 87 67 6 1 5 13 26 86 87 21 5 1 5 13 26 86 22 4 1 5 13 86 4 4 1 6 13 86 68 4 2 4 13 86 0 4 2 5 14 87 69 4 2 5 34 87 70 5 2 5 49 51 87 71 6 2 5 24 49 76 87 72 7 2 5 24 29 49 81 87 73 8 2 5 24 29 31 49 67 87 74 9 2 5 24 28 29 31 49 55 87 75 10 2 5 24 25 28 29 31 45 49 87 76 11 2 5 20 24 25 28 29 30 31 49 87 77 12 2 5 19 24 25 28 29 30 31 49 86 87 33 11 2 5 19 25 28 29 30 31 49 86 87 17 10 2 5 19 25 29 30 31 49 86 87 18 9 2 5 19 25 30 31 49 86 87 19 8 2 5 19 25 31 49 86 87 78 7 2 5 19 25 31 86 87 21 6 2 5 19 25 31 86 20 5 2 5 19 25 86 13 4 2 5 19 86 4 4 2 6 19 86 79 4 4 9 19 86 0 4 5 9 20 87 80 4 5 9 37 87 81 5 5 9 50 82 87 82 6 5 9 24 75 82 87 83 7 5 9 24 29 80 82 87 84 8 5 9 24 29 31 66 82 87 85 9 5 9 24 28 29 31 54 82 87 18 8 5 9 24 28 31 54 82 87 20 7 5 9 24 28 54 82 87 86 8 5 9 24 25 26 28 82 87 13 7 5 9 24 26 28 82 87 87 6 5 9 24 26 28 87 21 5 5 9 24 26 28 22 4 5 9 24 28 33 3 5 9 28 17 2 5 9 4 2 6 9 88 
+Dot file: /tmp/tmpcjzwdke3/policy.dot

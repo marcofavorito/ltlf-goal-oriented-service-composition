@@ -1,0 +1,27 @@
++ TB_encode /tmp/tmpyn__l6sj/domain.pddl /tmp/tmpyn__l6sj/problem.pddl 3
+++ realpath /tmp/tmpyn__l6sj/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpyn__l6sj/domain.pddl
+++ realpath /tmp/tmpyn__l6sj/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpyn__l6sj/problem.pddl
++ local _ACTION_MODE=3
++ _COMPILED_DOMAIN_FILE=/tmp/tmpyn__l6sj/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpyn__l6sj/problem_compiled.pddl
+++ dirname /tmp/tmpyn__l6sj/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpyn__l6sj/services_condition.txt
+++ cat /tmp/tmpyn__l6sj/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) '
++ [[ -z 3 ]]
++ [[ 3 != \1 ]]
++ [[ 3 != \2 ]]
++ [[ 3 != \3 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpyn__l6sj/domain.pddl /tmp/tmpyn__l6sj/problem.pddl dp 3
+% 73,062,134 inferences, 4.796 CPU in 4.805 seconds (100% CPU, 15233035 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpyn__l6sj/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpyn__l6sj/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpyn__l6sj/domain_compiled.pddl
++ [[ 3 == \1 ]]
++ [[ 3 == \2 ]]
++ [[ 3 == \3 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) /g' /tmp/tmpyn__l6sj/problem_compiled.pddl

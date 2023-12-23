@@ -1,0 +1,27 @@
++ TB_encode /tmp/tmpbh6zxpug/domain.pddl /tmp/tmpbh6zxpug/problem.pddl 3
+++ realpath /tmp/tmpbh6zxpug/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpbh6zxpug/domain.pddl
+++ realpath /tmp/tmpbh6zxpug/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpbh6zxpug/problem.pddl
++ local _ACTION_MODE=3
++ _COMPILED_DOMAIN_FILE=/tmp/tmpbh6zxpug/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpbh6zxpug/problem_compiled.pddl
+++ dirname /tmp/tmpbh6zxpug/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpbh6zxpug/services_condition.txt
+++ cat /tmp/tmpbh6zxpug/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0) '
++ [[ -z 3 ]]
++ [[ 3 != \1 ]]
++ [[ 3 != \2 ]]
++ [[ 3 != \3 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpbh6zxpug/domain.pddl /tmp/tmpbh6zxpug/problem.pddl dp 3
+% 1,815,055 inferences, 0.181 CPU in 0.183 seconds (99% CPU, 10043840 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpbh6zxpug/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpbh6zxpug/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpbh6zxpug/domain_compiled.pddl
++ [[ 3 == \1 ]]
++ [[ 3 == \2 ]]
++ [[ 3 == \3 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0) /g' /tmp/tmpbh6zxpug/problem_compiled.pddl

@@ -1,0 +1,126 @@
+Parsing...
+Parsing: [0.010s CPU, 0.008s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 287 rules.
+Computing model... [0.010s CPU, 0.001s wall-clock]
+205 relevant atoms
+0 auxiliary atoms
+205 final queue length
+282 total queue pushes
+Completing instantiation... [0.000s CPU, 0.002s wall-clock]
+Instantiating: [0.010s CPU, 0.006s wall-clock]
+Computing fact groups...
+Finding invariants...
+140 initial candidates
+Finding invariants: [25.310s CPU, 25.483s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+84 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [25.310s CPU, 25.484s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+not in strips_to_sas, left out: Atom q_14()
+not in strips_to_sas, left out: Atom q_15()
+not in strips_to_sas, left out: Atom q_16()
+not in strips_to_sas, left out: Atom q_17()
+not in strips_to_sas, left out: Atom q_18()
+not in strips_to_sas, left out: Atom q_19()
+not in strips_to_sas, left out: Atom q_20()
+not in strips_to_sas, left out: Atom q_21()
+not in strips_to_sas, left out: Atom q_22()
+not in strips_to_sas, left out: Atom q_23()
+not in strips_to_sas, left out: Atom q_24()
+not in strips_to_sas, left out: Atom q_25()
+not in strips_to_sas, left out: Atom q_26()
+not in strips_to_sas, left out: Atom q_28()
+not in strips_to_sas, left out: Atom q_29()
+not in strips_to_sas, left out: Atom q_3()
+not in strips_to_sas, left out: Atom q_30()
+not in strips_to_sas, left out: Atom q_31()
+not in strips_to_sas, left out: Atom q_32()
+not in strips_to_sas, left out: Atom q_33()
+not in strips_to_sas, left out: Atom q_34()
+not in strips_to_sas, left out: Atom q_35()
+not in strips_to_sas, left out: Atom q_36()
+not in strips_to_sas, left out: Atom q_37()
+not in strips_to_sas, left out: Atom q_38()
+not in strips_to_sas, left out: Atom q_39()
+not in strips_to_sas, left out: Atom q_4()
+not in strips_to_sas, left out: Atom q_40()
+not in strips_to_sas, left out: Atom q_41()
+not in strips_to_sas, left out: Atom q_42()
+not in strips_to_sas, left out: Atom q_43()
+not in strips_to_sas, left out: Atom q_44()
+not in strips_to_sas, left out: Atom q_45()
+not in strips_to_sas, left out: Atom q_46()
+not in strips_to_sas, left out: Atom q_47()
+not in strips_to_sas, left out: Atom q_48()
+not in strips_to_sas, left out: Atom q_49()
+not in strips_to_sas, left out: Atom q_5()
+not in strips_to_sas, left out: Atom q_50()
+not in strips_to_sas, left out: Atom q_51()
+not in strips_to_sas, left out: Atom q_52()
+not in strips_to_sas, left out: Atom q_53()
+not in strips_to_sas, left out: Atom q_54()
+not in strips_to_sas, left out: Atom q_55()
+not in strips_to_sas, left out: Atom q_56()
+not in strips_to_sas, left out: Atom q_6()
+not in strips_to_sas, left out: Atom q_7()
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.003s wall-clock]
+189 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+3 operators removed
+7 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 86
+Translator derived variables: 0
+Translator facts: 173
+Translator goal facts: 7
+Translator mutex groups: 54
+Translator total mutex groups size: 111
+Translator operators: 78
+Translator axioms: 0
+Translator task size: 1131
+Translator peak memory: 120752 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [25.340s CPU, 25.505s wall-clock]
+Heuristic: FF-heuristic.
+Algorithm: AO*-search
+The protagonist has got a winning strategy.
+INITIAL IS PROVEN!
+
+Result: Strong plan found.
+
+Time needed for preprocess (Parsing, PDBs, ...):    0.01 seconds.
+Time needed for search:                             26.438 seconds.
+Time needed:                                        26.448 seconds.
+Total Garbage Collections: 23
+Total Garbage Collection Time: 0 seconds.
+
+Out of 182611 nodes, 107975 are proven
+Number of node expansions: 145182
+Policy entries: 282
+Number of sensing applications in policy: 0
+
+88 (cleaning) (current_state_0 s0_handler_cleaning_0) (current_state_0 s0_handler_cleaning_broken) (current_state_1 s1_handler_film_deposition_0) (current_state_1 s1_handler_film_deposition_broken) (current_state_2 s2_handler_resist_coating_0) (current_state_2 s2_handler_resist_coating_broken) (current_state_3 s3_handler_exposure_0) (current_state_3 s3_handler_exposure_broken) (current_state_4 s4_handler_development_0) (current_state_4 s4_handler_development_broken) (current_state_5 s5_handler_etching_0) (current_state_5 s5_handler_etching_broken) (development) (etching) (exposure) (f_copy) (f_sync) (f_world) (f_goal) (film_deposition) (q_27s) (q_10) (q_10s) (q_11) (q_11s) (q_12) (q_12s) (q_13) (q_13s) (q_14s) (q_15s) (q_16s) (q_17s) (q_18s) (q_19s) (q_1s) (q_20s) (q_21s) (q_22s) (q_23s) (q_24s) (q_25s) (q_26s) (q_27) (q_28s) (q_29s) (q_2s) (q_30s) (q_31s) (q_32s) (q_33s) (q_34s) (q_35s) (q_36s) (q_37s) (q_38s) (q_39s) (q_3s) (q_40s) (q_41s) (q_42s) (q_43s) (q_44s) (q_45s) (q_46s) (q_47s) (q_48s) (q_49s) (q_4s) (q_50s) (q_51s) (q_52s) (q_53s) (q_54s) (q_55s) (q_56s) (q_57) (q_57s) (q_5s) (q_6s) (q_7s) (q_8) (q_8s) (q_9) (q_9s) (repair) (resist_coating) 
+%%
+77 (o_copy) (o_sync_q_27s) (o_sync_q_14s) (o_sync_q_7s) (o_world) (cleaning_0_handler_cleaning_0) (o_sync_q_57s) (o_sync_q_8s_1) (o_sync_q_21s) (o_sync_q_51s) (o_sync_q_55s) (o_sync_q_45s) (o_sync_q_41s) (o_sync_q_31s) (o_sync_q_12s_2) (o_sync_q_20s) (o_sync_q_16s) (o_sync_q_17s) (o_sync_q_18s) (o_sync_q_19s) (o_sync_q_1s) (film_deposition_1_handler_film_deposition_0) (o_sync_q_12s_1) (o_sync_q_25s) (o_sync_q_37s) (o_sync_q_56s) (o_sync_q_46s) (o_sync_q_42s) (o_sync_q_32s) (o_sync_q_13s_2) (o_sync_q_5s) (o_sync_q_15s) (repair_0_handler_cleaning_broken) (resist_coating_2_handler_resist_coating_0) (repair_1_handler_film_deposition_broken) (o_sync_q_13s_1) (o_sync_q_26s) (o_sync_q_33s) (o_sync_q_47s) (o_sync_q_44s) (o_sync_q_40s) (o_sync_q_30s) (o_sync_q_11s_2) (o_sync_q_6s) (repair_2_handler_resist_coating_broken) (exposure_3_handler_exposure_0) (o_sync_q_11s_1) (o_sync_q_24s) (o_sync_q_4s) (o_sync_q_35s) (o_sync_q_49s) (o_sync_q_53s) (o_sync_q_39s) (o_sync_q_28s) (o_sync_q_9s_2) (development_4_handler_development_0) (repair_3_handler_exposure_broken) (o_sync_q_9s_1) (o_sync_q_22s) (o_sync_q_36s) (o_sync_q_50s) (o_sync_q_2s) (o_sync_q_54s) (o_sync_q_43s) (o_sync_q_29s) (o_sync_q_10s_2) (repair_4_handler_development_broken) (etching_5_handler_etching_0) (o_sync_q_10s_1) (o_sync_q_23s) (o_sync_q_3s) (o_sync_q_34s) (o_sync_q_48s) (o_sync_q_52s) (o_sync_q_38s) (o_goal) (repair_5_handler_etching_broken) 
+%%
+policy 282 8 1 3 5 7 9 11 16 44 0 8 1 3 5 7 9 11 17 21 1 9 1 3 5 7 9 11 17 30 81 2 10 1 3 5 7 9 11 17 77 81 82 3 9 1 3 5 7 9 11 17 77 82 4 9 1 3 5 7 9 11 18 77 82 5 10 0 2 3 5 7 9 11 16 77 82 0 10 0 1 3 5 7 9 11 16 77 82 0 10 0 2 3 5 7 9 11 17 78 83 6 10 0 1 3 5 7 9 11 17 78 83 7 9 0 2 3 5 7 9 11 17 83 7 10 0 1 3 5 7 9 11 17 38 78 8 9 0 2 3 5 7 9 11 17 38 8 11 0 1 3 5 7 9 11 17 36 71 78 9 10 0 2 3 5 7 9 11 17 36 71 9 12 0 1 3 5 7 9 11 17 35 36 75 78 10 11 0 2 3 5 7 9 11 17 35 36 75 10 13 0 1 3 5 7 9 11 17 35 36 37 64 78 11 12 0 2 3 5 7 9 11 17 35 36 37 64 11 14 0 1 3 5 7 9 11 17 34 35 36 37 60 78 12 13 0 2 3 5 7 9 11 17 34 35 36 37 60 12 15 0 1 3 5 7 9 11 17 32 34 35 36 37 49 78 13 14 0 2 3 5 7 9 11 17 32 34 35 36 37 49 13 16 0 1 3 5 7 9 11 17 27 32 33 34 35 36 37 78 14 15 0 2 3 5 7 9 11 17 27 32 33 34 35 36 37 14 17 0 1 3 5 7 9 11 17 26 32 33 34 35 36 37 77 78 6 16 0 2 3 5 7 9 11 17 26 32 33 34 35 36 37 77 15 16 0 1 3 5 7 9 11 17 26 32 33 34 35 36 37 77 16 15 0 2 3 5 7 9 11 17 26 32 33 34 35 36 77 16 15 0 1 3 5 7 9 11 17 26 33 34 35 36 37 77 17 14 0 2 3 5 7 9 11 17 26 33 34 35 36 77 17 14 0 1 3 5 7 9 11 17 26 34 35 36 37 77 18 13 0 2 3 5 7 9 11 17 26 34 35 36 77 18 13 0 1 3 5 7 9 11 17 26 35 36 37 77 19 12 0 2 3 5 7 9 11 17 26 35 36 77 19 12 0 1 3 5 7 9 11 17 26 36 37 77 20 11 0 2 3 5 7 9 11 17 26 36 77 20 11 0 1 3 5 7 9 11 17 26 37 77 15 10 0 2 3 5 7 9 11 17 26 77 4 10 0 1 3 5 7 9 11 17 26 77 4 10 0 2 3 5 7 9 11 18 26 77 21 10 0 1 3 5 7 9 11 18 26 77 21 10 2 3 5 7 9 11 16 20 26 77 0 10 2 4 5 7 9 11 16 20 26 77 0 10 1 3 5 7 9 11 16 20 26 77 0 10 1 4 5 7 9 11 16 20 26 77 0 10 2 3 5 7 9 11 17 20 27 78 22 10 2 4 5 7 9 11 17 20 27 78 22 10 1 3 5 7 9 11 17 20 27 78 22 10 1 4 5 7 9 11 17 20 27 78 22 10 2 3 5 7 9 11 17 20 42 78 23 10 2 4 5 7 9 11 17 20 42 78 23 10 1 3 5 7 9 11 17 20 42 78 23 10 1 4 5 7 9 11 17 20 42 78 23 11 2 3 5 7 9 11 17 20 55 78 79 24 11 2 4 5 7 9 11 17 20 55 78 79 24 11 1 3 5 7 9 11 17 20 55 78 79 24 11 1 4 5 7 9 11 17 20 55 78 79 24 12 2 3 5 7 9 11 17 20 31 76 78 79 25 12 2 4 5 7 9 11 17 20 31 76 78 79 25 12 1 3 5 7 9 11 17 20 31 76 78 79 25 12 1 4 5 7 9 11 17 20 31 76 78 79 25 13 2 3 5 7 9 11 17 20 31 37 65 78 79 26 13 2 4 5 7 9 11 17 20 31 37 65 78 79 26 13 1 3 5 7 9 11 17 20 31 37 65 78 79 26 13 1 4 5 7 9 11 17 20 31 37 65 78 79 26 14 2 3 5 7 9 11 17 20 31 34 37 61 78 79 27 14 2 4 5 7 9 11 17 20 31 34 37 61 78 79 27 14 1 3 5 7 9 11 17 20 31 34 37 61 78 79 27 14 1 4 5 7 9 11 17 20 31 34 37 61 78 79 27 15 2 3 5 7 9 11 17 20 31 32 34 37 50 78 79 28 15 2 4 5 7 9 11 17 20 31 32 34 37 50 78 79 28 15 1 3 5 7 9 11 17 20 31 32 34 37 50 78 79 28 15 1 4 5 7 9 11 17 20 31 32 34 37 50 78 79 28 16 2 3 5 7 9 11 17 20 29 31 32 33 34 37 78 79 29 16 2 4 5 7 9 11 17 20 29 31 32 33 34 37 78 79 29 16 1 3 5 7 9 11 17 20 29 31 32 33 34 37 78 79 29 16 1 4 5 7 9 11 17 20 29 31 32 33 34 37 78 79 29 17 2 3 5 7 9 11 17 20 28 31 32 33 34 37 77 78 79 30 17 2 4 5 7 9 11 17 20 28 31 32 33 34 37 77 78 79 30 17 1 3 5 7 9 11 17 20 28 31 32 33 34 37 77 78 79 30 17 1 4 5 7 9 11 17 20 28 31 32 33 34 37 77 78 79 30 16 2 3 5 7 9 11 17 20 28 31 32 33 34 37 77 78 31 16 2 4 5 7 9 11 17 20 28 31 32 33 34 37 77 78 31 16 1 3 5 7 9 11 17 20 28 31 32 33 34 37 77 78 31 16 1 4 5 7 9 11 17 20 28 31 32 33 34 37 77 78 31 15 2 3 5 7 9 11 17 20 28 32 33 34 37 77 78 16 15 2 4 5 7 9 11 17 20 28 32 33 34 37 77 78 16 15 1 3 5 7 9 11 17 20 28 32 33 34 37 77 78 16 15 1 4 5 7 9 11 17 20 28 32 33 34 37 77 78 16 14 2 3 5 7 9 11 17 20 28 33 34 37 77 78 17 14 2 4 5 7 9 11 17 20 28 33 34 37 77 78 17 14 1 3 5 7 9 11 17 20 28 33 34 37 77 78 17 14 1 4 5 7 9 11 17 20 28 33 34 37 77 78 17 13 2 3 5 7 9 11 17 20 28 34 37 77 78 18 13 2 4 5 7 9 11 17 20 28 34 37 77 78 18 13 1 3 5 7 9 11 17 20 28 34 37 77 78 18 13 1 4 5 7 9 11 17 20 28 34 37 77 78 18 12 2 3 5 7 9 11 17 20 28 37 77 78 15 12 2 4 5 7 9 11 17 20 28 37 77 78 15 12 1 3 5 7 9 11 17 20 28 37 77 78 15 12 1 4 5 7 9 11 17 20 28 37 77 78 15 11 2 3 5 7 9 11 17 20 28 77 78 6 11 2 4 5 7 9 11 17 20 28 77 78 6 11 1 3 5 7 9 11 17 20 28 77 78 6 11 1 4 5 7 9 11 17 20 28 77 78 6 10 2 3 5 7 9 11 17 20 28 77 4 10 2 4 5 7 9 11 17 20 28 77 4 10 1 3 5 7 9 11 17 20 28 77 4 10 1 4 5 7 9 11 17 20 28 77 4 10 2 3 5 7 9 11 18 20 28 77 32 10 2 4 5 7 9 11 18 20 28 77 32 10 1 3 5 7 9 11 18 20 28 77 33 10 1 4 5 7 9 11 18 20 28 77 34 10 1 3 5 7 9 11 16 28 77 86 0 10 1 4 5 7 9 11 16 28 77 86 0 10 1 3 6 7 9 11 16 28 77 87 0 10 1 3 5 7 9 11 16 28 77 87 0 10 1 3 5 7 9 11 17 29 78 86 29 10 1 4 5 7 9 11 17 29 78 86 29 10 1 3 6 7 9 11 17 29 78 87 35 10 1 3 5 7 9 11 17 29 78 87 35 11 1 3 5 7 9 11 17 28 77 78 86 6 11 1 4 5 7 9 11 17 28 77 78 86 6 10 1 3 6 7 9 11 17 43 78 87 36 10 1 3 5 7 9 11 17 43 78 87 36 10 1 3 5 7 9 11 17 28 77 86 4 10 1 4 5 7 9 11 17 28 77 86 4 11 1 3 6 7 9 11 17 51 78 80 87 37 11 1 3 5 7 9 11 17 51 78 80 87 37 10 1 3 5 7 9 11 18 28 77 86 33 10 1 4 5 7 9 11 18 28 77 86 34 12 1 3 6 7 9 11 17 31 66 78 80 87 38 12 1 3 5 7 9 11 17 31 66 78 80 87 38 13 1 3 6 7 9 11 17 31 35 63 78 80 87 39 13 1 3 5 7 9 11 17 31 35 63 78 80 87 39 14 1 3 6 7 9 11 17 31 34 35 59 78 80 87 40 14 1 3 5 7 9 11 17 31 34 35 59 78 80 87 40 15 1 3 6 7 9 11 17 31 32 34 35 48 78 80 87 41 15 1 3 5 7 9 11 17 31 32 34 35 48 78 80 87 41 16 1 3 6 7 9 11 17 25 31 32 33 34 35 78 80 87 42 16 1 3 5 7 9 11 17 25 31 32 33 34 35 78 80 87 42 17 1 3 6 7 9 11 17 24 31 32 33 34 35 77 78 80 87 43 17 1 3 5 7 9 11 17 24 31 32 33 34 35 77 78 80 87 43 16 1 3 6 7 9 11 17 24 31 32 33 34 35 77 78 87 31 16 1 3 5 7 9 11 17 24 31 32 33 34 35 77 78 87 31 15 1 3 6 7 9 11 17 24 32 33 34 35 77 78 87 16 15 1 3 5 7 9 11 17 24 32 33 34 35 77 78 87 16 14 1 3 6 7 9 11 17 24 33 34 35 77 78 87 17 14 1 3 5 7 9 11 17 24 33 34 35 77 78 87 17 13 1 3 6 7 9 11 17 24 34 35 77 78 87 18 13 1 3 5 7 9 11 17 24 34 35 77 78 87 18 12 1 3 6 7 9 11 17 24 35 77 78 87 19 12 1 3 5 7 9 11 17 24 35 77 78 87 19 11 1 3 6 7 9 11 17 24 77 78 87 6 11 1 3 5 7 9 11 17 24 77 78 87 6 10 1 3 6 7 9 11 17 24 77 87 4 10 1 3 5 7 9 11 17 24 77 87 4 10 1 3 6 7 9 11 18 24 77 87 44 10 1 3 5 7 9 11 18 24 77 87 45 10 1 3 5 7 9 11 16 24 77 86 0 10 1 3 5 7 9 11 15 16 24 77 0 10 1 3 5 8 9 11 15 16 24 77 0 10 1 3 5 7 9 11 17 25 78 86 42 10 1 3 5 7 9 11 15 17 25 78 46 10 1 3 5 8 9 11 15 17 25 78 46 11 1 3 5 7 9 11 17 24 77 78 86 6 10 1 3 5 7 9 11 15 17 41 78 47 10 1 3 5 8 9 11 15 17 41 78 47 10 1 3 5 7 9 11 17 24 77 86 4 11 1 3 5 7 9 11 15 17 53 69 78 48 11 1 3 5 8 9 11 15 17 53 69 78 49 10 1 3 5 7 9 11 18 24 77 86 45 10 1 3 5 7 9 11 15 17 53 78 49 12 1 3 5 8 9 11 15 17 31 68 69 78 50 11 1 3 5 7 9 11 15 17 31 68 78 31 13 1 3 5 8 9 11 15 17 31 35 69 73 78 51 10 1 3 5 7 9 11 15 17 68 78 50 14 1 3 5 8 9 11 15 17 31 35 37 57 69 78 52 11 1 3 5 7 9 11 15 17 35 73 78 19 15 1 3 5 8 9 11 15 17 31 32 35 37 45 69 78 53 10 1 3 5 7 9 11 15 17 73 78 51 16 1 3 5 8 9 11 15 17 31 32 33 35 37 69 78 85 54 11 1 3 5 7 9 11 15 17 37 57 78 15 17 1 3 5 8 9 11 15 17 31 32 33 35 37 69 77 78 84 31 10 1 3 5 7 9 11 15 17 57 78 52 16 1 3 5 8 9 11 15 17 32 33 35 37 69 77 78 84 16 11 1 3 5 7 9 11 15 17 32 45 78 16 15 1 3 5 8 9 11 15 17 33 35 37 69 77 78 84 17 10 1 3 5 7 9 11 15 17 45 78 53 14 1 3 5 8 9 11 15 17 35 37 69 77 78 84 19 11 1 3 5 7 9 11 15 17 33 78 85 17 13 1 3 5 8 9 11 15 17 37 69 77 78 84 15 10 1 3 5 7 9 11 15 17 78 85 6 12 1 3 5 8 9 11 15 17 69 77 78 84 48 9 1 3 5 7 9 11 15 17 85 54 11 1 3 5 8 9 11 15 17 77 78 84 6 10 1 3 5 7 9 11 15 17 77 84 4 10 1 3 5 8 9 11 15 17 77 84 4 10 1 3 5 7 9 11 15 18 77 84 55 10 1 3 5 8 9 11 15 18 77 84 56 10 1 3 5 7 10 11 13 16 77 84 0 10 1 3 5 7 9 11 13 16 77 84 0 10 1 3 5 7 9 11 16 77 84 86 0 10 1 3 5 7 10 11 13 17 78 85 57 10 1 3 5 7 9 11 13 17 78 85 6 10 1 3 5 7 9 11 17 78 85 86 54 10 1 3 5 7 10 11 13 17 39 78 58 9 1 3 5 7 9 11 13 17 85 57 11 1 3 5 7 9 11 17 77 78 84 86 6 11 1 3 5 7 10 11 13 17 47 54 78 59 9 1 3 5 7 9 11 13 17 39 58 10 1 3 5 7 9 11 17 77 84 86 4 12 1 3 5 7 10 11 13 17 31 47 70 78 60 10 1 3 5 7 9 11 13 17 47 54 61 10 1 3 5 7 9 11 18 77 84 86 55 13 1 3 5 7 10 11 13 17 31 35 47 74 78 62 9 1 3 5 7 9 11 13 17 54 59 14 1 3 5 7 10 11 13 17 31 35 37 47 62 78 63 10 1 3 5 7 9 11 13 17 31 70 60 15 1 3 5 7 10 11 13 17 31 34 35 37 46 47 78 64 11 1 3 5 7 9 11 13 17 31 35 74 31 16 1 3 5 7 10 11 13 17 23 31 33 34 35 37 47 78 65 10 1 3 5 7 9 11 13 17 35 74 19 17 1 3 5 7 10 11 13 17 22 31 33 34 35 37 47 77 78 6 9 1 3 5 7 9 11 13 17 74 62 16 1 3 5 7 10 11 13 17 22 31 33 34 35 37 47 77 31 10 1 3 5 7 9 11 13 17 37 62 63 15 1 3 5 7 10 11 13 17 22 33 34 35 37 47 77 17 11 1 3 5 7 9 11 13 17 34 37 46 15 14 1 3 5 7 10 11 13 17 22 34 35 37 47 77 18 10 1 3 5 7 9 11 13 17 34 46 18 13 1 3 5 7 10 11 13 17 22 35 37 47 77 19 9 1 3 5 7 9 11 13 17 46 64 12 1 3 5 7 10 11 13 17 22 37 47 77 15 10 1 3 5 7 9 11 13 17 23 33 17 11 1 3 5 7 10 11 13 17 22 47 77 61 9 1 3 5 7 9 11 13 17 23 65 10 1 3 5 7 10 11 13 17 22 77 4 10 1 3 5 7 9 11 13 17 22 77 4 10 1 3 5 7 10 11 13 18 22 77 66 10 1 3 5 7 9 11 13 18 22 77 67 10 1 3 5 7 9 11 16 22 77 86 0 10 1 3 5 7 9 11 14 16 22 77 0 10 1 3 5 7 9 12 14 16 22 77 0 10 1 3 5 7 9 11 17 23 78 86 65 10 1 3 5 7 9 11 14 17 23 78 6 10 1 3 5 7 9 12 14 17 23 78 68 11 1 3 5 7 9 11 17 22 77 78 86 6 9 1 3 5 7 9 11 14 17 23 68 10 1 3 5 7 9 12 14 17 40 78 6 10 1 3 5 7 9 11 17 22 77 86 4 9 1 3 5 7 9 11 14 17 40 69 9 1 3 5 7 9 12 14 17 40 69 10 1 3 5 7 9 11 18 22 77 86 67 10 1 3 5 7 9 11 14 17 52 58 70 10 1 3 5 7 9 12 14 17 52 58 70 9 1 3 5 7 9 11 14 17 52 71 9 1 3 5 7 9 12 14 17 52 71 10 1 3 5 7 9 11 14 17 31 67 31 10 1 3 5 7 9 12 14 17 31 67 31 9 1 3 5 7 9 11 14 17 67 72 9 1 3 5 7 9 12 14 17 67 72 10 1 3 5 7 9 11 14 17 35 72 19 10 1 3 5 7 9 12 14 17 35 72 19 9 1 3 5 7 9 11 14 17 72 73 9 1 3 5 7 9 12 14 17 72 73 10 1 3 5 7 9 11 14 17 37 56 15 10 1 3 5 7 9 12 14 17 37 56 15 9 1 3 5 7 9 11 14 17 56 74 9 1 3 5 7 9 12 14 17 56 74 10 1 3 5 7 9 11 14 17 32 34 16 10 1 3 5 7 9 12 14 17 32 34 16 9 1 3 5 7 9 11 14 17 34 18 9 1 3 5 7 9 12 14 17 34 18 8 1 3 5 7 9 11 14 17 4 8 1 3 5 7 9 12 14 17 4 8 1 3 5 7 9 11 14 18 75 8 1 3 5 7 9 12 14 18 76 8 1 3 5 7 9 11 16 86 0 8 1 3 5 7 9 11 17 86 4 8 1 3 5 7 9 11 18 86 75 
+Dot file: /tmp/tmpfqx12e3a/policy.dot

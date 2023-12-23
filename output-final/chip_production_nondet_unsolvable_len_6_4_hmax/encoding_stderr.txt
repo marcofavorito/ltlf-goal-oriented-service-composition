@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmp77agopoj/domain.pddl /tmp/tmp77agopoj/problem.pddl 4
+++ realpath /tmp/tmp77agopoj/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmp77agopoj/domain.pddl
+++ realpath /tmp/tmp77agopoj/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmp77agopoj/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmp77agopoj/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmp77agopoj/problem_compiled.pddl
+++ dirname /tmp/tmp77agopoj/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmp77agopoj/services_condition.txt
+++ cat /tmp/tmp77agopoj/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmp77agopoj/domain.pddl /tmp/tmp77agopoj/problem.pddl dp 4
+% 4,021,866 inferences, 0.305 CPU in 0.305 seconds (100% CPU, 13198996 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmp77agopoj/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmp77agopoj/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmp77agopoj/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0) /g' /tmp/tmp77agopoj/problem_compiled.pddl

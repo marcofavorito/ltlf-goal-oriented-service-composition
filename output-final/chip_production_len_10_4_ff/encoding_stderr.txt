@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmpxa6ahjpq/domain.pddl /tmp/tmpxa6ahjpq/problem.pddl 4
+++ realpath /tmp/tmpxa6ahjpq/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmpxa6ahjpq/domain.pddl
+++ realpath /tmp/tmpxa6ahjpq/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmpxa6ahjpq/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmpxa6ahjpq/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmpxa6ahjpq/problem_compiled.pddl
+++ dirname /tmp/tmpxa6ahjpq/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmpxa6ahjpq/services_condition.txt
+++ cat /tmp/tmpxa6ahjpq/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmpxa6ahjpq/domain.pddl /tmp/tmpxa6ahjpq/problem.pddl dp 4
+% 74,108,393 inferences, 4.764 CPU in 4.765 seconds (100% CPU, 15554969 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmpxa6ahjpq/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmpxa6ahjpq/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmpxa6ahjpq/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0)  (current_state_2 s2_handler_resist_coating_0)  (current_state_3 s3_handler_exposure_0)  (current_state_4 s4_handler_development_0)  (current_state_5 s5_handler_etching_0)  (current_state_6 s6_handler_impurities_implantation_0)  (current_state_7 s7_handler_activation_0)  (current_state_8 s8_handler_resist_stripping_0)  (current_state_9 s9_handler_assembly_0) /g' /tmp/tmpxa6ahjpq/problem_compiled.pddl

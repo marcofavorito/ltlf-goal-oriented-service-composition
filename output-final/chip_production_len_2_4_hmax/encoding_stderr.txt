@@ -1,0 +1,29 @@
++ TB_encode /tmp/tmprh2yxf1_/domain.pddl /tmp/tmprh2yxf1_/problem.pddl 4
+++ realpath /tmp/tmprh2yxf1_/domain.pddl
++ local _DOMAIN_FILE=/tmp/tmprh2yxf1_/domain.pddl
+++ realpath /tmp/tmprh2yxf1_/problem.pddl
++ local _PROBLEM_FILE=/tmp/tmprh2yxf1_/problem.pddl
++ local _ACTION_MODE=4
++ _COMPILED_DOMAIN_FILE=/tmp/tmprh2yxf1_/domain_compiled.pddl
++ _COMPILED_PROBLEM_FILE=/tmp/tmprh2yxf1_/problem_compiled.pddl
+++ dirname /tmp/tmprh2yxf1_/domain.pddl
++ FINAL_CONDITION_FILE=/tmp/tmprh2yxf1_/services_condition.txt
+++ cat /tmp/tmprh2yxf1_/services_condition.txt
++ FINAL_CONDITION='(current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0) '
++ [[ -z 4 ]]
++ [[ 4 != \1 ]]
++ [[ 4 != \2 ]]
++ [[ 4 != \3 ]]
++ [[ 4 != \4 ]]
++ cd prologex
++ ./convert.sh /tmp/tmprh2yxf1_/domain.pddl /tmp/tmprh2yxf1_/problem.pddl dp 4
+% 531,001 inferences, 0.055 CPU in 0.055 seconds (100% CPU, 9596220 Lips)
++ cp ../prologex/tmp/domain-problem_problem_dp.pddl /tmp/tmprh2yxf1_/domain_compiled.pddl
++ cp ../prologex/tmp/problem_dp.pddl /tmp/tmprh2yxf1_/problem_compiled.pddl
++ cd ../
++ python3 scripts/fix_tb_oneof.py --domain-file /tmp/tmprh2yxf1_/domain_compiled.pddl
++ [[ 4 == \1 ]]
++ [[ 4 == \2 ]]
++ [[ 4 == \3 ]]
++ [[ 4 == \4 ]]
++ sed -i 's/(:goal (and/(:goal (and (current_state_0 s0_handler_cleaning_0)  (current_state_1 s1_handler_film_deposition_0) /g' /tmp/tmprh2yxf1_/problem_compiled.pddl
