@@ -389,3 +389,5 @@ examples/**/*.pddl
 ./output
 experiment-output
 output-plots
+!output-final/**/output.sas
+!output-final/**/policy.dot
