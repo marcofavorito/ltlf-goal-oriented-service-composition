@@ -2,9 +2,9 @@
 
 This is the supplementary material for the paper "LTLf Goal-oriented Service Composition".
 
-Link repo: [https://github.com/anonymous4143/icaps-2024-ltlf-goal-oriented-service-composition](https://github.com/anonymous4143/icaps-2024-ltlf-goal-oriented-service-composition)
+Link repo: [https://github.com/marcofavorito/icaps-2024-ltlf-goal-oriented-service-composition](https://github.com/marcofavorito/icaps-2024-ltlf-goal-oriented-service-composition)
 
-Link GH page: [https://anonymous4143.github.io/icaps-2024-ltlf-goal-oriented-service-composition](https://anonymous4143.github.io/icaps-2024-ltlf-goal-oriented-service-composition)
+Link GH page: [https://marcofavorito.github.io/icaps-2024-ltlf-goal-oriented-service-composition](https://marcofavorito.github.io/icaps-2024-ltlf-goal-oriented-service-composition)
 
 
 In the GitHub version, you won't find code in `prologex` since it must be asked to the authors of the TB's paper to make it public, ask the software to the authors:
